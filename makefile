@@ -1,7 +1,7 @@
 PNAME=edcare.out
 CC=gcc
-CC_FLAGS=-Wall      \
-		 -g         
+CC_FLAGS=-Wall \
+		 -g 
 #		 -ansi
 #		 -Wextra
 #		 -pedantic
@@ -9,9 +9,9 @@ CC_FLAGS=-Wall      \
 
 .PHONY: all clean run valgrind
 
-all: edcare.out
+all: $(PNAME)
 
-edcare.out:
+$(PNAME):
 	$(CC) $(CC_FLAGS) ./src/*.c -o $(PNAME) $(CC_LIBS)
 
 run: $(PNAME)
