@@ -6,5 +6,5 @@ febre alta, acionou Cuidador4
 febre baixa, acionou amigo Alice
 febre baixa, acionou amigo Alice
 tudo ok
-Febre baixa mas, infelizmente, o idoso está sem amigos na rede
+febre baixa, acionou amigo Joao
 febre alta, acionou Cuidador4
