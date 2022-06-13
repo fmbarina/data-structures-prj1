@@ -12,7 +12,7 @@ struct idoso
     int idade;
     char condicao;
     Geoloc *local;
-    FILE *arquivo;
+    FILE *arquivo;    
     // Lista de idoso
     // lista de cuidador
 };
