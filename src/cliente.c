@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "idoso.h"
-#include "cuidador.h"
+#include "TADidoso.h"
+#include "TADcuidador.h"
 
 int main()
 {

@@ -1,14 +1,17 @@
 #include "TADidoso.h"
+#include "TADgeoloc.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #define EXT ".txt"
 
 struct idoso
 {
-    Geoloc *Local;
     char *nome;
     int idade;
-    int condicao;
+    char condicao;
+    Geoloc *local;
     FILE *arquivo;
     // Lista de idoso
     // lista de cuidador
@@ -20,7 +23,7 @@ Idoso *IniciaIdoso(char *nome, int idade, char *diretorio)
     saida->nome = strdup(nome);
     saida->idade = idade;
     saida->condicao = 0;
-    saida->Local = InicializaGeo(0, 0);
+    saida->local = IniciaGeo(0, 0);
 
     char *dir;
     // Concatenacao com nome do idoso
@@ -29,16 +32,43 @@ Idoso *IniciaIdoso(char *nome, int idade, char *diretorio)
     strcat(dir, nome);
     strcat(dir, EXT);
 
-    saida->arquivo = fopen(dir, 'r');
+    saida->arquivo = fopen(dir, "r");
 
     return saida;
 }
 
-Geoloc *GetLocal(Idoso *entrada);
-void SetLocal(Idoso *entrada);
-void AtualizaIdoso(Idoso *entrada);
-int GetCondicao(Idoso *entrada);
+void AtualizaIdoso(Idoso *ido)
+{
+    // Eh complicado.
+}
+
+Geoloc* GetLocal(Idoso *ido)
+{
+    return ido->local;
+}
+
+void SetLocalIdoso(Idoso *ido, int longitude, int latitude)
+{
+    MudaPosGeo(ido->local, longitude, latitude);
+}
+
+int GetCondicaoIdoso(Idoso *ido)
+{
+    return (int)ido->condicao;
+}
+
+void SetCondicaoIdoso(Idoso *ido, int condicao)
+{
+    ido->condicao = (char)condicao;
+}
 
 // Entra aqui lista de amigos e lista de cuidadores, ainda por fazer
 
-void LiberaIdoso(Idoso *entrada);
+void LiberaIdoso(Idoso *ido)
+{
+    // TODO: verificar se existem antes!
+    LiberaGeo(ido->local);
+    fclose(ido->arquivo);
+    free(ido->nome);
+    free(ido);
+}

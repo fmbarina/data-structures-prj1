@@ -1,16 +1,19 @@
-#ifndef CUID_H
-#define CUID_H
+#ifndef CUIDADOR_H
+#define CUIDADOR_H
 #include "TADgeoloc.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 typedef struct cuidador Cuidador;
 
-Cuidador *InicializaCuidador(int longitude, int latitude, int id);
-int GetOcupancia(Cuidador *entrada);
-Geoloc *GetLocal(Cuidador *entrada);
-void SetLocal(Cuidador *entrada,int longitude, int latitude);
-void SetOcupacao(Cuidador *entrada, int ocupancia);
-void LiberaCuidador(Cuidador *entrada);
+Cuidador *IniciaCuidador(int id, int longitude, int latitude);
 
-#endif
+int GetOcupacaoCuidador(Cuidador *c);
+
+void SetOcupacaoCuidador(Cuidador *c, int ocupacao);
+
+Geoloc *GetLocalCuidador(Cuidador *c);
+
+void SetLocalCuidador(Cuidador *c, int longitude, int latitude);
+
+void LiberaCuidador(Cuidador *c);
+
+#endif  // CUIDADOR_H

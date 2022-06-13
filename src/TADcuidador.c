@@ -1,40 +1,45 @@
 #include "TADcuidador.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 struct cuidador
 {
-    Geoloc *Local;
-    int ocupancia;
     int id;
+    char ocupacao;
+    Geoloc *local;
 };
 
-Cuidador *InicializaCuidador(int longitude, int latitude, int id)
+Cuidador *IniciaCuidador(int id, int longitude, int latitude)
 {
-    Cuidador *saida = (Cuidador *)malloc(sizeof(Cuidador));
-    saida->Local = InicializaGeo(longitude, latitude);
-    saida->ocupancia = 0;
-    saida->id = id;
-    return saida;
-}
-int GetOcupancia(Cuidador *entrada)
-{
-    return entrada->ocupancia;
-}
-Geoloc *GetLocal(Cuidador *entrada)
-{
-    return entrada->Local;
-}
-void SetLocal(Cuidador *entrada, int longitude, int latitude)
-{
-    MudaPos(entrada->Local, longitude, latitude);
+    Cuidador *c = (Cuidador *)malloc(sizeof(Cuidador));
+    c->id       = id;
+    c->local    = IniciaGeo(longitude, latitude);
+    c->ocupacao = 0; 
+    return c;
 }
 
-void SetOcupacao(Cuidador *entrada, int ocupancia)
+int GetOcupacaoCuidador(Cuidador *c)
 {
-    entrada->ocupancia = ocupancia;
+    return (int)c->ocupacao;
 }
-void LiberaCuidador(Cuidador *entrada)
+
+void SetOcupacaoCuidador(Cuidador *c, int ocupacao)
 {
-    LiberaGeo(entrada->Local);
-    free(entrada);
+    c->ocupacao = (char)ocupacao;
+}
+
+Geoloc *GetLocalCuidador(Cuidador *c)
+{
+    return c->local;
+}
+
+void SetLocalCuidador(Cuidador *c, int longitude, int latitude)
+{
+    MudaPosGeo(c->local, longitude, latitude);
+}
+
+void LiberaCuidador(Cuidador *c)
+{
+    LiberaGeo(c->local);
+    free(c);
 }

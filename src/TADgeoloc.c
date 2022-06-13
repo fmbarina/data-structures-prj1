@@ -1,33 +1,34 @@
-
-
 #include "TADgeoloc.h"
+#include <stdlib.h>
 #include <math.h>
+
 struct geoloc
 {
     float latitude;
     float longitude;
 };
 
-Geoloc *InicializaGeo(int longitude, int latitude)
+Geoloc *IniciaGeo(int longitude, int latitude)
 {
-    Geoloc *saida = (Geoloc *)malloc(sizeof(Geoloc));
-    saida->latitude = latitude;
-    saida->longitude = longitude;
-    return saida;
+    Geoloc *geo    = (Geoloc *)malloc(sizeof(Geoloc));
+    geo->latitude  = latitude;
+    geo->longitude = longitude;
+    return geo;
 }
-double CalcDist(Geoloc *idoso, Geoloc *cuidador)
+
+double CalcDistGeo(Geoloc *g1, Geoloc *g2)
 {
-    double dist;
-    dist = sqrt(pow(idoso->latitude - cuidador->latitude, 2) +
-                pow(idoso->longitude - cuidador->longitude, 2));
-    return dist;
+    return sqrt(pow(g1->latitude - g2->latitude, 2) +
+                pow(g1->longitude - g2->longitude, 2));
 }
-void LiberaGeo(Geoloc *entrada)
+
+void MudaPosGeo(Geoloc *geo, int longitude, int latitude)
 {
-    free(entrada);
+    geo->latitude = latitude;
+    geo->longitude = longitude;
 }
-void MudaPos(Geoloc *saida, int longitude, int latitude)
+
+void LiberaGeo(Geoloc *geo)
 {
-    saida->latitude = latitude;
-    saida->longitude = longitude;
+    free(geo);
 }
