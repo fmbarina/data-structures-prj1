@@ -7,18 +7,12 @@ CC_FLAGS=-Wall \
 #		 -pedantic
 #CC_LIBS=-lm # Definir se precisar
 
-.PHONY: all clean run valgrind
+.PHONY: all clean
 
-all: $(PNAME)
+all: edcare.out
 
-$(PNAME):
-	$(CC) $(CC_FLAGS) ./src/*.c -o $(PNAME) $(CC_LIBS)
-
-run: $(PNAME)
-	./$(PNAME)
-
-valgrind: $(PNAME)
-	valgrind --leak-check=full --track-origins=yes ./$(PNAME)
+edcare.out:
+	$(CC) $(CC_FLAGS) ./src/*.c -o edcare.out $(CC_LIBS)
 
 clean:
 	@ rm -rf ./*.o ./*.out
