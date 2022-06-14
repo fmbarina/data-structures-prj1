@@ -18,7 +18,6 @@ struct idoso
         0   = Bem
         1   = Necessita de amigos
         2   = Necessita de cuidador
-
     */
     Geoloc *local;
     FILE *arquivo;
@@ -31,7 +30,7 @@ struct idoso
 Idoso *IniciaIdoso(char *nome, char *diretorio)
 {
     Idoso *saida = (Idoso *)malloc(sizeof(Idoso));
-    saida->nome = strdup(nome);
+    SetNomeIdoso(saida, nome);
     saida->febreSeguida = 0;
     saida->condicao = 0;
     saida->local = IniciaGeo(0, 0);
@@ -110,7 +109,21 @@ void AtualizaIdoso(Idoso *ido)
     }
 }
 
-Geoloc *GetLocal(Idoso *ido)
+char* GetNomeIdoso(Idoso *ido)
+{
+    return ido->nome;
+}
+
+void SetNomeIdoso(Idoso *ido, char* nome)
+{
+    if(ido->nome)
+        free(ido->nome);
+
+    ido->nome = strdup(nome);
+
+}
+
+Geoloc *GetLocalIdoso(Idoso *ido)
 {
     return ido->local;
 }
@@ -130,7 +143,15 @@ void SetCondicaoIdoso(Idoso *ido, int condicao)
     ido->condicao = (char)condicao;
 }
 
-// Entra aqui lista de amigos e lista de cuidadores, ainda por fazer
+void InsereCuidadorIdoso(Idoso *ido, Cuidador* cuidador)
+{
+    InsereListaCui(ido->ListaCuidadores, cuidador);
+}
+
+void InsereAmigoIdoso(Idoso *ido, Idoso* amigoIdoso)
+{
+    InsereListaIdoso(ido->ListaAmigos, amigoIdoso);
+}
 
 void LiberaIdoso(Idoso *ido)
 {

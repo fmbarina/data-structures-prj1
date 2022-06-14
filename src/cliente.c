@@ -1,73 +1,92 @@
 #include <stdio.h>
 #include <string.h>
 #include "TADidoso.h"
-//#include "TADListaIdoso.h"
+#include "TADListaIdoso.h"
 #include "TADcuidador.h"
 #include "TADListaCuidador.h"
 
 #define EXT ".txt"
+#define BUF 30
 
 int main(int argc, char *argv[])
 {
     // Organizacao dos parametros recebidos
-    char *diretoriogeral;
-    diretoriogeral = strdup(argv[0]);
+    char *diretorioGeral = strdup(argv[0]);
     int numLeituras;
     sscanf(argv[1], "%i", &numLeituras);
 
-    char nome[30];
-    char dirAtual[strlen(diretoriogeral) + strlen("/cuidadores") + strlen(EXT) + 2];
+    char nome[BUF];
+    char dirAtual[strlen(diretorioGeral) + strlen("/cuidadores") + strlen(EXT) + 2];
 
-    strcpy(dirAtual, diretoriogeral);
+    strcpy(dirAtual, diretorioGeral);
     strcat(dirAtual, "/apoio");
     strcat(dirAtual, EXT);
     FILE *fApoio;
     fApoio = fopen(dirAtual, "r");
 
     // Inicializacao dos idosos
-    char aux;
+    char final;
+    ListaIdoso *idosos = IniciaListaIdoso();
 
-    // TODO:CriaListaIdoso
-
-    while (fscanf(fApoio, "%[^;\n]", nome)) // Leitura de todos idosos
-    {
-        // TODO:Insere idoso criado com o nome na lista criada acima
-        fscanf(fApoio, "%c", aux); // Deteccao do inicio das amizades
-        if (aux =='\n')
+    while (fscanf(fApoio, "%[^;\n]", nome))                          // Leitura de todos idosos
+    {                                                                //
+        InsereListaIdoso(idosos, IniciaIdoso(nome, diretorioGeral)); // Insere idoso criado com o nome na lista criada acima
+        fscanf(fApoio, "%c", &final);                                // Deteccao do inicio das amizades
+        if (final == '\n')
             break;
     }
 
-    // TODO: Relacoes de amizade
+    // Relacoes de amizade
+    char amigo[BUF];
+    while (fscanf(fApoio, "%[^;];%[^;\n]\n", nome, amigo))
+    {
+        InsereAmizade(idosos, nome, amigo);
+    }
 
     fclose(fApoio);
 
-    strcpy(dirAtual, diretoriogeral);
+    strcpy(dirAtual, diretorioGeral);
     strcat(dirAtual, "/cuidadores");
     strcat(dirAtual, EXT);
+
     FILE *fCuidadores;
     fCuidadores = fopen(dirAtual, "r");
 
     // Inicializacao dos cuidadores
-    ListaCui *geraisCuidadores;
-    geraisCuidadores = IniciaListaCui();
+    ListaCui *geraisCuidadores = IniciaListaCui();
 
     while (fscanf(fCuidadores, "%[^;,\n]", nome))
     {
-        InsereListaCui(IniciaCuidador(nome, diretoriogeral), geraisCuidadores);
+        InsereListaCui(IniciaCuidador(nome, diretorioGeral), geraisCuidadores);
 
-        fscanf(fApoio, "%c", aux); // Deteccao do inicio das relacoes cuidador
-        if (aux == '\n')
+        fscanf(fApoio, "%c", &final); // Deteccao do inicio das relacoes cuidador
+        if (final == '\n')
             break;
     }
 
-    // TODO:Relacoes cuidadores-idosos
-    /*
+    /* Relacoes cuidadores-idosos
+
     Agr, le o nome do idoso, dps le os nomes dos cuidadores,
     buscando na lista de cima e adicionando na lista dentro de idoso
 
     Obs: esta sendo feito assim para nao ter que alocar cuidador repetido
     e facilitar a liberacao dos mesmos depois
     */
+
+    while (fscanf(fCuidadores, "%[^;,\n]", nome))
+    {
+        Idoso *idosoLido = BuscaListaIdoso(idosos, nome);
+        fscanf(fApoio, "%*c");
+
+        while (fscanf(fCuidadores, "%[^;,\n]", nome))
+        {
+            InsereCuidadorIdoso(idosoLido, RetornaCuiListaCui(geraisCuidadores, nome));
+
+            fscanf(fApoio, "%c", &final);
+            if (final == '\n')
+                break;
+        }
+    }
 
     fclose(fCuidadores);
 

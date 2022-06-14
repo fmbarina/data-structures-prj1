@@ -8,6 +8,10 @@ Idoso *IniciaIdoso(char *nome, char *diretorio);
 
 void AtualizaIdoso(Idoso *ido);
 
+char* GetNomeIdoso(Idoso *ido);
+
+void SetNomeIdoso(Idoso *ido, char* nome);
+
 Geoloc *GetLocalIdoso(Idoso *ido);
 
 void SetLocalIdoso(Idoso *ido, int longitude, int latitude);
@@ -16,8 +20,9 @@ int GetCondicaoIdoso(Idoso *ido);
 
 void SetCondicaoIdoso(Idoso *ido, int condicao);
 
-// Entra aqui lista de amigos e lista de cuidadores, ainda por fazer
-void InsereCuidador(Idoso *ido, int idCuidador);
+void InsereCuidadorIdoso(Idoso *ido, Cuidador* cuidador);
+
+void InsereAmigoIdoso(Idoso *ido, Idoso* amigoIdoso);
 
 void LiberaIdoso(Idoso *ido);
 

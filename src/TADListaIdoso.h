@@ -10,7 +10,7 @@ void InsereListaIdoso(ListaIdoso* li, Idoso* ido);
 
 Idoso* RemoveListaIdoso(ListaIdoso* li, char* nome);
 
-Idoso* BuscaListaIdoso(ListaIdoso li, char* nome);
+Idoso* BuscaListaIdoso(ListaIdoso* li, char* nome);
 
 void LiberaListaIdoso(ListaIdoso* li);
 

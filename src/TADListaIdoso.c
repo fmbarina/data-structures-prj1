@@ -29,37 +29,37 @@ ListaIdoso *IniciaListaIdoso()
 
 void InsereListaIdoso(ListaIdoso *li, Idoso *ido)
 {
-    //TODO: Oq eh q aconteceu aqui, era p ser duplamente encadeada no teu?
     if (!li)
         return;
 
     CelulaIdo *novo = (CelulaIdo *)malloc(sizeof(CelulaIdo));
 
-    novo->ido = ido;
-    novo->prox = li->prim;
+    novo->ido  = ido;
+    novo->prox = NULL;
 
-    if ((li->prim) != NULL)
-        li->prim->ant = novo;
-    else if ((li->prim) == NULL)
-        li->ult = novo;
-
-    li->prim = novo;
+    if (li->ult == NULL)
+	{
+		li->prim = novo;
+	}
+	else
+	{
+		li->ult->prox = novo;
+	}
+	li->ult = novo;
 }
 
 Idoso *RemoveListaIdoso(ListaIdoso *li, char *nome)
 {
-    if (!li)
-        return;
+    if (!li || li->prim == NULL)
+        return NULL;
 
-    //TODO: Elemento eh celula?
-    Elemento *atual = l->prim;
-    Elemento *ant = NULL;
+    CelulaIdo *atual = li->prim;
+    CelulaIdo *ant   = NULL;
 
     while (atual != NULL)
     {
-        if (!strcmp(nome, atual->ido->nome);)
-            ;
-        break;
+        if (!strcmp(nome, GetNomeIdoso(atual->ido)))
+            break;
 
         ant = atual;
         atual = atual->prox;
@@ -70,17 +70,17 @@ Idoso *RemoveListaIdoso(ListaIdoso *li, char *nome)
         // Inicio
         if (ant == NULL)
         {
-            l->prim = atual->prox;
+            li->prim = atual->prox;
 
             // lista so tem um elemento
-            if (l->ult == l->prim)
-                l->ult = NULL;
+            if (li->ult == li->prim)
+                li->ult = NULL;
         }
         // Fim
-        else if (atual == l->ult)
+        else if (atual == li->ult)
         {
-            l->ult = ant;
-            l->ult->prox = NULL;
+            li->ult = ant;
+            li->ult->prox = NULL;
         }
         // Meio
         else
@@ -89,29 +89,28 @@ Idoso *RemoveListaIdoso(ListaIdoso *li, char *nome)
         }
     }
 
-    return atual;
+    return atual->ido;
 }
 
-Idoso *BuscaListaIdoso(ListaIdoso li, char *nome)
+Idoso *BuscaListaIdoso(ListaIdoso *li, char *nome)
 {
     if (!li)
-        return;
+        return NULL;
 
-    Elemento *atual = l->prim;
+    CelulaIdo *atual = li->prim;
 
     while (atual != NULL)
     {
-        if (!strcmp(nome, atual->ido->nome);)
-            ;
-        break;
+        if (!strcmp(nome, GetNomeIdoso(atual->ido)))
+            break;
 
         atual = atual->prox;
     }
 
     if (atual != NULL)
-        return atual;
+        return atual->ido;
 
-    return NULL // Idoso não encontrado!?
+    return NULL;
 }
 
 void LiberaListaIdoso(ListaIdoso *li)
@@ -132,11 +131,21 @@ void LiberaListaIdoso(ListaIdoso *li)
     free(li);
 }
 
-static int validaLI(ListaIdoso li)
+void InsereAmizade(ListaIdoso* li, char* amg1, char*amg2)
+{
+    Idoso* idoso = BuscaListaIdoso(li, amg1);
+    Idoso* amigo = BuscaListaIdoso(li, amg2);
+
+    InsereAmigoIdoso(idoso, amigo);
+    InsereAmigoIdoso(amigo, idoso);
+}
+
+static int validaLI(ListaIdoso *li)
 {
     if (!li)
     {
-        printf("AVISO: Lista de idosos não alocada.") return 0;
+        printf("AVISO: Lista de idosos não alocada.");
+        return 0;
     }
     return 1;
 }
