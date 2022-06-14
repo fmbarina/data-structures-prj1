@@ -5,16 +5,16 @@
 
 typedef struct listacui ListaCui;
 
-ListaCui* IniciaListaCui();
+ListaCui *IniciaListaCui();
 
-void InsereListaCui(Cuidador* inserido, ListaCui* cs);
+void InsereListaCui(Cuidador *inserido, ListaCui *cs);
 
-Cuidador* RetornaCuidadorProx(ListaCui* cs, Idoso* referencia);
+Cuidador *RetornaCuidadorProx(ListaCui *cs, Idoso *referencia);
 
-Cuidador* RetornaCuiListaCui(int idCui, ListaCui* cs);
+Cuidador *RetornaCuiListaCui(char *nomeCui, ListaCui *cs);
 
-Cuidador* RetiraListaCui(int idRemov, ListaCui* cs);
+Cuidador *RetiraListaCui(char *nomeCui, ListaCui *cs);
 
-void LiberaListaCui(ListaCui* cs);
+void LiberaListaCui(ListaCui *cs);
 
 #endif

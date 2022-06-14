@@ -1,31 +1,38 @@
 #include "TADListaCuidador.h"
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
 typedef struct celulaCui CelulaCui;
 
-struct celulaCui{
-	Cuidador* cuida;
-	CelulaCui* prox;
+struct celulaCui
+{
+	Cuidador *cuida;
+	CelulaCui *prox;
 };
 
-struct listacui{
-	CelulaCui* prim;
-	CelulaCui* ult;
-}
+struct listacui
+{
+	CelulaCui *prim;
+	CelulaCui *ult;
+};
 
-typedef struct listacui ListaCui;
-
-ListaCui* IniciaListaCui(){
-	ListaCui* saida = (ListaCui*) malloc(sizeof(ListaCui));
+ListaCui *IniciaListaCui()
+{
+	ListaCui *saida = (ListaCui *)malloc(sizeof(ListaCui));
 	saida->prim = NULL;
 	saida->ult = NULL;
 	return saida;
 }
 
-void InsereListaCui(Cuidador* inserido, ListaCui* cs){
-	CelulaCui* insertCel = (CelulaCui*) malloc(sizeof(CelulaCui));
+void InsereListaCui(Cuidador *inserido, ListaCui *cs)
+{
+	// Insere na ultima posicao da lista
+	CelulaCui *insertCel = (CelulaCui *)malloc(sizeof(CelulaCui));
 	insertCel->cuida = inserido;
 	insertCel->prox = NULL;
-	if(cs->ult == NULL){
+	if (cs->ult == NULL)
+	{
 		cs->prim = insertCel;
 	}
 	else
@@ -35,58 +42,65 @@ void InsereListaCui(Cuidador* inserido, ListaCui* cs){
 	cs->ult = insertCel;
 }
 
-Cuidador* RetornaCuidadorProx(ListaCui* cs, Idoso* referencia){
-	//Esta vazia
-	if (listona->prim == NULL){
+Cuidador *RetornaCuidadorProx(ListaCui *cs, Idoso *referencia)
+{
+	// Esta vazia
+	if (cs->prim == NULL)
+	{
 		printf("Lista de cuidadores vazia!!!\n");
 		return NULL;
 	}
-	
-	CelulaCui* aux = cs->prim;
-	double Menordist=CalcDistGeo(GetLocalCuidador(aux->cuida),GetLocalIdoso(referencia));
-	Cuidador* CuidadorMenor = cs->prim;
-	
-	while(aux!=NULL)
+
+	CelulaCui *aux = cs->prim;
+	double Menordist = CalcDistGeo(GetLocalCuidador(aux->cuida), GetLocalIdoso(referencia));
+	Cuidador *CuidadorMenor = cs->prim->cuida;
+
+	while (aux != NULL)
 	{
-		if(CalcDistGeo(GetLocalCuidador(aux->cuida),GetLocalIdoso(referencia))<Menordist)
+		if (CalcDistGeo(GetLocalCuidador(aux->cuida), GetLocalIdoso(referencia)) < Menordist)
 		{
 			CuidadorMenor = aux->cuida;
-			Menordist = CalcDistGeo(GetLocalCuidador(aux->cuida),GetLocalIdoso(referencia));
+			Menordist = CalcDistGeo(GetLocalCuidador(aux->cuida), GetLocalIdoso(referencia));
 		}
 		aux = aux->prox;
 	}
-	
+
 	return CuidadorMenor;
 }
 
-Cuidador* RetornaCuiListaCui(int idCui, ListaCui* cs){
-	CelulaCui *ant = NULL; *atual = cs->prim;
-	
-	while(atual!=NULL&&GetIdCuidador(atual)!=idCui)
+Cuidador *RetornaCuiListaCui(char *nomeCui, ListaCui *cs)
+{
+	CelulaCui  *atual = cs->prim;
+
+	// Varre a lista procurando um cuidador com o nome especificado
+	while (atual != NULL && strcmp(GetNomeCuidador(atual->cuida), nomeCui) != 0)
 	{
-		ant = atual;
 		atual = atual->prox;
 	}
-	
-	return atual;
+
+	return atual->cuida;
 }
 
-Cuidador* RetiraListaCui(int idRemov, ListaCui* cs){
-	CelulaCui *ant = NULL; *atual = cs->prim;
-	Cuidador* saida=NULL;
-	while(atual!=NULL&&GetIdCuidador(atual)!=idRemov)
+Cuidador *RetiraListaCui(char *nomeCui, ListaCui *cs)
+{
+	CelulaCui *ant = NULL;
+	CelulaCui *atual = cs->prim;
+	Cuidador *saida = NULL;
+
+	// Varre a lista procurando um cuidador com o nome especificado
+	while (atual != NULL && strcmp(GetNomeCuidador(atual->cuida), nomeCui) != 0)
 	{
 		ant = atual;
 		atual = atual->prox;
 	}
-	
+
 	// Lista vazia
 	if (cs->prim == NULL)
-	{ 
+	{
 		return NULL;
 	}
 	// Lista com unico elemento
-	else if (cs->ult == cs->prim && cs->final == atual)
+	else if (cs->ult == cs->prim && cs->ult == atual)
 	{
 		cs->ult = NULL;
 		cs->prim = NULL;
@@ -112,7 +126,8 @@ Cuidador* RetiraListaCui(int idRemov, ListaCui* cs){
 		return saida;
 	}
 	// Caso geral
-	else {
+	else
+	{
 		ant->prox = atual->prox;
 		saida = atual->cuida;
 		free(atual);
@@ -120,13 +135,14 @@ Cuidador* RetiraListaCui(int idRemov, ListaCui* cs){
 	}
 }
 
-void LiberaListaCui(ListaCui* cs){
-	CelulaCui* aux = cs->prim;
-	while(aux!=NULL){
-		cs->inic = aux->prox;
+void LiberaListaCui(ListaCui *cs)
+{
+	CelulaCui *aux = cs->prim;
+	while (aux != NULL)
+	{
+		cs->prim = aux->prox;
 		free(aux);
-		aux = cs->inic;
+		aux = cs->prim;
 	}
 	free(cs);
 }
-

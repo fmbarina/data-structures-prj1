@@ -8,58 +8,64 @@ typedef struct celulaIdoso CelulaIdo;
 
 struct celulaIdoso
 {
-    Idoso* ido;
-    CelulaIdo* prox;
+    Idoso *ido;
+    CelulaIdo *prox;
 };
 
 struct sentinelaIdoso
 {
-    CelulaIdo* prim;
-    CelulaIdo* ult;
+    CelulaIdo *prim;
+    CelulaIdo *ult;
 };
 
-ListaIdoso* IniciaListaIdoso()
+ListaIdoso *IniciaListaIdoso()
 {
-    li = (ListaIdoso*) malloc(sizeof(ListaIdoso));
+    ListaIdoso *li;
+    li = (ListaIdoso *)malloc(sizeof(ListaIdoso));
     li->prim = NULL;
-    li->ult  = NULL;
+    li->ult = NULL;
     return li;
 }
 
-void InsereListaIdoso(ListaIdoso* li, Idoso* ido)
+void InsereListaIdoso(ListaIdoso *li, Idoso *ido)
 {
-    if(!li) return;
+    //TODO: Oq eh q aconteceu aqui, era p ser duplamente encadeada no teu?
+    if (!li)
+        return;
 
-    CelulaIdo* novo = (Elemento*) malloc(sizeof(CelulaIdo));
-    
-    novo->idoso = ido;
-    novo->prox  = l->prim;
- 
+    CelulaIdo *novo = (CelulaIdo *)malloc(sizeof(CelulaIdo));
+
+    novo->ido = ido;
+    novo->prox = li->prim;
+
     if ((li->prim) != NULL)
         li->prim->ant = novo;
-    else if ((l->prim) == NULL)
-        lli->ult = novo;
- 
+    else if ((li->prim) == NULL)
+        li->ult = novo;
+
     li->prim = novo;
 }
 
-Idoso* RemoveListaIdoso(ListaIdoso* li, char* nome)
+Idoso *RemoveListaIdoso(ListaIdoso *li, char *nome)
 {
-    if(!li) return;
+    if (!li)
+        return;
 
-    Elemento* atual = l->prim;
-    Elemento* ant   = NULL;
+    //TODO: Elemento eh celula?
+    Elemento *atual = l->prim;
+    Elemento *ant = NULL;
 
     while (atual != NULL)
     {
-        if (!strcmp(nome, atual->ido->nome););
-            break;
-                
-        ant   = atual;
+        if (!strcmp(nome, atual->ido->nome);)
+            ;
+        break;
+
+        ant = atual;
         atual = atual->prox;
     }
 
-    if (atual != NULL) 
+    if (atual != NULL)
     {
         // Inicio
         if (ant == NULL)
@@ -67,17 +73,18 @@ Idoso* RemoveListaIdoso(ListaIdoso* li, char* nome)
             l->prim = atual->prox;
 
             // lista so tem um elemento
-            if(l->ult == l->prim)
+            if (l->ult == l->prim)
                 l->ult = NULL;
         }
         // Fim
         else if (atual == l->ult)
         {
-            l->ult       = ant;
+            l->ult = ant;
             l->ult->prox = NULL;
         }
         // Meio
-        else {
+        else
+        {
             ant->prox = atual->prox;
         }
     }
@@ -85,32 +92,35 @@ Idoso* RemoveListaIdoso(ListaIdoso* li, char* nome)
     return atual;
 }
 
-Idoso* BuscaListaIdoso(ListaIdoso li, char* nome)
+Idoso *BuscaListaIdoso(ListaIdoso li, char *nome)
 {
-    if(!li) return;
+    if (!li)
+        return;
 
-    Elemento* atual = l->prim;
+    Elemento *atual = l->prim;
 
     while (atual != NULL)
     {
-        if (!strcmp(nome, atual->ido->nome););
-            break;
-                
+        if (!strcmp(nome, atual->ido->nome);)
+            ;
+        break;
+
         atual = atual->prox;
     }
 
     if (atual != NULL)
         return atual;
-    
+
     return NULL // Idoso não encontrado!?
 }
 
-void LiberaListaIdoso(ListaIdoso* li)
+void LiberaListaIdoso(ListaIdoso *li)
 {
-    if(!li) return;
+    if (!li)
+        return;
 
-    CelulaIdo* temp = li->prim;
-    CelulaIdo* prox = NULL;
+    CelulaIdo *temp = li->prim;
+    CelulaIdo *prox = NULL;
 
     while (temp != NULL)
     {
@@ -122,13 +132,12 @@ void LiberaListaIdoso(ListaIdoso* li)
     free(li);
 }
 
-static int validaLI(ListaIdoso li) {
-    if(!li)
+static int validaLI(ListaIdoso li)
+{
+    if (!li)
     {
-        printf("AVISO: Lista de idosos não alocada.")
-        return 0;
+        printf("AVISO: Lista de idosos não alocada.") return 0;
     }
     return 1;
 }
 
-#endif // LISTA_IDOSO_H

@@ -14,4 +14,6 @@ Idoso* BuscaListaIdoso(ListaIdoso li, char* nome);
 
 void LiberaListaIdoso(ListaIdoso* li);
 
+void InsereAmizade(ListaIdoso* li, char* amg1, char*amg2);
+
 #endif // LISTA_IDOSO_H

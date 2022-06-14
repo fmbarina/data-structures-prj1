@@ -4,11 +4,13 @@
 
 typedef struct cuidador Cuidador;
 
-Cuidador *IniciaCuidador(int id, int longitude, int latitude);
+Cuidador *IniciaCuidador(char *nome, char *diretorio);
 
 int GetOcupacaoCuidador(Cuidador *c);
 
-int GetIdCuidador(Cuidador *c); //A ser implementado
+char *GetNomeCuidador(Cuidador *c);
+
+void AtualizaCuidador(Cuidador *c);
 
 void SetOcupacaoCuidador(Cuidador *c, int ocupacao);
 
@@ -18,6 +20,4 @@ void SetLocalCuidador(Cuidador *c, int longitude, int latitude);
 
 void LiberaCuidador(Cuidador *c);
 
-void ImprimeCuidador(Cuidador *c); //A ser implementado
-
-#endif  // CUIDADOR_H
+#endif // CUIDADOR_H
