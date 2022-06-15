@@ -1,6 +1,6 @@
 #ifndef CUIDADOR_H
 #define CUIDADOR_H
-#include "TADgeoloc.h"
+#include "geoloc.h"
 
 typedef struct cuidador Cuidador;
 

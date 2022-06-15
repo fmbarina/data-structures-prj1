@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if ! [ -e "edcare.out" ] ; then
-    echo "ERROR: edcare.out not found"
-    exit 1
+    echo "Running makefile..."
+    make
 fi
 
 [ -d ./test_output ] && rm -rf ./test_output
@@ -11,9 +11,9 @@ mkdir -p ./test_output
 
 test()
 {
-    echo "TEST: $1"
+    echo "RUNNING TEST: $1"
     mkdir -p ./test_output/"$(basename "$1")"
-    #./edcare.out "$1" TODO: como leio e pra onde jogo? 
+    ./edcare.out "$1"  
 }
 
 if [ "$(ls "./tests")" ]; then

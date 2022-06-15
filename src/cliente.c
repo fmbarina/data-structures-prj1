@@ -1,9 +1,9 @@
+#include "idoso.h"
+#include "cuidador.h"
+#include "listaIdoso.h"
+#include "listaCuidador.h"
 #include <stdio.h>
 #include <string.h>
-#include "TADidoso.h"
-#include "TADListaIdoso.h"
-#include "TADcuidador.h"
-#include "TADListaCuidador.h"
 
 #define EXT ".txt"
 #define BUF 30
@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
     char nome[BUF];
     char dirAtual[strlen(diretorioGeral) + strlen("/cuidadores") + strlen(EXT) + 2];
 
+    // TODO: argv[0] contem o nome do programa, precisamos do diretorio
     strcpy(dirAtual, diretorioGeral);
     strcat(dirAtual, "/apoio");
     strcat(dirAtual, EXT);
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
 
     // Inicializacao dos idosos
     char final;
-    ListaIdoso *idosos = IniciaListaIdoso();
+    lIdosos *idosos = IniciaListaIdoso();
 
     while (fscanf(fApoio, "%[^;\n]", nome))                          // Leitura de todos idosos
     {                                                                //
@@ -53,21 +54,21 @@ int main(int argc, char *argv[])
     fCuidadores = fopen(dirAtual, "r");
 
     // Inicializacao dos cuidadores
-    ListaCui *geraisCuidadores = IniciaListaCui();
+    lCuidadores *geraisCuidadores = IniciaListaCui();
 
     while (fscanf(fCuidadores, "%[^;,\n]", nome))
     {
-        InsereListaCui(IniciaCuidador(nome, diretorioGeral), geraisCuidadores);
+        InsereListaCui(geraisCuidadores, IniciaCuidador(nome, diretorioGeral));
 
-        fscanf(fApoio, "%c", &final); // Deteccao do inicio das relacoes cuidador
+        fscanf(fCuidadores, "%c", &final); // Deteccao do inicio das relacoes cuidador
         if (final == '\n')
             break;
     }
 
     /* Relacoes cuidadores-idosos
 
-    Agr, le o nome do idoso, dps le os nomes dos cuidadores,
-    buscando na lista de cima e adicionando na lista dentro de idoso
+    Agora, ler o nome do idoso, depois ler os nomes dos cuidadores,
+    buscando na lista acima e adicionando na lista dentro de idosos
 
     Obs: esta sendo feito assim para nao ter que alocar cuidador repetido
     e facilitar a liberacao dos mesmos depois
@@ -76,13 +77,13 @@ int main(int argc, char *argv[])
     while (fscanf(fCuidadores, "%[^;,\n]", nome))
     {
         Idoso *idosoLido = BuscaListaIdoso(idosos, nome);
-        fscanf(fApoio, "%*c");
+        fscanf(fCuidadores, "%*c");
 
         while (fscanf(fCuidadores, "%[^;,\n]", nome))
         {
-            InsereCuidadorIdoso(idosoLido, RetornaCuiListaCui(geraisCuidadores, nome));
+            InsereCuidadorIdoso(idosoLido, BuscaListaCui(geraisCuidadores, nome));
 
-            fscanf(fApoio, "%c", &final);
+            fscanf(fCuidadores, "%c", &final);
             if (final == '\n')
                 break;
         }

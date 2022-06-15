@@ -1,10 +1,10 @@
+#include "idoso.h"
+#include "geoloc.h"
+#include "listaIdoso.h" // TODO: Dependecia circular?!
+#include "listaCuidador.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "TADidoso.h"
-#include "TADgeoloc.h"
-#include "TADListaIdoso.h"
-#include "TADListaCuidador.h"
 
 #define EXT ".txt"
 
@@ -14,15 +14,15 @@ struct idoso
     int febreSeguida;
     char condicao;
     /*Tabela da condicao do idoso
-        -1  = Morto
+        -1  = Bem morto
         0   = Bem
         1   = Necessita de amigos
         2   = Necessita de cuidador
     */
     Geoloc *local;
     FILE *arquivo;
-    ListaIdoso *ListaAmigos;
-    ListaCui *ListaCuidadores;
+    lIdosos *ListaAmigos;
+    lCuidadores *ListaCuidadores;
     // Arquivo de saida do idoso
     FILE *saida;
 };
@@ -56,13 +56,13 @@ Idoso *IniciaIdoso(char *nome, char *diretorio)
     return saida;
 }
 
-void AtualizaIdoso(Idoso *ido)
+void AtualizaIdoso(Idoso *i)
 {
-    // TODO:Fazer a leitura de cada linha de joao.txt
-    // Considerando que o arquivo ja esta aberto em arquivo
+    // TODO:Fazer a leitura de cada linha de nome.txt
+    // Considerando que o arquivo ja esta aberto na prop. arquivo
 
     // Caso Morto
-    if (ido->condicao == -1)
+    if (i->condicao == -1)
         return;
 
     int queda;
@@ -70,100 +70,100 @@ void AtualizaIdoso(Idoso *ido)
     int lon, lati;
     char entrada[30];
 
-    fscanf(ido->arquivo, "%s", entrada);
+    fscanf(i->arquivo, "%s", entrada);
 
     // Caso Falecimento
-    if (entrada == "falecimento")
+    if (!strcmp(entrada, "falecimento"))
     {
-        ido->condicao = -1;
+        i->condicao = -1;
     }
 
     // Vivo
-    if (ido->condicao != -1)
+    if (i->condicao != -1)
     {
         sscanf(entrada, "%f;%i;%i;%i", &temp, &lati, &lon, &queda);
 
-        SetLocalIdoso(ido, lon, lati);
+        SetLocalIdoso(i, lon, lati);
 
         // Febre Baixa
         if (temp < 38 && temp > 37)
         {
-            ido->condicao = 1;
-            ido->febreSeguida++;
+            i->condicao = 1;
+            i->febreSeguida++;
         }
         // Febre Alta
         if (temp >= 38)
         {
-            ido->condicao = 2;
+            i->condicao = 2;
         }
         // Queda
         if (queda)
         {
-            ido->condicao = 2;
+            i->condicao = 2;
         }
         // Febres Seguidas
-        if (ido->febreSeguida >= 4)
+        if (i->febreSeguida >= 4)
         {
-            ido->condicao = 2;
+            i->condicao = 2;
         }
     }
 }
 
-char* GetNomeIdoso(Idoso *ido)
+char* GetNomeIdoso(Idoso *i)
 {
-    return ido->nome;
+    return i->nome;
 }
 
-void SetNomeIdoso(Idoso *ido, char* nome)
+void SetNomeIdoso(Idoso *i, char* nome)
 {
-    if(ido->nome)
-        free(ido->nome);
+    if(i->nome)
+        free(i->nome);
 
-    ido->nome = strdup(nome);
+    i->nome = strdup(nome);
 
 }
 
-Geoloc *GetLocalIdoso(Idoso *ido)
+Geoloc *GetLocalIdoso(Idoso *i)
 {
-    return ido->local;
+    return i->local;
 }
 
-void SetLocalIdoso(Idoso *ido, int longitude, int latitude)
+void SetLocalIdoso(Idoso *i, int longitude, int latitude)
 {
-    MudaPosGeo(ido->local, longitude, latitude);
+    MudaPosGeo(i->local, longitude, latitude);
 }
 
-int GetCondicaoIdoso(Idoso *ido)
+int GetCondicaoIdoso(Idoso *i)
 {
-    return (int)ido->condicao;
+    return (int)i->condicao;
 }
 
-void SetCondicaoIdoso(Idoso *ido, int condicao)
+void SetCondicaoIdoso(Idoso *i, int condicao)
 {
-    ido->condicao = (char)condicao;
+    i->condicao = (char)condicao;
 }
 
-void InsereCuidadorIdoso(Idoso *ido, Cuidador* cuidador)
+void InsereCuidadorIdoso(Idoso *i, Cuidador* c)
 {
-    InsereListaCui(ido->ListaCuidadores, cuidador);
+    InsereListaCui(i->ListaCuidadores, c);
 }
 
-void InsereAmigoIdoso(Idoso *ido, Idoso* amigoIdoso)
+void InsereAmigoIdoso(Idoso *i, Idoso* amigo)
 {
-    InsereListaIdoso(ido->ListaAmigos, amigoIdoso);
+    InsereListaIdoso(i->ListaAmigos, amigo);
 }
 
-void LiberaIdoso(Idoso *ido)
+void LiberaIdoso(Idoso *i)
 {
-    if (ido)
+    if (i)
     {
-        LiberaGeo(ido->local);
-        fclose(ido->arquivo);
-        fclose(ido->saida);
-        free(ido->nome);
-        LiberaListaIdoso(ido->ListaAmigos);
-        LiberaListaCui(ido->ListaCuidadores);
-        free(ido);
+        LiberaGeo(i->local);
+        fclose(i->arquivo);
+        fclose(i->saida);
+        free(i->nome);
+        LiberaListaIdoso(i->ListaAmigos);
+        LiberaListaCui(i->ListaCuidadores);
+        free(i);
     }
     else
         printf("Idoso Vazio!\n");

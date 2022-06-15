@@ -1,4 +1,4 @@
-#include "TADcuidador.h"
+#include "cuidador.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
