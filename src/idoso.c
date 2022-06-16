@@ -98,7 +98,7 @@ void ResetFebresIdoso(Idoso *ido)
 
 void IncFebresIdoso(Idoso *ido)
 {
-    ido->febreSeguida++;
+    ido->febreSeguida++; // Tem que ser reiniciado em algum momento
 }
 
 void AtualizaIdoso(Idoso *ido)
@@ -136,6 +136,7 @@ void AtualizaIdoso(Idoso *ido)
     if (temp >= 38)
     {
         SetCondicaoIdoso(ido, 2);
+        ResetFebresIdoso(ido); // Da especificação: sem febre alta “no meio”
     }
     // Queda
     if (queda)
