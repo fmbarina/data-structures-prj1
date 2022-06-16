@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cppdbg",
+            "request": "launch",
+            "name": "Debug Program",
+            "program": "${workspaceFolder}/edcare.out",
+            "cwd": "${workspaceFolder}",
+            "args": ["${input:numEntradas}", "${input:dirEntradas}"],
+            "preLaunchTask": "C/C++: gcc build active file"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "numEntradas",
+            "description": "Número de entradas do programa",
+            "default": "10",
+            "type": "promptString"
+        },
+        {
+            "id": "dirEntradas",
+            "description": "Pasta onde estão as entradas do programa",
+            "default": "./tests/1/Entradas",
+            "type": "promptString"
+        },
+    ]
+}
