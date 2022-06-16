@@ -33,13 +33,6 @@ Cuidador *IniciaCuidador(char *nome, char *diretorio)
     return cui;
 }
 
-void AtualizaCuidador(Cuidador *cui)
-{
-    int lon, lati;
-    fscanf(cui->arquivo, "%i;%i", &lati, &lon);
-    SetLocalCuidador(cui, lon, lati);
-}
-
 char *GetNomeCuidador(Cuidador *cui)
 {
     return cui->nome;
@@ -63,6 +56,13 @@ Geoloc *GetLocalCuidador(Cuidador *cui)
 void SetLocalCuidador(Cuidador *cui, int longitude, int latitude)
 {
     MudaPosGeo(cui->local, longitude, latitude);
+}
+
+void AtualizaCuidador(Cuidador *cui)
+{
+    int lon, lati; // ...long é uma palavra reservada
+    fscanf(cui->arquivo, "%i;%i", &lati, &lon);
+    SetLocalCuidador(cui, lon, lati);
 }
 
 void LiberaCuidador(Cuidador *cui)

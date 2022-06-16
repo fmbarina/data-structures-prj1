@@ -97,6 +97,11 @@ int GetFebresIdoso(Idoso *ido)
     return (int)ido->febreSeguida;
 }
 
+void ResetFebresIdoso(Idoso *ido)
+{
+    ido->febreSeguida = (char)0;
+}
+
 void IncFebresIdoso(Idoso *ido)
 {
     ido->febreSeguida++;
@@ -104,9 +109,6 @@ void IncFebresIdoso(Idoso *ido)
 
 void AtualizaIdoso(Idoso *ido)
 {
-    // TODO:Fazer a leitura de cada linha de nome.txt
-    // Considerando que o arquivo ja esta aberto na prop. arqent
-
     // Caso Morto
     if (ido->condicao == -1)
         return;
@@ -121,37 +123,35 @@ void AtualizaIdoso(Idoso *ido)
     // Caso Falecimento
     if (!strcmp(entrada, "falecimento"))
     {
-        ido->condicao = -1;
+        SetCondicaoIdoso(ido, -1);
+        return;
     }
 
-    // Vivo
-    if (ido->condicao != -1)
+    // Casos "Ainda está vivo graças"
+    sscanf(entrada, "%f;%i;%i;%i", &temp, &lati, &lon, &queda);
+
+    SetLocalIdoso(ido, lon, lati);
+
+    // Febre Baixa
+    if (temp < 38 && temp > 37)
     {
-        sscanf(entrada, "%f;%i;%i;%i", &temp, &lati, &lon, &queda);
-
-        SetLocalIdoso(ido, lon, lati);
-
-        // Febre Baixa
-        if (temp < 38 && temp > 37)
-        {
-            ido->condicao = 1;
-            ido->febreSeguida++;
-        }
-        // Febre Alta
-        if (temp >= 38)
-        {
-            ido->condicao = 2;
-        }
-        // Queda
-        if (queda)
-        {
-            ido->condicao = 2;
-        }
-        // Febres Seguidas
-        if (ido->febreSeguida >= 4)
-        {
-            ido->condicao = 2;
-        }
+        SetCondicaoIdoso(ido, 1);
+        IncFebresIdoso(ido);
+    }
+    // Febre Alta
+    if (temp >= 38)
+    {
+        SetCondicaoIdoso(ido, 2);
+    }
+    // Queda
+    if (queda)
+    {
+        SetCondicaoIdoso(ido, 2);
+    }
+    // Febres Seguidas
+    if (ido->febreSeguida >= 4)
+    {
+        SetCondicaoIdoso(ido, 2);
     }
 }
 

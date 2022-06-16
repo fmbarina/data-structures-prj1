@@ -10,13 +10,13 @@ int GetOcupacaoCuidador(Cuidador *cui);
 
 char *GetNomeCuidador(Cuidador *cui);
 
-void AtualizaCuidador(Cuidador *cui);
-
 void SetOcupacaoCuidador(Cuidador *cui, int ocupacao);
 
 Geoloc *GetLocalCuidador(Cuidador *cui);
 
 void SetLocalCuidador(Cuidador *cui, int longitude, int latitude);
+
+void AtualizaCuidador(Cuidador *cui);
 
 void LiberaCuidador(Cuidador *cui);
 

@@ -23,6 +23,8 @@ int GetFebresIdoso(Idoso *ido);
 
 void IncFebresIdoso(Idoso *ido);
 
+void ResetFebresIdoso(Idoso *ido);
+
 void AtualizaIdoso(Idoso *ido);
 
 void InsereCuidadorIdoso(Idoso *ido, Cuidador *cui);

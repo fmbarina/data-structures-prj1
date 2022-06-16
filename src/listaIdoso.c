@@ -127,15 +127,14 @@ void LiberaListaIdoso(listaIdo *l)
     if (!l)
         return;
 
-    CelulaIdo *temp = l->prim;
-    CelulaIdo *prox = NULL;
+    CelulaIdo *aux = l->prim;
 
-    while (temp != NULL)
-    {
-        prox = temp->prox;
-        free(temp);
-        temp = prox;
-    }
+    while (aux != NULL)
+	{
+		l->prim = aux->prox;
+		free(aux);
+		aux = l->prim;
+	}
 
     free(l);
 }
