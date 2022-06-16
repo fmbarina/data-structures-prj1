@@ -1,5 +1,7 @@
 #include "idoso.h"
 #include "cuidador.h"
+#include "listaIdoso.h"
+#include "listaCuidador.h"
 #include "geoloc.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,8 +25,8 @@ struct idoso
     FILE *arqent;
     FILE *arqsai;
     // Listas
-    struct listaIdoso *amigos;
-    struct listaCuidador *cuidadores;
+    listaIdo *amigos;
+    listaCui *cuidadores;
 };
 
 Idoso *IniciaIdoso(char *nome, char *diretorio)
