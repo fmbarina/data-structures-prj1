@@ -13,8 +13,8 @@
 struct idoso
 {
     char *nome;
-    char condicao;
     char febreSeguida;
+    char condicao;
     /*Tabela da condicao do idoso
         -1  = Bem morto
         0   = Bem
@@ -41,15 +41,15 @@ Idoso *IniciaIdoso(char *nome, char *diretorio)
     ido->cuidadores = IniciaListaCui();
 
     // Concatenacao com nome do idoso
-    char* pathEntrada = expth(adpth(strdup(diretorio), nome), EXT);
-    char* pahtSaida   = expth(expth(adpth(strdup(diretorio), nome), "-saida"), EXT);
-    
+    char *pathEntrada = expth(adpth(strdup(diretorio), nome), EXT);
+    char *pahtSaida = expth(expth(adpth(strdup(diretorio), nome), "-saida"), EXT);
+
     ido->arqent = fopen(pathEntrada, "r");
     ido->arqsai = fopen(pahtSaida, "W");
 
     free(pathEntrada);
     free(pahtSaida);
-    
+
     return ido;
 }
 
