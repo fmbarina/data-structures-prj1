@@ -31,7 +31,8 @@ void InsereListaCui(listaCui *l, Cuidador *novo)
 	CelulaCui *insertCel = (CelulaCui *)malloc(sizeof(CelulaCui));
 	insertCel->cuida = novo;
 	insertCel->prox = NULL;
-	if (l->ult == NULL)
+
+	if (l->prim == NULL)
 	{
 		l->prim = insertCel;
 	}
@@ -70,15 +71,30 @@ Cuidador *RetornaCuidadorProx(listaCui *l, Geoloc *referencia)
 
 Cuidador *BuscaListaCui(listaCui *l, char *nome)
 {
+	// CelulaCui *atual = l->prim;
+
+	// // Varre a lista procurando um cuidador com o nome especificado
+	// while (atual != NULL)
+	// {
+	// 	atual = atual->prox;
+	// }
+
+	// return atual->cuida;
+
 	CelulaCui *atual = l->prim;
 
-	// Varre a lista procurando um cuidador com o nome especificado
-	while (atual != NULL && strcmp(GetNomeCuidador(atual->cuida), nome) != 0)
-	{
-		atual = atual->prox;
-	}
+    while (atual != NULL)
+    {
+        if (!strcmp(nome, GetNomeCuidador(atual->cuida)))
+            break;
 
-	return atual->cuida;
+        atual = atual->prox;
+    }
+
+    if (atual != NULL)
+        return atual->cuida;
+
+    return NULL;
 }
 
 Cuidador *RetiraListaCui(listaCui *l, char *nome)

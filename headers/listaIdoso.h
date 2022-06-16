@@ -8,6 +8,8 @@ listaIdo *IniciaListaIdoso();
 
 void InsereListaIdoso(listaIdo *l, Idoso *idoso);
 
+Idoso *RetornaIdosoProx(listaIdo *l, Geoloc *referencia);
+
 Idoso *BuscaListaIdoso(listaIdo *l, char *nome);
 
 Idoso *RetiraListaIdoso(listaIdo *l, char *nome);

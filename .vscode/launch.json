@@ -10,7 +10,7 @@
             "name": "Debug Program",
             "program": "${workspaceFolder}/edcare.out",
             "cwd": "${workspaceFolder}",
-            "args": ["${input:numEntradas}", "${input:dirEntradas}"],
+            "args": ["${input:numEntradas}"],
             "preLaunchTask": "C/C++: gcc build active file"
         }
     ],

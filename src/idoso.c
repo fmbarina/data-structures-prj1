@@ -16,10 +16,13 @@ struct idoso
     char febreSeguida;
     char condicao;
     /*Tabela da condicao do idoso
-        -1  = Bem morto
+        -2  = Bem morto
+        -1  = A informar, morto
         0   = Bem
         1   = Necessita de amigos
-        2   = Necessita de cuidador
+        2   = Necessita de cuidador, febre alta
+        3   = Necessita de cuidador, febre baixa pela 4a vez
+        4   = Necessita de cuidador, queda
     */
     Geoloc *local;
     // Arquivos de entrada e saída
@@ -33,7 +36,7 @@ struct idoso
 Idoso *IniciaIdoso(char *nome, char *diretorio)
 {
     Idoso *ido = (Idoso *)malloc(sizeof(Idoso));
-    SetNomeIdoso(ido, nome);
+    SetNomeIdoso(ido, strdup(nome));
     ido->febreSeguida = 0;
     ido->condicao = 0;
     ido->local = IniciaGeo(0, 0);
@@ -45,7 +48,7 @@ Idoso *IniciaIdoso(char *nome, char *diretorio)
     char *pahtSaida = expth(expth(adpth(strdup(diretorio), nome), "-saida"), EXT);
 
     ido->arqent = fopen(pathEntrada, "r");
-    ido->arqsai = fopen(pahtSaida, "W");
+    ido->arqsai = fopen(pahtSaida, "w");
 
     free(pathEntrada);
     free(pahtSaida);
@@ -60,10 +63,7 @@ char *GetNomeIdoso(Idoso *ido)
 
 void SetNomeIdoso(Idoso *ido, char *nome)
 {
-    if (ido->nome)
-        free(ido->nome);
-
-    ido->nome = strdup(nome);
+    ido->nome = nome;
 }
 
 Geoloc *GetLocalIdoso(Idoso *ido)
@@ -104,7 +104,7 @@ void IncFebresIdoso(Idoso *ido)
 void AtualizaIdoso(Idoso *ido)
 {
     // Caso Morto
-    if (ido->condicao == -1)
+    if (ido->condicao < 0)
         return;
 
     int queda;
@@ -127,26 +127,27 @@ void AtualizaIdoso(Idoso *ido)
     SetLocalIdoso(ido, lon, lati);
 
     // Febre Baixa
-    if (temp < 38 && temp > 37)
+    if (temp > 37.0 && temp < 38.0)
     {
         SetCondicaoIdoso(ido, 1);
         IncFebresIdoso(ido);
     }
     // Febre Alta
-    if (temp >= 38)
+    if (temp >= 38.0)
     {
         SetCondicaoIdoso(ido, 2);
+        ResetFebresIdoso(ido); // Da especificação: sem febre alta “no meio”
+    }
+    // Febres Seguidas
+    if (ido->febreSeguida >= 4)
+    {
+        SetCondicaoIdoso(ido, 3);
         ResetFebresIdoso(ido); // Da especificação: sem febre alta “no meio”
     }
     // Queda
     if (queda)
     {
-        SetCondicaoIdoso(ido, 2);
-    }
-    // Febres Seguidas
-    if (ido->febreSeguida >= 4)
-    {
-        SetCondicaoIdoso(ido, 2);
+        SetCondicaoIdoso(ido, 4);
     }
 }
 
@@ -158,6 +159,58 @@ void InsereCuidadorIdoso(Idoso *ido, Cuidador *cui)
 void InsereAmigoIdoso(Idoso *ido, Idoso *amigo)
 {
     InsereListaIdoso(ido->amigos, amigo);
+}
+
+void ProcessaIdoso(Idoso *ido)
+{
+    // Caso Morto
+    if (ido->condicao == -2)
+        return;
+
+    char *bufNome;
+    Cuidador *auxCui;
+    Idoso *auxAmg;
+
+    if (ido->condicao == 1) // Acha amg
+    {
+        auxAmg = RetornaIdosoProx(ido->amigos, ido->local);
+        bufNome = GetNomeIdoso(auxAmg);
+    }
+
+    if (ido->condicao >= 2) // Acha cuidador
+    {
+        auxCui = RetornaCuidadorProx(ido->cuidadores, ido->local);
+        bufNome = GetNomeCuidador(auxCui);
+    }
+
+    switch (ido->condicao)
+    {
+    case -1: // Relatando falecimento
+        fprintf(ido->arqsai, "falecimento\n");
+        SetCondicaoIdoso(ido, -2);
+        return;
+    case 0: // Bem
+        fprintf(ido->arqsai, "tudo ok\n");
+        break;
+    case 1: // Necessita amg
+        fprintf(ido->arqsai, "febre baixa, acionou amigo %s\n", bufNome);
+        break;
+    case 2: // Necessita cuidador, febre alta
+        fprintf(ido->arqsai, "febre alta, acionou %s\n", bufNome);
+        break;
+    case 3: // Necessita cuidador, febre baixa 4 vez
+        fprintf(ido->arqsai, "febre baixa pela quarta vez, acionou %s\n", bufNome);
+        break;
+    case 4: // Necessita cuidador, queda
+        fprintf(ido->arqsai, "queda, acionou %s\n", bufNome);
+        break;
+    default:
+        fprintf(ido->arqsai, "ERRO: Ação de idoso não definida\n");
+        break;
+    }
+
+    // Resetar condição do idoso
+    SetCondicaoIdoso(ido, 0);
 }
 
 void LiberaIdoso(Idoso *ido)

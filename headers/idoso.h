@@ -31,6 +31,8 @@ void InsereCuidadorIdoso(Idoso *ido, Cuidador *cui);
 
 void InsereAmigoIdoso(Idoso *ido, Idoso *amigo);
 
+void ProcessaIdoso(Idoso *ido);
+
 void LiberaIdoso(Idoso *ido);
 
 #endif // IDOSO_H_

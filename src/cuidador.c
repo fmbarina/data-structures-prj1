@@ -18,7 +18,7 @@ struct cuidador
 Cuidador *IniciaCuidador(char *nome, char *diretorio)
 {
     Cuidador *cui = (Cuidador *)malloc(sizeof(Cuidador));
-    cui->nome = nome;
+    cui->nome = strdup(nome);
     cui->local = IniciaGeo(0, 0);
     // cui->ocupacao = 0;
 

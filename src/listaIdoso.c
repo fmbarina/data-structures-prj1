@@ -34,12 +34,40 @@ void InsereListaIdoso(listaIdo *l, Idoso *idoso)
     insertCel->idoso = idoso;
     insertCel->prox = NULL;
 
-    if (l->ult == NULL)
+    if (l->prim == NULL)
         l->prim = insertCel;
     else
         l->ult->prox = insertCel;
 
     l->ult = insertCel;
+}
+
+Idoso *RetornaIdosoProx(listaIdo *l, Geoloc *referencia)
+{
+    // Esta vazia
+    if (l->prim == NULL)
+    {
+        printf("Lista de idosos vazia!!!\n");
+        return NULL;
+    }
+
+    CelulaIdo *aux = l->prim;
+    double Menordist = CalcDistGeo(GetLocalIdoso(aux->idoso), referencia);
+    Idoso *IdosoMenor = l->prim->idoso;
+
+    while (aux != NULL)
+    {
+
+        if (GetCondicaoIdoso(aux->idoso) >= 0 && CalcDistGeo(GetLocalIdoso(aux->idoso), referencia) < Menordist)
+        {
+            IdosoMenor = aux->idoso;
+            Menordist = CalcDistGeo(GetLocalIdoso(aux->idoso), referencia);
+        }
+
+        aux = aux->prox;
+    }
+
+    return IdosoMenor;
 }
 
 Idoso *BuscaListaIdoso(listaIdo *l, char *nome)
@@ -130,11 +158,11 @@ void LiberaListaIdoso(listaIdo *l)
     CelulaIdo *aux = l->prim;
 
     while (aux != NULL)
-	{
-		l->prim = aux->prox;
-		free(aux);
-		aux = l->prim;
-	}
+    {
+        l->prim = aux->prox;
+        free(aux);
+        aux = l->prim;
+    }
 
     free(l);
 }

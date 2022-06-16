@@ -13,16 +13,15 @@
 int main(int argc, char *argv[])
 {
     // Organizacao dos parametros recebidos
-    // TODO: restaurar. Como passar o dir do programa? Devia ter perguntado
-    //char *diretorioGeral = strdup(argv[0]); 
-    char *diretorioGeral = strdup(argv[2]);  // modo alternativo, pra testes.
+    char *diretorioGeral = strdup(argv[0]);
     int numLeituras;
     sscanf(argv[1], "%i", &numLeituras);
 
     // Caminhos utilizados
-    // diretorioGeral  = trpth(diretorioGeral); TODO: restaurar
-    char* pathApoio = expth(adpth(strdup(diretorioGeral), "apoio"), EXT);
-    char* pathCuida = expth(adpth(strdup(diretorioGeral), "cuidadores"), EXT);
+    diretorioGeral = trpth(diretorioGeral);
+    diretorioGeral = adpth(diretorioGeral, "entrada");
+    char *pathApoio = expth(adpth(strdup(diretorioGeral), "apoio"), EXT);
+    char *pathCuida = expth(adpth(strdup(diretorioGeral), "cuidadores"), EXT);
 
     // TODO: considerar: Não seria melhor ter operações similares juntas?
     //       -> abertura dos arquivos, declaração de variáveis auxiliares, etc.
@@ -30,16 +29,17 @@ int main(int argc, char *argv[])
     //       meio bagunçado?
 
     FILE *fApoio;
+    FILE *fCuidadores;
     fApoio = fopen(pathApoio, "r");
-
-    // Inicializacao dos idosos
-    char final;
-    listaIdo *idosos = IniciaListaIdoso();
+    fCuidadores = fopen(pathCuida, "r");
 
     char nome[BUF];
-    // Leitura de todos idosos
-    while (fscanf(fApoio, "%[^;\n]", nome))                          
-    {                                                                
+    char final;
+
+    // Inicializacao e leitura dos idosos
+    listaIdo *idosos = IniciaListaIdoso();
+    while (fscanf(fApoio, "%[^;\n]", nome))
+    {
         // Insere idoso criado com o nome na lista criada acima
         InsereListaIdoso(idosos, IniciaIdoso(nome, diretorioGeral));
         fscanf(fApoio, "%c", &final);
@@ -51,19 +51,13 @@ int main(int argc, char *argv[])
 
     // Criação das relações de amizade entre idosos
     char amigo[BUF];
-    while (fscanf(fApoio, "%[^;];%[^;\n]\n", nome, amigo))
+    while (fscanf(fApoio, "%[^;];%[^;\n]\n", nome, amigo) == 2)
     {
         InsereAmizade(idosos, nome, amigo);
     }
 
-    fclose(fApoio);;
-
-    FILE *fCuidadores;
-    fCuidadores = fopen(pathCuida, "r");
-
-    // Inicializacao dos cuidadores
+    // Inicializacao e leitura dos cuidadores
     listaCui *cuidadores = IniciaListaCui();
-
     while (fscanf(fCuidadores, "%[^;,\n]", nome))
     {
         InsereListaCui(cuidadores, IniciaCuidador(nome, diretorioGeral));
@@ -82,7 +76,7 @@ int main(int argc, char *argv[])
     e facilitar a liberacao dos mesmos depois
     */
 
-    while (fscanf(fCuidadores, "%[^;,\n]", nome))
+    while (fscanf(fCuidadores, "%[^;,\n]", nome) == 1)
     {
         Idoso *idosoLido = BuscaListaIdoso(idosos, nome);
         fscanf(fCuidadores, "%*c");
@@ -97,30 +91,25 @@ int main(int argc, char *argv[])
         }
     }
 
+    fclose(fApoio);
     fclose(fCuidadores);
 
     // Ciclo de execução
     int i = 0;
     for (i = 0; i < numLeituras; i++)
     {
-        // Atualizacao dos dados
-        
         // Caminhar pela lista de idosos atualizando idosos
         IteraListaIdoso(idosos, AtualizaIdoso);
         // Caminhas pela lista de cuidadores atualizando cuidadores
         IteraListaCui(cuidadores, AtualizaCuidador);
 
         // Processamento das informações
-        
-        /*
-        TODO: Funcao de conectar os idosos aos amigos ou cuidadores (chamar)
-        dentro da lista de idosos,
-        [a ser descutido abaixo]
-        a mesma devera fazer a saida no arquivo saida presente no idoso?
-        se entendi direito, acho que seria melhor uma funcao que so faz saida
-        */
+        IteraListaIdoso(idosos, ProcessaIdoso);
     }
-    
+
+    // Liberacao de memoria
+    //LiberaListaIdoso(idosos);
+
     free(diretorioGeral);
     free(pathApoio);
     free(pathCuida);
