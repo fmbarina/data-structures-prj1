@@ -10,8 +10,8 @@ struct geoloc
 
 Geoloc *IniciaGeo(int longitude, int latitude)
 {
-    Geoloc *geo    = (Geoloc *)malloc(sizeof(Geoloc));
-    geo->latitude  = latitude;
+    Geoloc *geo = (Geoloc *)malloc(sizeof(Geoloc));
+    geo->latitude = latitude;
     geo->longitude = longitude;
     return geo;
 }

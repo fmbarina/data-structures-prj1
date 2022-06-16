@@ -1,23 +1,23 @@
-#ifndef CUIDADOR_H
-#define CUIDADOR_H
+#ifndef CUIDADOR_H_
+#define CUIDADOR_H_
 #include "geoloc.h"
 
 typedef struct cuidador Cuidador;
 
 Cuidador *IniciaCuidador(char *nome, char *diretorio);
 
-int GetOcupacaoCuidador(Cuidador *c);
+int GetOcupacaoCuidador(Cuidador *cui);
 
-char *GetNomeCuidador(Cuidador *c);
+char *GetNomeCuidador(Cuidador *cui);
 
-void AtualizaCuidador(Cuidador *c);
+void AtualizaCuidador(Cuidador *cui);
 
-void SetOcupacaoCuidador(Cuidador *c, int ocupacao);
+void SetOcupacaoCuidador(Cuidador *cui, int ocupacao);
 
-Geoloc *GetLocalCuidador(Cuidador *c);
+Geoloc *GetLocalCuidador(Cuidador *cui);
 
-void SetLocalCuidador(Cuidador *c, int longitude, int latitude);
+void SetLocalCuidador(Cuidador *cui, int longitude, int latitude);
 
-void LiberaCuidador(Cuidador *c);
+void LiberaCuidador(Cuidador *cui);
 
-#endif // CUIDADOR_H
+#endif // CUIDADOR_H_

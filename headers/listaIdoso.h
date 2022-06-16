@@ -1,19 +1,19 @@
-#ifndef LISTA_IDOSO_H
-#define LISTA_IDOSO_H
+#ifndef LISTA_IDOSO_H_
+#define LISTA_IDOSO_H_
 #include "idoso.h"
 
-typedef struct listaIdosos lIdosos;
+typedef struct listaIdoso listaIdo;
 
-lIdosos* IniciaListaIdoso();
+listaIdo *IniciaListaIdoso();
 
-void InsereListaIdoso(lIdosos* l, Idoso* idoso);
+void InsereListaIdoso(listaIdo *l, Idoso *idoso);
 
-Idoso* BuscaListaIdoso(lIdosos* l, char* nome);
+Idoso *BuscaListaIdoso(listaIdo *l, char *nome);
 
-Idoso* RetiraListaIdoso(lIdosos* l, char* nome);
+Idoso *RetiraListaIdoso(listaIdo *l, char *nome);
 
-void LiberaListaIdoso(lIdosos* l);
+void InsereAmizade(listaIdo *l, char *amg1, char *amg2);
 
-void InsereAmizade(lIdosos* l, char* amg1, char* amg2);
+void LiberaListaIdoso(listaIdo *l);
 
-#endif // LISTA_IDOSO_H
+#endif // LISTA_IDOSO_H_

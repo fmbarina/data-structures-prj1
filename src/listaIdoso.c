@@ -1,7 +1,7 @@
 #include "listaIdoso.h"
 #include "idoso.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 typedef struct celulaIdoso CelulaIdo;
@@ -12,22 +12,22 @@ struct celulaIdoso
     CelulaIdo *prox;
 };
 
-struct listaIdosos
+struct listaIdoso
 {
     CelulaIdo *prim;
     CelulaIdo *ult;
 };
 
-lIdosos *IniciaListaIdoso()
+listaIdo *IniciaListaIdoso()
 {
-    lIdosos *l;
-    l = (lIdosos *)malloc(sizeof(lIdosos));
+    listaIdo *l;
+    l = (listaIdo *)malloc(sizeof(listaIdo));
     l->prim = NULL;
     l->ult = NULL;
     return l;
 }
 
-void InsereListaIdoso(lIdosos* l, Idoso* idoso)
+void InsereListaIdoso(listaIdo *l, Idoso *idoso)
 {
     if (!l)
         return;
@@ -35,17 +35,17 @@ void InsereListaIdoso(lIdosos* l, Idoso* idoso)
     CelulaIdo *insertCel = (CelulaIdo *)malloc(sizeof(CelulaIdo));
 
     insertCel->idoso = idoso;
-    insertCel->prox  = NULL;
+    insertCel->prox = NULL;
 
     if (l->ult == NULL)
-		l->prim = insertCel;
-	else
-		l->ult->prox = insertCel;
+        l->prim = insertCel;
+    else
+        l->ult->prox = insertCel;
 
-	l->ult = insertCel;
+    l->ult = insertCel;
 }
 
-Idoso* BuscaListaIdoso(lIdosos* l, char* nome)
+Idoso *BuscaListaIdoso(listaIdo *l, char *nome)
 {
     if (!l)
         return NULL;
@@ -66,13 +66,13 @@ Idoso* BuscaListaIdoso(lIdosos* l, char* nome)
     return NULL;
 }
 
-Idoso* RetiraListaIdoso(lIdosos* l, char* nome)
+Idoso *RetiraListaIdoso(listaIdo *l, char *nome)
 {
     if (!l || l->prim == NULL)
         return NULL;
 
     CelulaIdo *atual = l->prim;
-    CelulaIdo *ant   = NULL;
+    CelulaIdo *ant = NULL;
 
     while (atual != NULL)
     {
@@ -110,7 +110,16 @@ Idoso* RetiraListaIdoso(lIdosos* l, char* nome)
     return atual->idoso;
 }
 
-void LiberaListaIdoso(lIdosos* l)
+void InsereAmizade(listaIdo *l, char *amg1, char *amg2)
+{
+    Idoso *idoso = BuscaListaIdoso(l, amg1);
+    Idoso *amigo = BuscaListaIdoso(l, amg2);
+
+    InsereAmigoIdoso(idoso, amigo);
+    InsereAmigoIdoso(amigo, idoso);
+}
+
+void LiberaListaIdoso(listaIdo *l)
 {
     if (!l)
         return;
@@ -126,13 +135,4 @@ void LiberaListaIdoso(lIdosos* l)
     }
 
     free(l);
-}
-
-void InsereAmizade(lIdosos* l, char* amg1, char* amg2)
-{
-    Idoso* idoso = BuscaListaIdoso(l, amg1);
-    Idoso* amigo = BuscaListaIdoso(l, amg2);
-
-    InsereAmigoIdoso(idoso, amigo);
-    InsereAmigoIdoso(amigo, idoso);
 }

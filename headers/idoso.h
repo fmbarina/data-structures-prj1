@@ -1,5 +1,5 @@
-#ifndef IDOSO_H
-#define IDOSO_H
+#ifndef IDOSO_H_
+#define IDOSO_H_
 #include "geoloc.h"
 #include "cuidador.h"
 
@@ -7,24 +7,28 @@ typedef struct idoso Idoso;
 
 Idoso *IniciaIdoso(char *nome, char *diretorio);
 
-void AtualizaIdoso(Idoso *i);
+char *GetNomeIdoso(Idoso *ido);
 
-char* GetNomeIdoso(Idoso *i);
+void SetNomeIdoso(Idoso *ido, char *nome);
 
-void SetNomeIdoso(Idoso *i, char* nome);
+Geoloc *GetLocalIdoso(Idoso *ido);
 
-Geoloc *GetLocalIdoso(Idoso *i);
+void SetLocalIdoso(Idoso *ido, int longitude, int latitude);
 
-void SetLocalIdoso(Idoso *i, int longitude, int latitude);
+int GetCondicaoIdoso(Idoso *ido);
 
-int GetCondicaoIdoso(Idoso *i);
+void SetCondicaoIdoso(Idoso *ido, int condicao);
 
-void SetCondicaoIdoso(Idoso *i, int condicao);
+int GetFebresIdoso(Idoso *ido);
 
-void InsereCuidadorIdoso(Idoso *i, Cuidador* c);
+void IncFebresIdoso(Idoso *ido);
 
-void InsereAmigoIdoso(Idoso *i, Idoso* amigo);
+void AtualizaIdoso(Idoso *ido);
 
-void LiberaIdoso(Idoso *i);
+void InsereCuidadorIdoso(Idoso *ido, Cuidador *cui);
 
-#endif // IDOSO_H
+void InsereAmigoIdoso(Idoso *ido, Idoso *amigo);
+
+void LiberaIdoso(Idoso *ido);
+
+#endif // IDOSO_H_

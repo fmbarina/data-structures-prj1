@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     // Inicializacao dos idosos
     char final;
-    lIdosos *idosos = IniciaListaIdoso();
+    listaIdo *idosos = IniciaListaIdoso();
 
     while (fscanf(fApoio, "%[^;\n]", nome))                          // Leitura de todos idosos
     {                                                                //
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     fCuidadores = fopen(dirAtual, "r");
 
     // Inicializacao dos cuidadores
-    lCuidadores *geraisCuidadores = IniciaListaCui();
+    listaCui *geraisCuidadores = IniciaListaCui();
 
     while (fscanf(fCuidadores, "%[^;,\n]", nome))
     {

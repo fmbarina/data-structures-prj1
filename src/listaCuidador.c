@@ -1,7 +1,7 @@
 #include "listaCuidador.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 typedef struct celulaCuidador CelulaCui;
 
@@ -11,21 +11,21 @@ struct celulaCuidador
 	CelulaCui *prox;
 };
 
-struct listaCuidadores
+struct listaCui
 {
 	CelulaCui *prim;
 	CelulaCui *ult;
 };
 
-lCuidadores *IniciaListaCui()
+listaCui *IniciaListaCui()
 {
-	lCuidadores *saida = (lCuidadores *)malloc(sizeof(lCuidadores));
+	listaCui *saida = (listaCui *)malloc(sizeof(listaCui));
 	saida->prim = NULL;
 	saida->ult = NULL;
 	return saida;
 }
 
-void InsereListaCui(lCuidadores *l, Cuidador *novo)
+void InsereListaCui(listaCui *l, Cuidador *novo)
 {
 	// Insere na ultima posicao da lista
 	CelulaCui *insertCel = (CelulaCui *)malloc(sizeof(CelulaCui));
@@ -42,7 +42,7 @@ void InsereListaCui(lCuidadores *l, Cuidador *novo)
 	l->ult = insertCel;
 }
 
-Cuidador *RetornaCuidadorProx(lCuidadores *l, Geoloc *referencia)
+Cuidador *RetornaCuidadorProx(listaCui *l, Geoloc *referencia)
 {
 	// Esta vazia
 	if (l->prim == NULL)
@@ -68,9 +68,9 @@ Cuidador *RetornaCuidadorProx(lCuidadores *l, Geoloc *referencia)
 	return CuidadorMenor;
 }
 
-Cuidador *BuscaListaCui(lCuidadores *l, char *nome)
+Cuidador *BuscaListaCui(listaCui *l, char *nome)
 {
-	CelulaCui  *atual = l->prim;
+	CelulaCui *atual = l->prim;
 
 	// Varre a lista procurando um cuidador com o nome especificado
 	while (atual != NULL && strcmp(GetNomeCuidador(atual->cuida), nome) != 0)
@@ -81,7 +81,7 @@ Cuidador *BuscaListaCui(lCuidadores *l, char *nome)
 	return atual->cuida;
 }
 
-Cuidador *RetiraListaCui(lCuidadores *l, char *nome)
+Cuidador *RetiraListaCui(listaCui *l, char *nome)
 {
 	CelulaCui *ant = NULL;
 	CelulaCui *atual = l->prim;
@@ -135,7 +135,7 @@ Cuidador *RetiraListaCui(lCuidadores *l, char *nome)
 	}
 }
 
-void LiberaListaCui(lCuidadores *l)
+void LiberaListaCui(listaCui *l)
 {
 	CelulaCui *aux = l->prim;
 	while (aux != NULL)

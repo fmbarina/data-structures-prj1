@@ -1,4 +1,5 @@
 #include "cuidador.h"
+#include "geoloc.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,17 +9,17 @@
 struct cuidador
 {
     char *nome;
-    char ocupacao;
+    // char ocupacao; // cuidadores agora sao onipresentes
     Geoloc *local;
     FILE *arquivo;
 };
 
 Cuidador *IniciaCuidador(char *nome, char *diretorio)
 {
-    Cuidador *c = (Cuidador *)malloc(sizeof(Cuidador));
-    c->nome = nome;
-    c->local = IniciaGeo(0, 0);
-    c->ocupacao = 0;
+    Cuidador *cui = (Cuidador *)malloc(sizeof(Cuidador));
+    cui->nome = nome;
+    cui->local = IniciaGeo(0, 0);
+    // cui->ocupacao = 0;
 
     char dir[strlen(diretorio) + strlen(nome) + strlen(EXT) + 3];
 
@@ -27,50 +28,50 @@ Cuidador *IniciaCuidador(char *nome, char *diretorio)
     strcat(dir, "/");
     strcat(dir, nome);
     strcat(dir, EXT);
-    c->arquivo = fopen(dir, "r");
+    cui->arquivo = fopen(dir, "r");
 
-    return c;
+    return cui;
 }
 
-void AtualizaCuidador(Cuidador *c)
+void AtualizaCuidador(Cuidador *cui)
 {
     int lon, lati;
-    fscanf(c->arquivo, "%i;%i", &lati, &lon);
-    SetLocalCuidador(c, lon, lati);
+    fscanf(cui->arquivo, "%i;%i", &lati, &lon);
+    SetLocalCuidador(cui, lon, lati);
 }
 
-char *GetNomeCuidador(Cuidador *c)
+char *GetNomeCuidador(Cuidador *cui)
 {
-    return c->nome;
+    return cui->nome;
 }
 
-int GetOcupacaoCuidador(Cuidador *c)
+/*int GetOcupacaoCuidador(Cuidador *cui)
 {
-    return (int)c->ocupacao;
+    return (int)cui->ocupacao;
 }
 
-void SetOcupacaoCuidador(Cuidador *c, int ocupacao)
+void SetOcupacaoCuidador(Cuidador *cui, int ocupacao)
 {
-    c->ocupacao = (char)ocupacao;
+    cui->ocupacao = (char)ocupacao;
+}*/
+
+Geoloc *GetLocalCuidador(Cuidador *cui)
+{
+    return cui->local;
 }
 
-Geoloc *GetLocalCuidador(Cuidador *c)
+void SetLocalCuidador(Cuidador *cui, int longitude, int latitude)
 {
-    return c->local;
+    MudaPosGeo(cui->local, longitude, latitude);
 }
 
-void SetLocalCuidador(Cuidador *c, int longitude, int latitude)
+void LiberaCuidador(Cuidador *cui)
 {
-    MudaPosGeo(c->local, longitude, latitude);
-}
-
-void LiberaCuidador(Cuidador *c)
-{
-    if (c)
+    if (cui)
     {
-        LiberaGeo(c->local);
-        fclose(c->arquivo);
-        free(c);
+        LiberaGeo(cui->local);
+        fclose(cui->arquivo);
+        free(cui);
     }
     else
         printf("Cuidador vazio!\n");
