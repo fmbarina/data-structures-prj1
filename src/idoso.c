@@ -3,6 +3,7 @@
 #include "listaIdoso.h"
 #include "listaCuidador.h"
 #include "geoloc.h"
+#include "pathman.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -39,23 +40,16 @@ Idoso *IniciaIdoso(char *nome, char *diretorio)
     ido->amigos = IniciaListaIdoso();
     ido->cuidadores = IniciaListaCui();
 
-    char dir[strlen(diretorio) + strlen(nome) + strlen(EXT) + strlen("-saida") + 3];
-
     // Concatenacao com nome do idoso
-    strcpy(dir, diretorio);
-    strcat(dir, "/");
-    strcat(dir, nome);
-    strcat(dir, EXT);
+    char* pathEntrada = expth(adpth(strdup(diretorio), nome), EXT);
+    char* pahtSaida   = expth(expth(adpth(strdup(diretorio), nome), "-saida"), EXT);
+    
+    ido->arqent = fopen(pathEntrada, "r");
+    ido->arqsai = fopen(pahtSaida, "W");
 
-    ido->arqent = fopen(dir, "r");
-
-    strcpy(dir, diretorio);
-    strcat(dir, "/");
-    strcat(dir, nome);
-    strcat(dir, "-saida");
-    strcat(dir, EXT);
-
-    ido->arqsai = fopen(dir, "W");
+    free(pathEntrada);
+    free(pahtSaida);
+    
     return ido;
 }
 

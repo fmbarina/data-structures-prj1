@@ -1,5 +1,6 @@
 #include "cuidador.h"
 #include "geoloc.h"
+#include "pathman.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -21,14 +22,10 @@ Cuidador *IniciaCuidador(char *nome, char *diretorio)
     cui->local = IniciaGeo(0, 0);
     // cui->ocupacao = 0;
 
-    char dir[strlen(diretorio) + strlen(nome) + strlen(EXT) + 3];
-
-    // Concatenacao com nome do idoso
-    strcpy(dir, diretorio);
-    strcat(dir, "/");
-    strcat(dir, nome);
-    strcat(dir, EXT);
-    cui->arquivo = fopen(dir, "r");
+    // Concatenacao com nome do cuidador
+    char* pathEntrada = expth(adpth(strdup(diretorio), nome), EXT);
+    cui->arquivo = fopen(pathEntrada, "r");
+    free(pathEntrada);
 
     return cui;
 }

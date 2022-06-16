@@ -2,7 +2,9 @@
 #include "cuidador.h"
 #include "listaIdoso.h"
 #include "listaCuidador.h"
+#include "pathman.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #define EXT ".txt"
@@ -11,61 +13,67 @@
 int main(int argc, char *argv[])
 {
     // Organizacao dos parametros recebidos
-    char *diretorioGeral = strdup(argv[0]);
+    // TODO: restaurar. Como passar o dir do programa? Devia ter perguntado
+    //char *diretorioGeral = strdup(argv[0]); 
+    char *diretorioGeral = strdup(argv[2]);  // modo alternativo, pra testes.
     int numLeituras;
     sscanf(argv[1], "%i", &numLeituras);
 
-    char nome[BUF];
-    char dirAtual[strlen(diretorioGeral) + strlen("/cuidadores") + strlen(EXT) + 2];
+    // Caminhos utilizados
+    // diretorioGeral  = trpth(diretorioGeral); TODO: restaurar
+    char* pathApoio = expth(adpth(strdup(diretorioGeral), "apoio"), EXT);
+    char* pathCuida = expth(adpth(strdup(diretorioGeral), "cuidadores"), EXT);
 
-    // TODO: argv[0] contem o nome do programa, precisamos do diretorio
-    strcpy(dirAtual, diretorioGeral);
-    strcat(dirAtual, "/apoio");
-    strcat(dirAtual, EXT);
+    // TODO: considerar: Não seria melhor ter operações similares juntas?
+    //       -> abertura dos arquivos, declaração de variáveis auxiliares, etc.
+    //       Li que deixar coisas perto de onde são usadas é melhor, mas parece
+    //       meio bagunçado?
+
     FILE *fApoio;
-    fApoio = fopen(dirAtual, "r");
+    fApoio = fopen(pathApoio, "r");
 
     // Inicializacao dos idosos
     char final;
     listaIdo *idosos = IniciaListaIdoso();
 
-    while (fscanf(fApoio, "%[^;\n]", nome))                          // Leitura de todos idosos
-    {                                                                //
-        InsereListaIdoso(idosos, IniciaIdoso(nome, diretorioGeral)); // Insere idoso criado com o nome na lista criada acima
-        fscanf(fApoio, "%c", &final);                                // Deteccao do inicio das amizades
+    char nome[BUF];
+    // Leitura de todos idosos
+    while (fscanf(fApoio, "%[^;\n]", nome))                          
+    {                                                                
+        // Insere idoso criado com o nome na lista criada acima
+        InsereListaIdoso(idosos, IniciaIdoso(nome, diretorioGeral));
+        fscanf(fApoio, "%c", &final);
+
+        // Deteccao do inicio das amizades
         if (final == '\n')
             break;
     }
 
-    // Relacoes de amizade
+    // Criação das relações de amizade entre idosos
     char amigo[BUF];
     while (fscanf(fApoio, "%[^;];%[^;\n]\n", nome, amigo))
     {
         InsereAmizade(idosos, nome, amigo);
     }
 
-    fclose(fApoio);
-
-    strcpy(dirAtual, diretorioGeral);
-    strcat(dirAtual, "/cuidadores");
-    strcat(dirAtual, EXT);
+    fclose(fApoio);;
 
     FILE *fCuidadores;
-    fCuidadores = fopen(dirAtual, "r");
+    fCuidadores = fopen(pathCuida, "r");
 
     // Inicializacao dos cuidadores
-    listaCui *geraisCuidadores = IniciaListaCui();
+    listaCui *cuidadores = IniciaListaCui();
 
     while (fscanf(fCuidadores, "%[^;,\n]", nome))
     {
-        InsereListaCui(geraisCuidadores, IniciaCuidador(nome, diretorioGeral));
+        InsereListaCui(cuidadores, IniciaCuidador(nome, diretorioGeral));
 
         fscanf(fCuidadores, "%c", &final); // Deteccao do inicio das relacoes cuidador
         if (final == '\n')
             break;
     }
 
-    /* Relacoes cuidadores-idosos
+    /* Criação das relações cuidadores-idosos
 
     Agora, ler o nome do idoso, depois ler os nomes dos cuidadores,
     buscando na lista acima e adicionando na lista dentro de idosos
@@ -81,7 +89,7 @@ int main(int argc, char *argv[])
 
         while (fscanf(fCuidadores, "%[^;,\n]", nome))
         {
-            InsereCuidadorIdoso(idosoLido, BuscaListaCui(geraisCuidadores, nome));
+            InsereCuidadorIdoso(idosoLido, BuscaListaCui(cuidadores, nome));
 
             fscanf(fCuidadores, "%c", &final);
             if (final == '\n')
@@ -91,21 +99,31 @@ int main(int argc, char *argv[])
 
     fclose(fCuidadores);
 
+    // Ciclo de execução
     int i = 0;
     for (i = 0; i < numLeituras; i++)
     {
         // Atualizacao dos dados
+        
         // Caminhar pela lista de idosos atualizando idosos
+        IteraListaIdoso(idosos, AtualizaIdoso);
         // Caminhas pela lista de cuidadores atualizando cuidadores
+        IteraListaCui(cuidadores, AtualizaCuidador);
 
-        // Processamento das infos
+        // Processamento das informações
+        
         /*
-        TODO: Funcao de conectar os idosos aos amigos ou cuidadores
+        TODO: Funcao de conectar os idosos aos amigos ou cuidadores (chamar)
         dentro da lista de idosos,
         [a ser descutido abaixo]
         a mesma devera fazer a saida no arquivo saida presente no idoso?
+        se entendi direito, acho que seria melhor uma funcao que so faz saida
         */
     }
+    
+    free(diretorioGeral);
+    free(pathApoio);
+    free(pathCuida);
 
     return 0;
 }
