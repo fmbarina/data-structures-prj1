@@ -135,6 +135,18 @@ Cuidador *RetiraListaCui(listaCui *l, char *nome)
 	}
 }
 
+void IteraListaCui(listaCui *l, void (*funcao)(Cuidador *))
+{
+	CelulaCui *atual = l->prim;
+	
+	// Varre a lista chamando a funcao passada
+	while (atual != NULL)
+	{
+		funcao(atual->cuida);
+		atual = atual->prox;
+	}
+}
+
 void LiberaListaCui(listaCui *l)
 {
 	CelulaCui *aux = l->prim;

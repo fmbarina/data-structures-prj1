@@ -14,6 +14,8 @@ Cuidador *BuscaListaCui(listaCui *l, char *nome);
 
 Cuidador *RetiraListaCui(listaCui *l, char *nome);
 
+void IteraListaCui(listaCui *l, void (*funcao)(Cuidador *));
+
 void LiberaListaCui(listaCui *l);
 
 #endif // LISTA_CUIDADOR_H_

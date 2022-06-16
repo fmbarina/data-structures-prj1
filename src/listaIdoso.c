@@ -29,9 +29,6 @@ listaIdo *IniciaListaIdoso()
 
 void InsereListaIdoso(listaIdo *l, Idoso *idoso)
 {
-    if (!l)
-        return;
-
     CelulaIdo *insertCel = (CelulaIdo *)malloc(sizeof(CelulaIdo));
 
     insertCel->idoso = idoso;
@@ -47,9 +44,6 @@ void InsereListaIdoso(listaIdo *l, Idoso *idoso)
 
 Idoso *BuscaListaIdoso(listaIdo *l, char *nome)
 {
-    if (!l)
-        return NULL;
-
     CelulaIdo *atual = l->prim;
 
     while (atual != NULL)
@@ -68,9 +62,6 @@ Idoso *BuscaListaIdoso(listaIdo *l, char *nome)
 
 Idoso *RetiraListaIdoso(listaIdo *l, char *nome)
 {
-    if (!l || l->prim == NULL)
-        return NULL;
-
     CelulaIdo *atual = l->prim;
     CelulaIdo *ant = NULL;
 
@@ -117,6 +108,18 @@ void InsereAmizade(listaIdo *l, char *amg1, char *amg2)
 
     InsereAmigoIdoso(idoso, amigo);
     InsereAmigoIdoso(amigo, idoso);
+}
+
+void IteraListaIdoso(listaIdo *l, void (*funcao)(Idoso *))
+{
+    CelulaIdo *atual = l->prim;
+
+    // Varre a lista chamando a funcao passada
+    while (atual != NULL)
+    {
+        funcao(atual->idoso);
+        atual = atual->prox;
+    }
 }
 
 void LiberaListaIdoso(listaIdo *l)

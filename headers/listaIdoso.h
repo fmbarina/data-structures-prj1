@@ -14,6 +14,8 @@ Idoso *RetiraListaIdoso(listaIdo *l, char *nome);
 
 void InsereAmizade(listaIdo *l, char *amg1, char *amg2);
 
+void IteraListaIdoso(listaIdo *l, void (*funcao)(Idoso *));
+
 void LiberaListaIdoso(listaIdo *l);
 
 #endif // LISTA_IDOSO_H_
