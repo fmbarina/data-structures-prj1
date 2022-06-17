@@ -11,19 +11,21 @@ end="$2"
 
 error=
 
-if ! [ -d "test_output" ] ; then
+DIR_TEST=./tests_out
+
+if ! [ -d "$DIR_TEST" ] ; then
     echo "ERROR: no test_output directory found. Did you run the tests?"
     exit 1
 fi
 
-if ! [ -d "tests" ] ; then
+if ! [ -d "./tests" ] ; then
     echo "ERROR: no tests directory found."
     exit 1
 fi
 
 do_diff() {
-    echo "DIFF: $1"
-    dif=$(diff -qur --exclude=Entradas --exclude=Entrada --suppress-common-lines "$1" ./tests/"$(basename "$1")")
+    echo "DIFF: $(basename "$1")"
+    dif=$(diff -qur --suppress-common-lines $DIR_TEST/"$(basename "$1")" ./tests/"$(basename "$1")/Saida")
 
     if [ -n "$dif" ]; then
         error=hahayes
@@ -41,7 +43,7 @@ if [ -n "$beg" ] ; then
         do_diff "$i"
     done
 else
-    for test in "./test_output"/*; do
+    for test in "./$DIR_TEST"/*; do
         do_diff "$test"
     done
 fi
