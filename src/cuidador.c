@@ -67,6 +67,7 @@ void LiberaCuidador(Cuidador *cui)
     if (cui)
     {
         LiberaGeo(cui->local);
+        free(cui->nome);
         fclose(cui->arquivo);
         free(cui);
     }

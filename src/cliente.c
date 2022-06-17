@@ -58,11 +58,14 @@ int main(int argc, char *argv[])
 
     // Inicializacao e leitura dos cuidadores
     listaCui *cuidadores = IniciaListaCui();
-    while (fscanf(fCuidadores, "%[^;,\n]", nome))
+    while (fscanf(fCuidadores, "%[^;, \n]", nome))
     {
         InsereListaCui(cuidadores, IniciaCuidador(nome, diretorioGeral));
 
-        fscanf(fCuidadores, "%c", &final); // Deteccao do inicio das relacoes cuidador
+        // Deteccao do inicio das relacoes cuidador
+        while (fscanf(fCuidadores, "%*[ ]"));
+
+        fscanf(fCuidadores, "%c", &final);
         if (final == '\n')
             break;
     }
@@ -108,7 +111,11 @@ int main(int argc, char *argv[])
     }
 
     // Liberacao de memoria
-    //LiberaListaIdoso(idosos);
+    IteraListaIdoso(idosos, LiberaIdoso);
+    LiberaListaIdoso(idosos);
+
+    IteraListaCui(cuidadores, LiberaCuidador);
+    LiberaListaCui(cuidadores);
 
     free(diretorioGeral);
     free(pathApoio);

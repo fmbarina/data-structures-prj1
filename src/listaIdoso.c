@@ -52,13 +52,23 @@ Idoso *RetornaIdosoProx(listaIdo *l, Geoloc *referencia)
     }
 
     CelulaIdo *aux = l->prim;
+
+    // Exclusão de mortos
+    while (aux && GetCondicaoIdoso(aux->idoso) < 0)
+        aux = aux->prox;
+
+    // Nao tem idosos, infelizmente todos os amigos morreram! [ou sem amigos]
+    if (aux == NULL)
+        return NULL;
+
     double Menordist = CalcDistGeo(GetLocalIdoso(aux->idoso), referencia);
-    Idoso *IdosoMenor = l->prim->idoso;
+    Idoso *IdosoMenor = aux->idoso;
 
     while (aux != NULL)
     {
 
-        if (GetCondicaoIdoso(aux->idoso) >= 0 && CalcDistGeo(GetLocalIdoso(aux->idoso), referencia) < Menordist)
+        if (GetCondicaoIdoso(aux->idoso) >= 0 &&
+            CalcDistGeo(GetLocalIdoso(aux->idoso), referencia) < Menordist)
         {
             IdosoMenor = aux->idoso;
             Menordist = CalcDistGeo(GetLocalIdoso(aux->idoso), referencia);

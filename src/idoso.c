@@ -13,7 +13,7 @@
 struct idoso
 {
     char *nome;
-    char febreSeguida;
+    int febreSeguida;
     char condicao;
     /*Tabela da condicao do idoso
         -2  = Bem morto
@@ -45,7 +45,8 @@ Idoso *IniciaIdoso(char *nome, char *diretorio)
 
     // Concatenacao com nome do idoso
     char *pathEntrada = expth(adpth(strdup(diretorio), nome), EXT);
-    char *pahtSaida = expth(expth(adpth(strdup(diretorio), nome), "-saida"), EXT);
+
+    char *pahtSaida = expth(expth(adpth(adpth(strdup(diretorio), "saida"), nome), "-saida"), EXT);
 
     ido->arqent = fopen(pathEntrada, "r");
     ido->arqsai = fopen(pahtSaida, "w");
@@ -93,7 +94,7 @@ int GetFebresIdoso(Idoso *ido)
 
 void ResetFebresIdoso(Idoso *ido)
 {
-    ido->febreSeguida = (char)0;
+    ido->febreSeguida = /*(char)*/ 0;
 }
 
 void IncFebresIdoso(Idoso *ido)
@@ -127,7 +128,7 @@ void AtualizaIdoso(Idoso *ido)
     SetLocalIdoso(ido, lon, lati);
 
     // Febre Baixa
-    if (temp > 37.0 && temp < 38.0)
+    if (temp >= 37.0 && temp < 38.0 && !queda)
     {
         SetCondicaoIdoso(ido, 1);
         IncFebresIdoso(ido);
@@ -139,10 +140,10 @@ void AtualizaIdoso(Idoso *ido)
         ResetFebresIdoso(ido); // Da especificação: sem febre alta “no meio”
     }
     // Febres Seguidas
-    if (ido->febreSeguida >= 4)
+    if (ido->febreSeguida == 4)
     {
         SetCondicaoIdoso(ido, 3);
-        ResetFebresIdoso(ido); // Da especificação: sem febre alta “no meio”
+        ResetFebresIdoso(ido);
     }
     // Queda
     if (queda)
@@ -168,12 +169,19 @@ void ProcessaIdoso(Idoso *ido)
         return;
 
     char *bufNome;
-    Cuidador *auxCui;
-    Idoso *auxAmg;
+    Cuidador *auxCui = NULL;
+    Idoso *auxAmg = NULL;
 
     if (ido->condicao == 1) // Acha amg
     {
         auxAmg = RetornaIdosoProx(ido->amigos, ido->local);
+        //  Caso nao tenha amigo
+        if (auxAmg == NULL)
+        {
+            fprintf(ido->arqsai,
+                    "Febre baixa mas, infelizmente, o idoso está sem amigos na rede\n");
+            return;
+        }
         bufNome = GetNomeIdoso(auxAmg);
     }
 
@@ -189,7 +197,8 @@ void ProcessaIdoso(Idoso *ido)
         fprintf(ido->arqsai, "falecimento\n");
         SetCondicaoIdoso(ido, -2);
         return;
-    case 0: // Bem
+        break; // TODO: Isso importa?
+    case 0:    // Bem
         fprintf(ido->arqsai, "tudo ok\n");
         break;
     case 1: // Necessita amg

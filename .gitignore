@@ -52,5 +52,5 @@ Mkfile.old
 dkms.conf
 
 # Additional files
-test_output/
+tests_out/
 entrada/
