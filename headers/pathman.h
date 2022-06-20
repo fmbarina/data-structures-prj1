@@ -10,25 +10,31 @@
  * Todas as funções assumem uma string "path" válida, pré-alocada.
  */
 
-/* Extend path: adiciona uma string no final do caminho
- * @input: path - string de caminho
- * @input: add - string a ser adicionada no fim
- * @output: path - nova string do caminho extendido
+/**
+ * @brief Extend path: adiciona uma string no final do caminho
+ *
+ * @param path - string de caminho
+ * @param add - string a ser adicionada no fim
+ * @return char* - nova string do caminho extendido
  */
 char *expth(char *path, char *add);
 
-/* Trim path: remove caracteres do fim até o primeiro divisor (incluso),
+/**
+ * @brief Trim path: remove caracteres do fim até o primeiro divisor (incluso),
  * se o path terminar com o divisor, ignora e procura o anterior.
- * @input: path - string de caminho
- * @output: path - nova string do caminho reduzido
+ *
+ * @param path - string de caminho
+ * @return char* - nova string do caminho reduzido
  */
 char *trpth(char *path);
 
-/* Add path: adiciona uma string no final do caminho, com um divisor no meio
+/**
+ * @brief adiciona uma string no final do caminho, com um divisor no meio
  * se o path terminar com um divisor, não o adiciona novamente.
- * @input: path - string de caminho
- * @input: add - string a ser adicionada no fim
- * @output: path - nova string do caminho extendido com um divisor
+ *
+ * @param path - string de caminho
+ * @param add - string a ser adicionada no fim
+ * @return char* - nova string do caminho extendido com um divisor
  */
 char *adpth(char *path, char *add);
 
