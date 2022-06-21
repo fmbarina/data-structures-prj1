@@ -1,0 +1,14 @@
+digraph "LiberaIdoso"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="LiberaIdoso",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Libera a memoria alocada para a variavel de tipo Idoso."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="LiberaGeo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$geoloc_8h.html#a1e2732e2aee467321c0e4df4f748aa65",tooltip="Libera a memoria alocada para a variavel de tipo Geoloc."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="LiberaListaCui",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lista_cuidador_8h.html#a86284060d805e7118ba0094834ff85db",tooltip="Libera a memoria alocada pela lista e suas celulas."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="LiberaListaIdoso",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lista_idoso_8h.html#a6372ab13748fb8d78259a424fd21d986",tooltip="Libera a memoria alocada pela lista e suas celulas."];
+}

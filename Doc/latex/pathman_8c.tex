@@ -1,0 +1,115 @@
+\hypertarget{pathman_8c}{}\doxysection{src/pathman.c File Reference}
+\label{pathman_8c}\index{src/pathman.c@{src/pathman.c}}
+{\ttfamily \#include \char`\"{}pathman.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for pathman.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pathman_8c_a536c57b2e2dab1658020baee5f963a3d}{DIVISOR}}~\char`\"{}/\textbackslash{}0\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{pathman_8c_a18886c8669c2a9541f75720f21bdb84c}{expth}} (char $\ast$path, char $\ast$add)
+\begin{DoxyCompactList}\small\item\em Extend path\+: adiciona uma string no final do caminho. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{pathman_8c_a759e228c839cbdff1102432a69ad7e9e}{trpth}} (char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Trim path\+: remove caracteres do fim até o primeiro divisor (incluso), se o path terminar com o divisor, ignora e procura o anterior. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{pathman_8c_a8ac57bc6fde707215bb75ce25309489b}{adpth}} (char $\ast$path, char $\ast$add)
+\begin{DoxyCompactList}\small\item\em adiciona uma string no final do caminho, com um divisor no meio se o path terminar com um divisor, não o adiciona novamente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pathman_8c_a536c57b2e2dab1658020baee5f963a3d}\label{pathman_8c_a536c57b2e2dab1658020baee5f963a3d}} 
+\index{pathman.c@{pathman.c}!DIVISOR@{DIVISOR}}
+\index{DIVISOR@{DIVISOR}!pathman.c@{pathman.c}}
+\doxysubsubsection{\texorpdfstring{DIVISOR}{DIVISOR}}
+{\footnotesize\ttfamily \#define DIVISOR~\char`\"{}/\textbackslash{}0\char`\"{}}
+
+
+
+Definition at line 5 of file pathman.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pathman_8c_a8ac57bc6fde707215bb75ce25309489b}\label{pathman_8c_a8ac57bc6fde707215bb75ce25309489b}} 
+\index{pathman.c@{pathman.c}!adpth@{adpth}}
+\index{adpth@{adpth}!pathman.c@{pathman.c}}
+\doxysubsubsection{\texorpdfstring{adpth()}{adpth()}}
+{\footnotesize\ttfamily char$\ast$ adpth (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{char $\ast$}]{add }\end{DoxyParamCaption})}
+
+
+
+adiciona uma string no final do caminho, com um divisor no meio se o path terminar com um divisor, não o adiciona novamente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & -\/ string de caminho \\
+\hline
+{\em add} & -\/ string a ser adicionada no fim \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ -\/ nova string do caminho extendido com um divisor 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file pathman.\+c.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{pathman_8c_a18886c8669c2a9541f75720f21bdb84c}\label{pathman_8c_a18886c8669c2a9541f75720f21bdb84c}} 
+\index{pathman.c@{pathman.c}!expth@{expth}}
+\index{expth@{expth}!pathman.c@{pathman.c}}
+\doxysubsubsection{\texorpdfstring{expth()}{expth()}}
+{\footnotesize\ttfamily char$\ast$ expth (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{char $\ast$}]{add }\end{DoxyParamCaption})}
+
+
+
+Extend path\+: adiciona uma string no final do caminho. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & -\/ string de caminho \\
+\hline
+{\em add} & -\/ string a ser adicionada no fim \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ -\/ nova string do caminho extendido 
+\end{DoxyReturn}
+
+
+Definition at line 7 of file pathman.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{pathman_8c_a759e228c839cbdff1102432a69ad7e9e}\label{pathman_8c_a759e228c839cbdff1102432a69ad7e9e}} 
+\index{pathman.c@{pathman.c}!trpth@{trpth}}
+\index{trpth@{trpth}!pathman.c@{pathman.c}}
+\doxysubsubsection{\texorpdfstring{trpth()}{trpth()}}
+{\footnotesize\ttfamily char$\ast$ trpth (\begin{DoxyParamCaption}\item[{char $\ast$}]{path }\end{DoxyParamCaption})}
+
+
+
+Trim path\+: remove caracteres do fim até o primeiro divisor (incluso), se o path terminar com o divisor, ignora e procura o anterior. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & -\/ string de caminho \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ -\/ nova string do caminho reduzido 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file pathman.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 4

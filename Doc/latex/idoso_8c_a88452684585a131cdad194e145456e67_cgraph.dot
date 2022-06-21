@@ -1,0 +1,27 @@
+digraph "ProcessaIdoso"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ProcessaIdoso",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes ob..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="GetNomeCuidador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cuidador_8h.html#a2e1114aca6ce014765fcba5722825b2b",tooltip="Retorna o Nome do objeto Cuidador."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="GetNomeIdoso",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$idoso_8c.html#ad410fb3330c4e9336dc048bb5c684b58",tooltip="Retorna o Nome do objeto Idoso."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="RetornaCuidadorProx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lista_cuidador_8h.html#a199e3cfc61052c71a6afad55ba8d4e4c",tooltip="Retorna o cuidador mais proximo do ponto de referencia entre os presentes na lista."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="CalcDistGeo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$geoloc_8h.html#a58b31cb21ffe9fe839d9c2e0f69772a8",tooltip="Calcula a distancia entre duas localizacoes Retornando um double resultante do calculo."];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="GetLocalCuidador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cuidador_8h.html#a0b02209f82186c9bd84ca27c3c01b58e",tooltip="Retorna o Local (de tipo Geoloc) do objeto Cuidador."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="RetornaIdosoProx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lista_idoso_8h.html#afa97c09900abce26facf342d0a824599",tooltip="Retorna o Idoso mais proximo do ponto de referencia entre os presentes na lista."];
+  Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="GetCondicaoIdoso",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$idoso_8h.html#a137d0f97f095286e4d25790507a52e61",tooltip="Retorna a condicao atual do idoso, respeitando a seguinte tabela -2 = Bem morto -1 = A informar,..."];
+  Node7 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="GetLocalIdoso",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$idoso_8h.html#a408d4574b54a20f17a044f55cd887fa6",tooltip="Retorna o Local do Idoso (Como Geoloc)"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="SetCondicaoIdoso",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$idoso_8c.html#a05c6062c3c814bfd4b9b219ccd09caa0",tooltip="Define uma nova Condicao ao Idoso."];
+}

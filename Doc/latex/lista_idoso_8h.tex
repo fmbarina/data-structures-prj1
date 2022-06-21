@@ -1,0 +1,242 @@
+\hypertarget{lista_idoso_8h}{}\doxysection{headers/lista\+Idoso.h File Reference}
+\label{lista_idoso_8h}\index{headers/listaIdoso.h@{headers/listaIdoso.h}}
+{\ttfamily \#include \char`\"{}idoso.\+h\char`\"{}}\newline
+Include dependency graph for lista\+Idoso.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structlista_idoso}{lista\+Idoso}} \mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$ \mbox{\hyperlink{lista_idoso_8h_a8db6232f56c31eabd4870f5c010710b6}{Inicia\+Lista\+Idoso}} ()
+\begin{DoxyCompactList}\small\item\em Aloca e inicia uma lista de Idosos com uma sentinela vazia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lista_idoso_8h_aefc27e3a6b457254cdd0bb849ef2fbb8}{Insere\+Lista\+Idoso}} (\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$l, \mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$\mbox{\hyperlink{structidoso}{idoso}})
+\begin{DoxyCompactList}\small\item\em Insere o Idoso ao final da lista de idosos acessada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ \mbox{\hyperlink{lista_idoso_8h_afa97c09900abce26facf342d0a824599}{Retorna\+Idoso\+Prox}} (\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$l, \mbox{\hyperlink{geoloc_8h_a71029d6f48f46e9cbb711c59352d7a51}{Geoloc}} $\ast$referencia)
+\begin{DoxyCompactList}\small\item\em Retorna o Idoso mais proximo do ponto de referencia entre os presentes na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ \mbox{\hyperlink{lista_idoso_8h_ae54bcb97b257f8edff6646cf71e1946d}{Busca\+Lista\+Idoso}} (\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$l, char $\ast$nome)
+\begin{DoxyCompactList}\small\item\em Busca na lista o Idoso que possui o nome informado e faz o retorno do mesmo, retornando nulo caso a lista nao possua o mesmo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ \mbox{\hyperlink{lista_idoso_8h_a390721318183d3b056948c70bd213338}{Retira\+Lista\+Idoso}} (\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$l, char $\ast$nome)
+\begin{DoxyCompactList}\small\item\em Retira da lista o Idoso que possui o nome informado, caso nao tenha um cuidador com mesmo nome, nao sera retirado e retornara nulo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lista_idoso_8h_a426b6b2ccb10e43ecff84f9a744c1c5c}{Insere\+Amizade}} (\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$l, char $\ast$amg1, char $\ast$amg2)
+\begin{DoxyCompactList}\small\item\em Cria o um laco de amizade, inserindo o amigo na lista de amigos um do outro Como amizades sao reciprocas, amg1 eh inserido na lista de amigos de amg2 e amg2 inserido na lista de amigos de amg1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lista_idoso_8h_ab57e33e1935c754283861a88e9586c76}{Itera\+Lista\+Idoso}} (\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$l, void($\ast$funcao)(\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$))
+\begin{DoxyCompactList}\small\item\em Faz a iteracao da lista executando a funcao passada como parametro em cada elemento. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lista_idoso_8h_a6372ab13748fb8d78259a424fd21d986}{Libera\+Lista\+Idoso}} (\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Libera a memoria alocada pela lista e suas celulas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}\label{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}} 
+\index{listaIdoso.h@{listaIdoso.h}!listaIdo@{listaIdo}}
+\index{listaIdo@{listaIdo}!listaIdoso.h@{listaIdoso.h}}
+\doxysubsubsection{\texorpdfstring{listaIdo}{listaIdo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structlista_idoso}{lista\+Idoso}} \mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}}}
+
+
+
+Definition at line 1 of file lista\+Idoso.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lista_idoso_8h_ae54bcb97b257f8edff6646cf71e1946d}\label{lista_idoso_8h_ae54bcb97b257f8edff6646cf71e1946d}} 
+\index{listaIdoso.h@{listaIdoso.h}!BuscaListaIdoso@{BuscaListaIdoso}}
+\index{BuscaListaIdoso@{BuscaListaIdoso}!listaIdoso.h@{listaIdoso.h}}
+\doxysubsubsection{\texorpdfstring{BuscaListaIdoso()}{BuscaListaIdoso()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}}$\ast$ Busca\+Lista\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$}]{l,  }\item[{char $\ast$}]{nome }\end{DoxyParamCaption})}
+
+
+
+Busca na lista o Idoso que possui o nome informado e faz o retorno do mesmo, retornando nulo caso a lista nao possua o mesmo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista acessada \\
+\hline
+{\em nome} & -\/ Nome a ser procurado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Idoso$\ast$ -\/ Idoso achado // Null 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file lista\+Idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{lista_idoso_8h_a8db6232f56c31eabd4870f5c010710b6}\label{lista_idoso_8h_a8db6232f56c31eabd4870f5c010710b6}} 
+\index{listaIdoso.h@{listaIdoso.h}!IniciaListaIdoso@{IniciaListaIdoso}}
+\index{IniciaListaIdoso@{IniciaListaIdoso}!listaIdoso.h@{listaIdoso.h}}
+\doxysubsubsection{\texorpdfstring{IniciaListaIdoso()}{IniciaListaIdoso()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}}$\ast$ Inicia\+Lista\+Idoso (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Aloca e inicia uma lista de Idosos com uma sentinela vazia. 
+
+\begin{DoxyReturn}{Returns}
+lista\+Ido$\ast$ -\/ Lista inicializada 
+\end{DoxyReturn}
+
+
+Definition at line 21 of file lista\+Idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{lista_idoso_8h_a426b6b2ccb10e43ecff84f9a744c1c5c}\label{lista_idoso_8h_a426b6b2ccb10e43ecff84f9a744c1c5c}} 
+\index{listaIdoso.h@{listaIdoso.h}!InsereAmizade@{InsereAmizade}}
+\index{InsereAmizade@{InsereAmizade}!listaIdoso.h@{listaIdoso.h}}
+\doxysubsubsection{\texorpdfstring{InsereAmizade()}{InsereAmizade()}}
+{\footnotesize\ttfamily void Insere\+Amizade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$}]{l,  }\item[{char $\ast$}]{amg1,  }\item[{char $\ast$}]{amg2 }\end{DoxyParamCaption})}
+
+
+
+Cria o um laco de amizade, inserindo o amigo na lista de amigos um do outro Como amizades sao reciprocas, amg1 eh inserido na lista de amigos de amg2 e amg2 inserido na lista de amigos de amg1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista de Idosos em que estao inseridos \\
+\hline
+{\em amg1} & -\/ Idoso a fazer amizade \\
+\hline
+{\em amg2} & -\/ Idoso a fazer amizade \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 142 of file lista\+Idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{lista_idoso_8h_aefc27e3a6b457254cdd0bb849ef2fbb8}\label{lista_idoso_8h_aefc27e3a6b457254cdd0bb849ef2fbb8}} 
+\index{listaIdoso.h@{listaIdoso.h}!InsereListaIdoso@{InsereListaIdoso}}
+\index{InsereListaIdoso@{InsereListaIdoso}!listaIdoso.h@{listaIdoso.h}}
+\doxysubsubsection{\texorpdfstring{InsereListaIdoso()}{InsereListaIdoso()}}
+{\footnotesize\ttfamily void Insere\+Lista\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$}]{l,  }\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{idoso }\end{DoxyParamCaption})}
+
+
+
+Insere o Idoso ao final da lista de idosos acessada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista acessada \\
+\hline
+{\em idoso} & -\/ Idoso a ser inserido \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file lista\+Idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{lista_idoso_8h_ab57e33e1935c754283861a88e9586c76}\label{lista_idoso_8h_ab57e33e1935c754283861a88e9586c76}} 
+\index{listaIdoso.h@{listaIdoso.h}!IteraListaIdoso@{IteraListaIdoso}}
+\index{IteraListaIdoso@{IteraListaIdoso}!listaIdoso.h@{listaIdoso.h}}
+\doxysubsubsection{\texorpdfstring{IteraListaIdoso()}{IteraListaIdoso()}}
+{\footnotesize\ttfamily void Itera\+Lista\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$}]{l,  }\item[{void($\ast$)(\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$)}]{funcao }\end{DoxyParamCaption})}
+
+
+
+Faz a iteracao da lista executando a funcao passada como parametro em cada elemento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista acessada \\
+\hline
+{\em funcao} & -\/ Funcao a ser executada \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 151 of file lista\+Idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{lista_idoso_8h_a6372ab13748fb8d78259a424fd21d986}\label{lista_idoso_8h_a6372ab13748fb8d78259a424fd21d986}} 
+\index{listaIdoso.h@{listaIdoso.h}!LiberaListaIdoso@{LiberaListaIdoso}}
+\index{LiberaListaIdoso@{LiberaListaIdoso}!listaIdoso.h@{listaIdoso.h}}
+\doxysubsubsection{\texorpdfstring{LiberaListaIdoso()}{LiberaListaIdoso()}}
+{\footnotesize\ttfamily void Libera\+Lista\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Libera a memoria alocada pela lista e suas celulas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista a ser liberada \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 163 of file lista\+Idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{lista_idoso_8h_a390721318183d3b056948c70bd213338}\label{lista_idoso_8h_a390721318183d3b056948c70bd213338}} 
+\index{listaIdoso.h@{listaIdoso.h}!RetiraListaIdoso@{RetiraListaIdoso}}
+\index{RetiraListaIdoso@{RetiraListaIdoso}!listaIdoso.h@{listaIdoso.h}}
+\doxysubsubsection{\texorpdfstring{RetiraListaIdoso()}{RetiraListaIdoso()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}}$\ast$ Retira\+Lista\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$}]{l,  }\item[{char $\ast$}]{nome }\end{DoxyParamCaption})}
+
+
+
+Retira da lista o Idoso que possui o nome informado, caso nao tenha um cuidador com mesmo nome, nao sera retirado e retornara nulo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista acessada \\
+\hline
+{\em nome} & -\/ Nome a ser procurado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Idoso$\ast$ -\/ Idoso retirado da lista 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file lista\+Idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{lista_idoso_8h_afa97c09900abce26facf342d0a824599}\label{lista_idoso_8h_afa97c09900abce26facf342d0a824599}} 
+\index{listaIdoso.h@{listaIdoso.h}!RetornaIdosoProx@{RetornaIdosoProx}}
+\index{RetornaIdosoProx@{RetornaIdosoProx}!listaIdoso.h@{listaIdoso.h}}
+\doxysubsubsection{\texorpdfstring{RetornaIdosoProx()}{RetornaIdosoProx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}}$\ast$ Retorna\+Idoso\+Prox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lista_idoso_8h_a511fd522ce243a0397b3c114a86d70bf}{lista\+Ido}} $\ast$}]{l,  }\item[{\mbox{\hyperlink{geoloc_8h_a71029d6f48f46e9cbb711c59352d7a51}{Geoloc}} $\ast$}]{referencia }\end{DoxyParamCaption})}
+
+
+
+Retorna o Idoso mais proximo do ponto de referencia entre os presentes na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista de Idosos disponiveis \\
+\hline
+{\em referencia} & -\/ Ponto de referencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Idoso$\ast$ -\/ Idoso mais proximo do ponto de referencia 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file lista\+Idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12

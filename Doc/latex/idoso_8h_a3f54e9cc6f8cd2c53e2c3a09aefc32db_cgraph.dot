@@ -1,0 +1,22 @@
+digraph "IniciaIdoso"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="IniciaIdoso",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Faz a alocacao de memoria e inicializacao de uma variavel do tipo Idoso."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="adpth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pathman_8h.html#a8ac57bc6fde707215bb75ce25309489b",tooltip="adiciona uma string no final do caminho, com um divisor no meio se o path terminar com um divisor,..."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="expth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pathman_8c.html#a18886c8669c2a9541f75720f21bdb84c",tooltip="Extend path: adiciona uma string no final do caminho."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="expth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pathman_8h.html#a18886c8669c2a9541f75720f21bdb84c",tooltip="Extend path: adiciona uma string no final do caminho."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="IniciaGeo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$geoloc_8h.html#afbcdcb86de07f57b99d242367e2a4a05",tooltip="Faz a alocacao de memoria e inicializacao de uma variavel do tipo Geoloc, responsavel por armazenas e..."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="IniciaListaCui",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lista_cuidador_8h.html#ac9664361693d2ac6ad17afb02d0af621",tooltip="Aloca e inicia uma lista de cuidadores com uma sentinela vazia."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="IniciaListaIdoso",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lista_idoso_8h.html#a8db6232f56c31eabd4870f5c010710b6",tooltip="Aloca e inicia uma lista de Idosos com uma sentinela vazia."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="SetNomeIdoso",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$idoso_8c.html#ab7bfad24a236d31876f699b460e00f4d",tooltip="Define o Nome do objeto Idoso."];
+}

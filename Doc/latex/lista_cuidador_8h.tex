@@ -1,0 +1,213 @@
+\hypertarget{lista_cuidador_8h}{}\doxysection{headers/lista\+Cuidador.h File Reference}
+\label{lista_cuidador_8h}\index{headers/listaCuidador.h@{headers/listaCuidador.h}}
+{\ttfamily \#include \char`\"{}cuidador.\+h\char`\"{}}\newline
+Include dependency graph for lista\+Cuidador.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structlista_cui}{lista\+Cui}} \mbox{\hyperlink{lista_cuidador_8h_ab14af8b8a2baddb3e87aea6a99564276}{lista\+Cui}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$ \mbox{\hyperlink{lista_cuidador_8h_ac9664361693d2ac6ad17afb02d0af621}{Inicia\+Lista\+Cui}} ()
+\begin{DoxyCompactList}\small\item\em Aloca e inicia uma lista de cuidadores com uma sentinela vazia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lista_cuidador_8h_a8c1178c4c579b1d1950f0caa01f5ce41}{Insere\+Lista\+Cui}} (\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$l, \mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}} $\ast$\mbox{\hyperlink{structcuidador}{cuidador}})
+\begin{DoxyCompactList}\small\item\em Insere o cuidador ao final da lista de cuidadores acessada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}} $\ast$ \mbox{\hyperlink{lista_cuidador_8h_a199e3cfc61052c71a6afad55ba8d4e4c}{Retorna\+Cuidador\+Prox}} (\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$l, \mbox{\hyperlink{geoloc_8h_a71029d6f48f46e9cbb711c59352d7a51}{Geoloc}} $\ast$referencia)
+\begin{DoxyCompactList}\small\item\em Retorna o cuidador mais proximo do ponto de referencia entre os presentes na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}} $\ast$ \mbox{\hyperlink{lista_cuidador_8h_a61dc6d98fd31091c9282d2cc26eb8ba3}{Busca\+Lista\+Cui}} (\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$l, char $\ast$nome)
+\begin{DoxyCompactList}\small\item\em Busca na lista o cuidador que possui o nome informado e faz o retorno do mesmo, retornando nulo caso a lista nao possua o mesmo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}} $\ast$ \mbox{\hyperlink{lista_cuidador_8h_a905bee6c8eaa9c06af483d76dbbb01df}{Retira\+Lista\+Cui}} (\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$l, char $\ast$nome)
+\begin{DoxyCompactList}\small\item\em Retira da lista o cuidador que possui o nome informado, caso nao tenha um cuidador com mesmo nome, nao sera retirado e retornara nulo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lista_cuidador_8h_af74176e22e075d1e490381dea9d5f83b}{Itera\+Lista\+Cui}} (\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$l, void($\ast$funcao)(\mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}} $\ast$))
+\begin{DoxyCompactList}\small\item\em Faz a iteracao da lista executando a funcao passada como parametro em cada elemento. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lista_cuidador_8h_a86284060d805e7118ba0094834ff85db}{Libera\+Lista\+Cui}} (\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Libera a memoria alocada pela lista e suas celulas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{lista_cuidador_8h_ab14af8b8a2baddb3e87aea6a99564276}\label{lista_cuidador_8h_ab14af8b8a2baddb3e87aea6a99564276}} 
+\index{listaCuidador.h@{listaCuidador.h}!listaCui@{listaCui}}
+\index{listaCui@{listaCui}!listaCuidador.h@{listaCuidador.h}}
+\doxysubsubsection{\texorpdfstring{listaCui}{listaCui}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structlista_cui}{lista\+Cui}} \mbox{\hyperlink{structlista_cui}{lista\+Cui}}}
+
+
+
+Definition at line 1 of file lista\+Cuidador.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lista_cuidador_8h_a61dc6d98fd31091c9282d2cc26eb8ba3}\label{lista_cuidador_8h_a61dc6d98fd31091c9282d2cc26eb8ba3}} 
+\index{listaCuidador.h@{listaCuidador.h}!BuscaListaCui@{BuscaListaCui}}
+\index{BuscaListaCui@{BuscaListaCui}!listaCuidador.h@{listaCuidador.h}}
+\doxysubsubsection{\texorpdfstring{BuscaListaCui()}{BuscaListaCui()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}}$\ast$ Busca\+Lista\+Cui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$}]{l,  }\item[{char $\ast$}]{nome }\end{DoxyParamCaption})}
+
+
+
+Busca na lista o cuidador que possui o nome informado e faz o retorno do mesmo, retornando nulo caso a lista nao possua o mesmo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista acessada \\
+\hline
+{\em nome} & -\/ Nome a ser procurado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cuidador$\ast$ -\/ Cuidador achado // Null 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file lista\+Cuidador.\+c.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{lista_cuidador_8h_ac9664361693d2ac6ad17afb02d0af621}\label{lista_cuidador_8h_ac9664361693d2ac6ad17afb02d0af621}} 
+\index{listaCuidador.h@{listaCuidador.h}!IniciaListaCui@{IniciaListaCui}}
+\index{IniciaListaCui@{IniciaListaCui}!listaCuidador.h@{listaCuidador.h}}
+\doxysubsubsection{\texorpdfstring{IniciaListaCui()}{IniciaListaCui()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlista_cui}{lista\+Cui}}$\ast$ Inicia\+Lista\+Cui (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Aloca e inicia uma lista de cuidadores com uma sentinela vazia. 
+
+\begin{DoxyReturn}{Returns}
+lista\+Cui$\ast$ -\/ Lista inicializada 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file lista\+Cuidador.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{lista_cuidador_8h_a8c1178c4c579b1d1950f0caa01f5ce41}\label{lista_cuidador_8h_a8c1178c4c579b1d1950f0caa01f5ce41}} 
+\index{listaCuidador.h@{listaCuidador.h}!InsereListaCui@{InsereListaCui}}
+\index{InsereListaCui@{InsereListaCui}!listaCuidador.h@{listaCuidador.h}}
+\doxysubsubsection{\texorpdfstring{InsereListaCui()}{InsereListaCui()}}
+{\footnotesize\ttfamily void Insere\+Lista\+Cui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$}]{l,  }\item[{\mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}} $\ast$}]{cuidador }\end{DoxyParamCaption})}
+
+
+
+Insere o cuidador ao final da lista de cuidadores acessada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista acessada \\
+\hline
+{\em cuidador} & -\/ Cuidador a ser inserido \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file lista\+Cuidador.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{lista_cuidador_8h_af74176e22e075d1e490381dea9d5f83b}\label{lista_cuidador_8h_af74176e22e075d1e490381dea9d5f83b}} 
+\index{listaCuidador.h@{listaCuidador.h}!IteraListaCui@{IteraListaCui}}
+\index{IteraListaCui@{IteraListaCui}!listaCuidador.h@{listaCuidador.h}}
+\doxysubsubsection{\texorpdfstring{IteraListaCui()}{IteraListaCui()}}
+{\footnotesize\ttfamily void Itera\+Lista\+Cui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$}]{l,  }\item[{void($\ast$)(\mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}} $\ast$)}]{funcao }\end{DoxyParamCaption})}
+
+
+
+Faz a iteracao da lista executando a funcao passada como parametro em cada elemento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista acessada \\
+\hline
+{\em funcao} & -\/ Funcao a ser executada \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 154 of file lista\+Cuidador.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{lista_cuidador_8h_a86284060d805e7118ba0094834ff85db}\label{lista_cuidador_8h_a86284060d805e7118ba0094834ff85db}} 
+\index{listaCuidador.h@{listaCuidador.h}!LiberaListaCui@{LiberaListaCui}}
+\index{LiberaListaCui@{LiberaListaCui}!listaCuidador.h@{listaCuidador.h}}
+\doxysubsubsection{\texorpdfstring{LiberaListaCui()}{LiberaListaCui()}}
+{\footnotesize\ttfamily void Libera\+Lista\+Cui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Libera a memoria alocada pela lista e suas celulas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista a ser liberada \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 166 of file lista\+Cuidador.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{lista_cuidador_8h_a905bee6c8eaa9c06af483d76dbbb01df}\label{lista_cuidador_8h_a905bee6c8eaa9c06af483d76dbbb01df}} 
+\index{listaCuidador.h@{listaCuidador.h}!RetiraListaCui@{RetiraListaCui}}
+\index{RetiraListaCui@{RetiraListaCui}!listaCuidador.h@{listaCuidador.h}}
+\doxysubsubsection{\texorpdfstring{RetiraListaCui()}{RetiraListaCui()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}}$\ast$ Retira\+Lista\+Cui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$}]{l,  }\item[{char $\ast$}]{nome }\end{DoxyParamCaption})}
+
+
+
+Retira da lista o cuidador que possui o nome informado, caso nao tenha um cuidador com mesmo nome, nao sera retirado e retornara nulo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista acessada \\
+\hline
+{\em nome} & -\/ Nome do cuidador a ser retirado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cuidador$\ast$ -\/ Faz o Retorno do cuidador retirado da lista 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file lista\+Cuidador.\+c.
+
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{lista_cuidador_8h_a199e3cfc61052c71a6afad55ba8d4e4c}\label{lista_cuidador_8h_a199e3cfc61052c71a6afad55ba8d4e4c}} 
+\index{listaCuidador.h@{listaCuidador.h}!RetornaCuidadorProx@{RetornaCuidadorProx}}
+\index{RetornaCuidadorProx@{RetornaCuidadorProx}!listaCuidador.h@{listaCuidador.h}}
+\doxysubsubsection{\texorpdfstring{RetornaCuidadorProx()}{RetornaCuidadorProx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}}$\ast$ Retorna\+Cuidador\+Prox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_cui}{lista\+Cui}} $\ast$}]{l,  }\item[{\mbox{\hyperlink{geoloc_8h_a71029d6f48f46e9cbb711c59352d7a51}{Geoloc}} $\ast$}]{referencia }\end{DoxyParamCaption})}
+
+
+
+Retorna o cuidador mais proximo do ponto de referencia entre os presentes na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & -\/ Lista de cuidadores disponiveis \\
+\hline
+{\em referencia} & -\/ Ponto de referencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cuidador$\ast$ -\/ Cuidador mais proximo do ponto de referencia 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file lista\+Cuidador.\+c.
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10

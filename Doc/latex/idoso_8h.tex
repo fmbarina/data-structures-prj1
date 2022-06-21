@@ -1,0 +1,418 @@
+\hypertarget{idoso_8h}{}\doxysection{headers/idoso.h File Reference}
+\label{idoso_8h}\index{headers/idoso.h@{headers/idoso.h}}
+{\ttfamily \#include \char`\"{}geoloc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cuidador.\+h\char`\"{}}\newline
+Include dependency graph for idoso.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structidoso}{idoso}} \mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ \mbox{\hyperlink{idoso_8h_a3f54e9cc6f8cd2c53e2c3a09aefc32db}{Inicia\+Idoso}} (char $\ast$nome, char $\ast$diretorio)
+\begin{DoxyCompactList}\small\item\em Faz a alocacao de memoria e inicializacao de uma variavel do tipo Idoso. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{idoso_8h_ad410fb3330c4e9336dc048bb5c684b58}{Get\+Nome\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido)
+\begin{DoxyCompactList}\small\item\em Retorna o Nome do objeto Idoso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{idoso_8h_ab7bfad24a236d31876f699b460e00f4d}{Set\+Nome\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido, char $\ast$nome)
+\begin{DoxyCompactList}\small\item\em Define o Nome do objeto Idoso. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{geoloc_8h_a71029d6f48f46e9cbb711c59352d7a51}{Geoloc}} $\ast$ \mbox{\hyperlink{idoso_8h_a408d4574b54a20f17a044f55cd887fa6}{Get\+Local\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido)
+\begin{DoxyCompactList}\small\item\em Retorna o Local do Idoso (Como Geoloc) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{idoso_8h_a73c41422fa6d8127dff69b6b02894fc1}{Set\+Local\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido, int longitude, int latitude)
+\begin{DoxyCompactList}\small\item\em Define o Local do Idoso para as novas coordenadas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{idoso_8h_a137d0f97f095286e4d25790507a52e61}{Get\+Condicao\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido)
+\begin{DoxyCompactList}\small\item\em Retorna a condicao atual do idoso, respeitando a seguinte tabela -\/2 = Bem morto -\/1 = A informar, morto 0 = Bem 1 = Necessita de amigos 2 = Necessita de cuidador, febre alta 3 = Necessita de cuidador, febre baixa pela 4a vez 4 = Necessita de cuidador, queda. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{idoso_8h_a05c6062c3c814bfd4b9b219ccd09caa0}{Set\+Condicao\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido, int condicao)
+\begin{DoxyCompactList}\small\item\em Define uma nova Condicao ao Idoso. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{idoso_8h_ad498478889dd98cfb4369b704b681e1c}{Get\+Febres\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido)
+\begin{DoxyCompactList}\small\item\em Retorna quantas Febres baixas seguidas o Idoso em questao teve. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{idoso_8h_abcba8ce4d83ae423bb11438deb58b55e}{Inc\+Febres\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido)
+\begin{DoxyCompactList}\small\item\em Incrementa o contador de febres baixas seguidas do Idoso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{idoso_8h_a074ec0beda9207173bb20248369d008e}{Reset\+Febres\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido)
+\begin{DoxyCompactList}\small\item\em Zera o contador de febres baixas do Idoso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{idoso_8h_a9f1d51ea97ea9f557a840325ef5fb737}{Atualiza\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido)
+\begin{DoxyCompactList}\small\item\em Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{idoso_8h_aab10cd3a90c4c144a89041f24c9b148f}{Insere\+Cuidador\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido, \mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}} $\ast$cui)
+\begin{DoxyCompactList}\small\item\em Insere um novo cuidador a lista de cuidadores que o Idoso acessado pode requisitar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{idoso_8h_adead1c28f1b19683b8958019426a8aa2}{Insere\+Amigo\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido, \mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$amigo)
+\begin{DoxyCompactList}\small\item\em Insere um novo idoso a lista de amizades do Idoso acessado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{idoso_8h_a88452684585a131cdad194e145456e67}{Processa\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido)
+\begin{DoxyCompactList}\small\item\em Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes obtidas e atualizar a condicao do idoso em questao. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{idoso_8h_a9f1fc433114612ab21373e245aa47712}{Libera\+Idoso}} (\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$ido)
+\begin{DoxyCompactList}\small\item\em Libera a memoria alocada para a variavel de tipo Idoso. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}\label{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}} 
+\index{idoso.h@{idoso.h}!Idoso@{Idoso}}
+\index{Idoso@{Idoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{Idoso}{Idoso}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structidoso}{idoso}} \mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}}}
+
+
+
+Definition at line 1 of file idoso.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{idoso_8h_a9f1d51ea97ea9f557a840325ef5fb737}\label{idoso_8h_a9f1d51ea97ea9f557a840325ef5fb737}} 
+\index{idoso.h@{idoso.h}!AtualizaIdoso@{AtualizaIdoso}}
+\index{AtualizaIdoso@{AtualizaIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{AtualizaIdoso()}{AtualizaIdoso()}}
+{\footnotesize\ttfamily void Atualiza\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido }\end{DoxyParamCaption})}
+
+
+
+Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso a ser atualizado \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{idoso_8h_a137d0f97f095286e4d25790507a52e61}\label{idoso_8h_a137d0f97f095286e4d25790507a52e61}} 
+\index{idoso.h@{idoso.h}!GetCondicaoIdoso@{GetCondicaoIdoso}}
+\index{GetCondicaoIdoso@{GetCondicaoIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{GetCondicaoIdoso()}{GetCondicaoIdoso()}}
+{\footnotesize\ttfamily int Get\+Condicao\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido }\end{DoxyParamCaption})}
+
+
+
+Retorna a condicao atual do idoso, respeitando a seguinte tabela -\/2 = Bem morto -\/1 = A informar, morto 0 = Bem 1 = Necessita de amigos 2 = Necessita de cuidador, febre alta 3 = Necessita de cuidador, febre baixa pela 4a vez 4 = Necessita de cuidador, queda. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ Condicao atual do Idoso 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{idoso_8h_ad498478889dd98cfb4369b704b681e1c}\label{idoso_8h_ad498478889dd98cfb4369b704b681e1c}} 
+\index{idoso.h@{idoso.h}!GetFebresIdoso@{GetFebresIdoso}}
+\index{GetFebresIdoso@{GetFebresIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{GetFebresIdoso()}{GetFebresIdoso()}}
+{\footnotesize\ttfamily int Get\+Febres\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido }\end{DoxyParamCaption})}
+
+
+
+Retorna quantas Febres baixas seguidas o Idoso em questao teve. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ Febres seguidas 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file idoso.\+c.
+
+\mbox{\Hypertarget{idoso_8h_a408d4574b54a20f17a044f55cd887fa6}\label{idoso_8h_a408d4574b54a20f17a044f55cd887fa6}} 
+\index{idoso.h@{idoso.h}!GetLocalIdoso@{GetLocalIdoso}}
+\index{GetLocalIdoso@{GetLocalIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{GetLocalIdoso()}{GetLocalIdoso()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{geoloc_8h_a71029d6f48f46e9cbb711c59352d7a51}{Geoloc}}$\ast$ Get\+Local\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido }\end{DoxyParamCaption})}
+
+
+
+Retorna o Local do Idoso (Como Geoloc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Geoloc$\ast$ -\/ Local do Idoso 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{idoso_8h_ad410fb3330c4e9336dc048bb5c684b58}\label{idoso_8h_ad410fb3330c4e9336dc048bb5c684b58}} 
+\index{idoso.h@{idoso.h}!GetNomeIdoso@{GetNomeIdoso}}
+\index{GetNomeIdoso@{GetNomeIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{GetNomeIdoso()}{GetNomeIdoso()}}
+{\footnotesize\ttfamily char$\ast$ Get\+Nome\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido }\end{DoxyParamCaption})}
+
+
+
+Retorna o Nome do objeto Idoso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ -\/ Atual nome do Idoso 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{idoso_8h_abcba8ce4d83ae423bb11438deb58b55e}\label{idoso_8h_abcba8ce4d83ae423bb11438deb58b55e}} 
+\index{idoso.h@{idoso.h}!IncFebresIdoso@{IncFebresIdoso}}
+\index{IncFebresIdoso@{IncFebresIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{IncFebresIdoso()}{IncFebresIdoso()}}
+{\footnotesize\ttfamily void Inc\+Febres\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido }\end{DoxyParamCaption})}
+
+
+
+Incrementa o contador de febres baixas seguidas do Idoso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{idoso_8h_a3f54e9cc6f8cd2c53e2c3a09aefc32db}\label{idoso_8h_a3f54e9cc6f8cd2c53e2c3a09aefc32db}} 
+\index{idoso.h@{idoso.h}!IniciaIdoso@{IniciaIdoso}}
+\index{IniciaIdoso@{IniciaIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{IniciaIdoso()}{IniciaIdoso()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}}$\ast$ Inicia\+Idoso (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome,  }\item[{char $\ast$}]{diretorio }\end{DoxyParamCaption})}
+
+
+
+Faz a alocacao de memoria e inicializacao de uma variavel do tipo Idoso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/ Nome do Idoso a ser inicializado \\
+\hline
+{\em diretorio} & -\/ Diretorio onde estarao os arquivos de entrada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Idoso$\ast$ -\/ Idoso inicializado 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{idoso_8h_adead1c28f1b19683b8958019426a8aa2}\label{idoso_8h_adead1c28f1b19683b8958019426a8aa2}} 
+\index{idoso.h@{idoso.h}!InsereAmigoIdoso@{InsereAmigoIdoso}}
+\index{InsereAmigoIdoso@{InsereAmigoIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{InsereAmigoIdoso()}{InsereAmigoIdoso()}}
+{\footnotesize\ttfamily void Insere\+Amigo\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido,  }\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{amigo }\end{DoxyParamCaption})}
+
+
+
+Insere um novo idoso a lista de amizades do Idoso acessado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+{\em amigo} & -\/ Amigo a ser inserido \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{idoso_8h_aab10cd3a90c4c144a89041f24c9b148f}\label{idoso_8h_aab10cd3a90c4c144a89041f24c9b148f}} 
+\index{idoso.h@{idoso.h}!InsereCuidadorIdoso@{InsereCuidadorIdoso}}
+\index{InsereCuidadorIdoso@{InsereCuidadorIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{InsereCuidadorIdoso()}{InsereCuidadorIdoso()}}
+{\footnotesize\ttfamily void Insere\+Cuidador\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido,  }\item[{\mbox{\hyperlink{cuidador_8h_a896650a2da012ebeaa06aaebb2e80f3c}{Cuidador}} $\ast$}]{cui }\end{DoxyParamCaption})}
+
+
+
+Insere um novo cuidador a lista de cuidadores que o Idoso acessado pode requisitar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+{\em cui} & -\/ Cuidador a ser inserido \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 155 of file idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{idoso_8h_a9f1fc433114612ab21373e245aa47712}\label{idoso_8h_a9f1fc433114612ab21373e245aa47712}} 
+\index{idoso.h@{idoso.h}!LiberaIdoso@{LiberaIdoso}}
+\index{LiberaIdoso@{LiberaIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{LiberaIdoso()}{LiberaIdoso()}}
+{\footnotesize\ttfamily void Libera\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido }\end{DoxyParamCaption})}
+
+
+
+Libera a memoria alocada para a variavel de tipo Idoso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso a ser liberado \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 225 of file idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{idoso_8h_a88452684585a131cdad194e145456e67}\label{idoso_8h_a88452684585a131cdad194e145456e67}} 
+\index{idoso.h@{idoso.h}!ProcessaIdoso@{ProcessaIdoso}}
+\index{ProcessaIdoso@{ProcessaIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{ProcessaIdoso()}{ProcessaIdoso()}}
+{\footnotesize\ttfamily void Processa\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido }\end{DoxyParamCaption})}
+
+
+
+Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes obtidas e atualizar a condicao do idoso em questao. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso a ser processado \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 165 of file idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 16
+Here is the caller graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{idoso_8h_a074ec0beda9207173bb20248369d008e}\label{idoso_8h_a074ec0beda9207173bb20248369d008e}} 
+\index{idoso.h@{idoso.h}!ResetFebresIdoso@{ResetFebresIdoso}}
+\index{ResetFebresIdoso@{ResetFebresIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{ResetFebresIdoso()}{ResetFebresIdoso()}}
+{\footnotesize\ttfamily void Reset\+Febres\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido }\end{DoxyParamCaption})}
+
+
+
+Zera o contador de febres baixas do Idoso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 18
+\mbox{\Hypertarget{idoso_8h_a05c6062c3c814bfd4b9b219ccd09caa0}\label{idoso_8h_a05c6062c3c814bfd4b9b219ccd09caa0}} 
+\index{idoso.h@{idoso.h}!SetCondicaoIdoso@{SetCondicaoIdoso}}
+\index{SetCondicaoIdoso@{SetCondicaoIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{SetCondicaoIdoso()}{SetCondicaoIdoso()}}
+{\footnotesize\ttfamily void Set\+Condicao\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido,  }\item[{int}]{condicao }\end{DoxyParamCaption})}
+
+
+
+Define uma nova Condicao ao Idoso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+{\em condicao} & -\/ Nova condicao de idoso \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 19
+\mbox{\Hypertarget{idoso_8h_a73c41422fa6d8127dff69b6b02894fc1}\label{idoso_8h_a73c41422fa6d8127dff69b6b02894fc1}} 
+\index{idoso.h@{idoso.h}!SetLocalIdoso@{SetLocalIdoso}}
+\index{SetLocalIdoso@{SetLocalIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{SetLocalIdoso()}{SetLocalIdoso()}}
+{\footnotesize\ttfamily void Set\+Local\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido,  }\item[{int}]{longitude,  }\item[{int}]{latitude }\end{DoxyParamCaption})}
+
+
+
+Define o Local do Idoso para as novas coordenadas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+{\em longitude} & -\/ Novas coordenadas \\
+\hline
+{\em latitude} & -\/ Novas coordenadas \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file idoso.\+c.
+
+Here is the call graph for this function\+:
+% FIG 20
+Here is the caller graph for this function\+:
+% FIG 21
+\mbox{\Hypertarget{idoso_8h_ab7bfad24a236d31876f699b460e00f4d}\label{idoso_8h_ab7bfad24a236d31876f699b460e00f4d}} 
+\index{idoso.h@{idoso.h}!SetNomeIdoso@{SetNomeIdoso}}
+\index{SetNomeIdoso@{SetNomeIdoso}!idoso.h@{idoso.h}}
+\doxysubsubsection{\texorpdfstring{SetNomeIdoso()}{SetNomeIdoso()}}
+{\footnotesize\ttfamily void Set\+Nome\+Idoso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{idoso_8h_a5111c2dbceb673d30c3676d4b42234cc}{Idoso}} $\ast$}]{ido,  }\item[{char $\ast$}]{nome }\end{DoxyParamCaption})}
+
+
+
+Define o Nome do objeto Idoso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ido} & -\/ Idoso acessado \\
+\hline
+{\em nome} & -\/ Novo nome que devera ser atribuido \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file idoso.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 22
