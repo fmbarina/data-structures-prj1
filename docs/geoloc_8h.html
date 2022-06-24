@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.1-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,10 +10,26 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<html>
+    <head>
+        <!-- ... other metadata & script includes ... -->
+        <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+        <script type="text/javascript">
+            DoxygenAwesomeDarkModeToggle.init()
+        </script>
+    </head>
+    <body>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,6 +63,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('geoloc_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +94,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#typedef-members">Definições de Tipos</a> &#124;
@@ -76,20 +105,7 @@ $(function() {
 <div class="textblock"><div class="dynheader">
 Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com esse arquivo:</div>
 <div class="dyncontent">
-<div class="center"><img src="geoloc_8h__dep__incl.png" border="0" usemap="#aheaders_2geoloc_8hdep" alt=""/></div>
-<map name="aheaders_2geoloc_8hdep" id="aheaders_2geoloc_8hdep">
-<area shape="rect" title=" " alt="" coords="467,5,601,32"/>
-<area shape="rect" href="cuidador_8h.html" title=" " alt="" coords="335,80,480,107"/>
-<area shape="rect" href="idoso_8h.html" title=" " alt="" coords="145,155,270,181"/>
-<area shape="rect" href="idoso_8c.html" title=" " alt="" coords="337,304,427,331"/>
-<area shape="rect" href="cuidador_8c.html" title=" " alt="" coords="479,155,589,181"/>
-<area shape="rect" href="geoloc_8c.html" title=" " alt="" coords="678,80,777,107"/>
-<area shape="rect" href="cliente_8c.html" title=" " alt="" coords="164,304,264,331"/>
-<area shape="rect" href="lista_cuidador_8h.html" title=" " alt="" coords="428,229,603,256"/>
-<area shape="rect" href="lista_idoso_8h.html" title=" " alt="" coords="97,229,251,256"/>
-<area shape="rect" href="lista_idoso_8c.html" title=" " alt="" coords="5,304,124,331"/>
-<area shape="rect" href="lista_cuidador_8c.html" title=" " alt="" coords="451,304,593,331"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="geoloc_8h__dep__incl.svg" width="783" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="geoloc_8h_source.html">Vá para o código-fonte desse arquivo.</a></p>
@@ -172,14 +188,7 @@ Funções</h2></td></tr>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="geoloc_8h_a58b31cb21ffe9fe839d9c2e0f69772a8_icgraph.png" border="0" usemap="#ageoloc_8h_a58b31cb21ffe9fe839d9c2e0f69772a8_icgraph" alt=""/></div>
-<map name="ageoloc_8h_a58b31cb21ffe9fe839d9c2e0f69772a8_icgraph" id="ageoloc_8h_a58b31cb21ffe9fe839d9c2e0f69772a8_icgraph">
-<area shape="rect" title="Calcula a distancia entre duas localizacoes Retornando um double resultante do calculo." alt="" coords="479,31,581,57"/>
-<area shape="rect" href="lista_cuidador_8h.html#a199e3cfc61052c71a6afad55ba8d4e4c" title="Retorna o cuidador mais proximo do ponto de referencia entre os presentes na lista." alt="" coords="271,5,431,32"/>
-<area shape="rect" href="lista_idoso_8h.html#afa97c09900abce26facf342d0a824599" title="Retorna o Idoso mais proximo do ponto de referencia entre os presentes na lista." alt="" coords="282,56,419,83"/>
-<area shape="rect" href="idoso_8h.html#a88452684585a131cdad194e145456e67" title="Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes ob..." alt="" coords="108,31,223,57"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,60,57"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="geoloc_8h_a58b31cb21ffe9fe839d9c2e0f69772a8_icgraph.svg" width="587" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -224,13 +233,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="geoloc_8h_afbcdcb86de07f57b99d242367e2a4a05_icgraph.png" border="0" usemap="#ageoloc_8h_afbcdcb86de07f57b99d242367e2a4a05_icgraph" alt=""/></div>
-<map name="ageoloc_8h_afbcdcb86de07f57b99d242367e2a4a05_icgraph" id="ageoloc_8h_afbcdcb86de07f57b99d242367e2a4a05_icgraph">
-<area shape="rect" title="Faz a alocacao de memoria e inicializacao de uma variavel do tipo Geoloc, responsavel por armazenas e..." alt="" coords="271,31,353,57"/>
-<area shape="rect" href="cuidador_8h.html#aeb8e274de45a5c99428ad3740eef86b8" title="Faz a alocacao de memoria e inicializacao de uma variavel do tipo cuidador." alt="" coords="108,5,223,32"/>
-<area shape="rect" href="idoso_8h.html#a3f54e9cc6f8cd2c53e2c3a09aefc32db" title="Faz a alocacao de memoria e inicializacao de uma variavel do tipo Idoso." alt="" coords="119,56,211,83"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,60,57"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="geoloc_8h_afbcdcb86de07f57b99d242367e2a4a05_icgraph.svg" width="359" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -263,13 +266,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="geoloc_8h_a1e2732e2aee467321c0e4df4f748aa65_icgraph.png" border="0" usemap="#ageoloc_8h_a1e2732e2aee467321c0e4df4f748aa65_icgraph" alt=""/></div>
-<map name="ageoloc_8h_a1e2732e2aee467321c0e4df4f748aa65_icgraph" id="ageoloc_8h_a1e2732e2aee467321c0e4df4f748aa65_icgraph">
-<area shape="rect" title="Libera a memoria alocada para a variavel de tipo Geoloc." alt="" coords="276,31,364,57"/>
-<area shape="rect" href="cuidador_8h.html#a6e4af23e054337b68d5037edeefa9c85" title="Libera a memoria alocada para tal cuidador." alt="" coords="108,5,228,32"/>
-<area shape="rect" href="idoso_8h.html#a9f1fc433114612ab21373e245aa47712" title="Libera a memoria alocada para a variavel de tipo Idoso." alt="" coords="119,56,217,83"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,60,57"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="geoloc_8h_a1e2732e2aee467321c0e4df4f748aa65_icgraph.svg" width="370" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -320,23 +317,19 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="geoloc_8h_ad15a017b73ab2909652b15b346373bb7_icgraph.png" border="0" usemap="#ageoloc_8h_ad15a017b73ab2909652b15b346373bb7_icgraph" alt=""/></div>
-<map name="ageoloc_8h_ad15a017b73ab2909652b15b346373bb7_icgraph" id="ageoloc_8h_ad15a017b73ab2909652b15b346373bb7_icgraph">
-<area shape="rect" title="Define a geolocalizacao dada para os valores de latitude e longitude passados." alt="" coords="472,31,579,57"/>
-<area shape="rect" href="cuidador_8h.html#a8eb550092858dafae62ebcc83fa99921" title="Define o Local (de tipo Geoloc) do objeto Cuidador." alt="" coords="289,5,424,32"/>
-<area shape="rect" href="idoso_8h.html#a73c41422fa6d8127dff69b6b02894fc1" title="Define o Local do Idoso para as novas coordenadas." alt="" coords="301,56,413,83"/>
-<area shape="rect" href="cuidador_8h.html#a676000430da09bc26e44294be49ce6a7" title="Faz a leitura de uma nova linha do arquivo referente ao cuidador, atualizando seu local no dado tempo..." alt="" coords="108,5,241,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,60,57"/>
-<area shape="rect" href="idoso_8h.html#a9f1d51ea97ea9f557a840325ef5fb737" title="Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo." alt="" coords="119,56,230,83"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="geoloc_8h_ad15a017b73ab2909652b15b346373bb7_icgraph.svg" width="584" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li><li class="navelem"><a class="el" href="geoloc_8h.html">geoloc.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
