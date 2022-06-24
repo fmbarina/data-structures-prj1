@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.1-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,10 +10,26 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<html>
+    <head>
+        <!-- ... other metadata & script includes ... -->
+        <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+        <script type="text/javascript">
+            DoxygenAwesomeDarkModeToggle.init()
+        </script>
+    </head>
+    <body>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,6 +63,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('idoso_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +94,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Estruturas de Dados</a> &#124;
@@ -86,19 +115,7 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Gráfico de dependência de inclusões para idoso.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c__incl.png" border="0" usemap="#asrc_2idoso_8c" alt=""/></div>
-<map name="asrc_2idoso_8c" id="asrc_2idoso_8c">
-<area shape="rect" title=" " alt="" coords="187,5,278,32"/>
-<area shape="rect" href="idoso_8h.html" title=" " alt="" coords="61,155,130,181"/>
-<area shape="rect" href="geoloc_8h.html" title=" " alt="" coords="57,304,134,331"/>
-<area shape="rect" href="cuidador_8h.html" title=" " alt="" coords="135,229,224,256"/>
-<area shape="rect" href="lista_idoso_8h.html" title=" " alt="" coords="47,80,144,107"/>
-<area shape="rect" href="lista_cuidador_8h.html" title=" " alt="" coords="220,155,339,181"/>
-<area shape="rect" href="pathman_8h.html" title=" " alt="" coords="271,80,363,107"/>
-<area shape="rect" title=" " alt="" coords="387,80,454,107"/>
-<area shape="rect" title=" " alt="" coords="479,80,549,107"/>
-<area shape="rect" title=" " alt="" coords="573,80,644,107"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c__incl.svg" width="650" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="idoso_8c_source.html">Vá para o código-fonte desse arquivo.</a></p>
@@ -207,24 +224,12 @@ Funções</h2></td></tr>
 <div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a9f1d51ea97ea9f557a840325ef5fb737_cgraph.png" border="0" usemap="#aidoso_8c_a9f1d51ea97ea9f557a840325ef5fb737_cgraph" alt=""/></div>
-<map name="aidoso_8c_a9f1d51ea97ea9f557a840325ef5fb737_cgraph" id="aidoso_8c_a9f1d51ea97ea9f557a840325ef5fb737_cgraph">
-<area shape="rect" title="Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo." alt="" coords="5,81,116,108"/>
-<area shape="rect" href="idoso_8c.html#abcba8ce4d83ae423bb11438deb58b55e" title="Incrementa o contador de febres baixas seguidas do Idoso." alt="" coords="174,5,293,32"/>
-<area shape="rect" href="idoso_8c.html#a074ec0beda9207173bb20248369d008e" title="Zera o contador de febres baixas do Idoso." alt="" coords="165,56,302,83"/>
-<area shape="rect" href="idoso_8c.html#a05c6062c3c814bfd4b9b219ccd09caa0" title="Define uma nova Condicao ao Idoso." alt="" coords="164,107,303,133"/>
-<area shape="rect" href="idoso_8c.html#a73c41422fa6d8127dff69b6b02894fc1" title="Define o Local do Idoso para as novas coordenadas." alt="" coords="177,157,289,184"/>
-<area shape="rect" href="geoloc_8h.html#ad15a017b73ab2909652b15b346373bb7" title="Define a geolocalizacao dada para os valores de latitude e longitude passados." alt="" coords="351,157,457,184"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a9f1d51ea97ea9f557a840325ef5fb737_cgraph.svg" width="463" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a9f1d51ea97ea9f557a840325ef5fb737_icgraph.png" border="0" usemap="#aidoso_8c_a9f1d51ea97ea9f557a840325ef5fb737_icgraph" alt=""/></div>
-<map name="aidoso_8c_a9f1d51ea97ea9f557a840325ef5fb737_icgraph" id="aidoso_8c_a9f1d51ea97ea9f557a840325ef5fb737_icgraph">
-<area shape="rect" title="Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo." alt="" coords="108,5,219,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a9f1d51ea97ea9f557a840325ef5fb737_icgraph.svg" width="224" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -258,13 +263,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a137d0f97f095286e4d25790507a52e61_icgraph.png" border="0" usemap="#aidoso_8c_a137d0f97f095286e4d25790507a52e61_icgraph" alt=""/></div>
-<map name="aidoso_8c_a137d0f97f095286e4d25790507a52e61_icgraph" id="aidoso_8c_a137d0f97f095286e4d25790507a52e61_icgraph">
-<area shape="rect" title="Retorna a condicao atual do idoso, respeitando a seguinte tabela &#45;2 = Bem morto &#45;1 = A informar,..." alt="" coords="456,5,596,32"/>
-<area shape="rect" href="lista_idoso_8h.html#afa97c09900abce26facf342d0a824599" title="Retorna o Idoso mais proximo do ponto de referencia entre os presentes na lista." alt="" coords="271,5,408,32"/>
-<area shape="rect" href="idoso_8h.html#a88452684585a131cdad194e145456e67" title="Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes ob..." alt="" coords="108,5,223,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a137d0f97f095286e4d25790507a52e61_icgraph.svg" width="602" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -327,13 +326,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a408d4574b54a20f17a044f55cd887fa6_icgraph.png" border="0" usemap="#aidoso_8c_a408d4574b54a20f17a044f55cd887fa6_icgraph" alt=""/></div>
-<map name="aidoso_8c_a408d4574b54a20f17a044f55cd887fa6_icgraph" id="aidoso_8c_a408d4574b54a20f17a044f55cd887fa6_icgraph">
-<area shape="rect" title="Retorna o Local do Idoso (Como Geoloc)" alt="" coords="456,5,571,32"/>
-<area shape="rect" href="lista_idoso_8h.html#afa97c09900abce26facf342d0a824599" title="Retorna o Idoso mais proximo do ponto de referencia entre os presentes na lista." alt="" coords="271,5,408,32"/>
-<area shape="rect" href="idoso_8h.html#a88452684585a131cdad194e145456e67" title="Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes ob..." alt="" coords="108,5,223,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a408d4574b54a20f17a044f55cd887fa6_icgraph.svg" width="576" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -367,15 +360,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_ad410fb3330c4e9336dc048bb5c684b58_icgraph.png" border="0" usemap="#aidoso_8c_ad410fb3330c4e9336dc048bb5c684b58_icgraph" alt=""/></div>
-<map name="aidoso_8c_ad410fb3330c4e9336dc048bb5c684b58_icgraph" id="aidoso_8c_ad410fb3330c4e9336dc048bb5c684b58_icgraph">
-<area shape="rect" title="Retorna o Nome do objeto Idoso." alt="" coords="449,107,568,133"/>
-<area shape="rect" href="lista_idoso_8h.html#ae54bcb97b257f8edff6646cf71e1946d" title="Busca na lista o Idoso que possui o nome informado e faz o retorno do mesmo, retornando nulo caso a l..." alt="" coords="275,56,401,83"/>
-<area shape="rect" href="idoso_8h.html#a88452684585a131cdad194e145456e67" title="Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes ob..." alt="" coords="110,107,225,133"/>
-<area shape="rect" href="lista_idoso_8h.html#a390721318183d3b056948c70bd213338" title="Retira da lista o Idoso que possui o nome informado, caso nao tenha um cuidador com mesmo nome,..." alt="" coords="275,157,401,184"/>
-<area shape="rect" href="lista_idoso_8h.html#a426b6b2ccb10e43ecff84f9a744c1c5c" title="Cria o um laco de amizade, inserindo o amigo na lista de amigos um do outro Como amizades sao recipro..." alt="" coords="108,5,227,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,56,60,83"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_ad410fb3330c4e9336dc048bb5c684b58_icgraph.svg" width="574" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -408,12 +393,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_abcba8ce4d83ae423bb11438deb58b55e_icgraph.png" border="0" usemap="#aidoso_8c_abcba8ce4d83ae423bb11438deb58b55e_icgraph" alt=""/></div>
-<map name="aidoso_8c_abcba8ce4d83ae423bb11438deb58b55e_icgraph" id="aidoso_8c_abcba8ce4d83ae423bb11438deb58b55e_icgraph">
-<area shape="rect" title="Incrementa o contador de febres baixas seguidas do Idoso." alt="" coords="267,5,385,32"/>
-<area shape="rect" href="idoso_8h.html#a9f1d51ea97ea9f557a840325ef5fb737" title="Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo." alt="" coords="108,5,219,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_abcba8ce4d83ae423bb11438deb58b55e_icgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -458,26 +438,12 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a3f54e9cc6f8cd2c53e2c3a09aefc32db_cgraph.png" border="0" usemap="#aidoso_8c_a3f54e9cc6f8cd2c53e2c3a09aefc32db_cgraph" alt=""/></div>
-<map name="aidoso_8c_a3f54e9cc6f8cd2c53e2c3a09aefc32db_cgraph" id="aidoso_8c_a3f54e9cc6f8cd2c53e2c3a09aefc32db_cgraph">
-<area shape="rect" title="Faz a alocacao de memoria e inicializacao de uma variavel do tipo Idoso." alt="" coords="5,132,97,159"/>
-<area shape="rect" href="pathman_8h.html#a8ac57bc6fde707215bb75ce25309489b" title="adiciona uma string no final do caminho, com um divisor no meio se o path terminar com um divisor,..." alt="" coords="177,5,236,32"/>
-<area shape="rect" href="pathman_8h.html#a18886c8669c2a9541f75720f21bdb84c" title="Extend path: adiciona uma string no final do caminho." alt="" coords="177,56,236,83"/>
-<area shape="rect" href="geoloc_8h.html#afbcdcb86de07f57b99d242367e2a4a05" title="Faz a alocacao de memoria e inicializacao de uma variavel do tipo Geoloc, responsavel por armazenas e..." alt="" coords="165,107,248,133"/>
-<area shape="rect" href="lista_cuidador_8h.html#ac9664361693d2ac6ad17afb02d0af621" title="Aloca e inicia uma lista de cuidadores com uma sentinela vazia." alt="" coords="152,157,261,184"/>
-<area shape="rect" href="lista_idoso_8h.html#a8db6232f56c31eabd4870f5c010710b6" title="Aloca e inicia uma lista de Idosos com uma sentinela vazia." alt="" coords="145,208,268,235"/>
-<area shape="rect" href="idoso_8c.html#ab7bfad24a236d31876f699b460e00f4d" title="Define o Nome do objeto Idoso." alt="" coords="148,259,265,285"/>
-<area shape="rect" href="pathman_8c.html#a18886c8669c2a9541f75720f21bdb84c" title="Extend path: adiciona uma string no final do caminho." alt="" coords="316,5,375,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a3f54e9cc6f8cd2c53e2c3a09aefc32db_cgraph.svg" width="380" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a3f54e9cc6f8cd2c53e2c3a09aefc32db_icgraph.png" border="0" usemap="#aidoso_8c_a3f54e9cc6f8cd2c53e2c3a09aefc32db_icgraph" alt=""/></div>
-<map name="aidoso_8c_a3f54e9cc6f8cd2c53e2c3a09aefc32db_icgraph" id="aidoso_8c_a3f54e9cc6f8cd2c53e2c3a09aefc32db_icgraph">
-<area shape="rect" title="Faz a alocacao de memoria e inicializacao de uma variavel do tipo Idoso." alt="" coords="108,5,200,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a3f54e9cc6f8cd2c53e2c3a09aefc32db_icgraph.svg" width="206" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -521,21 +487,12 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_adead1c28f1b19683b8958019426a8aa2_cgraph.png" border="0" usemap="#aidoso_8c_adead1c28f1b19683b8958019426a8aa2_cgraph" alt=""/></div>
-<map name="aidoso_8c_adead1c28f1b19683b8958019426a8aa2_cgraph" id="aidoso_8c_adead1c28f1b19683b8958019426a8aa2_cgraph">
-<area shape="rect" title="Insere um novo idoso a lista de amizades do Idoso acessado." alt="" coords="5,5,144,32"/>
-<area shape="rect" href="lista_idoso_8h.html#aefc27e3a6b457254cdd0bb849ef2fbb8" title="Insere o Idoso ao final da lista de idosos acessada." alt="" coords="192,5,320,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_adead1c28f1b19683b8958019426a8aa2_cgraph.svg" width="326" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_adead1c28f1b19683b8958019426a8aa2_icgraph.png" border="0" usemap="#aidoso_8c_adead1c28f1b19683b8958019426a8aa2_icgraph" alt=""/></div>
-<map name="aidoso_8c_adead1c28f1b19683b8958019426a8aa2_icgraph" id="aidoso_8c_adead1c28f1b19683b8958019426a8aa2_icgraph">
-<area shape="rect" title="Insere um novo idoso a lista de amizades do Idoso acessado." alt="" coords="275,5,413,32"/>
-<area shape="rect" href="lista_idoso_8h.html#a426b6b2ccb10e43ecff84f9a744c1c5c" title="Cria o um laco de amizade, inserindo o amigo na lista de amigos um do outro Como amizades sao recipro..." alt="" coords="108,5,227,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_adead1c28f1b19683b8958019426a8aa2_icgraph.svg" width="419" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -579,20 +536,12 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_aab10cd3a90c4c144a89041f24c9b148f_cgraph.png" border="0" usemap="#aidoso_8c_aab10cd3a90c4c144a89041f24c9b148f_cgraph" alt=""/></div>
-<map name="aidoso_8c_aab10cd3a90c4c144a89041f24c9b148f_cgraph" id="aidoso_8c_aab10cd3a90c4c144a89041f24c9b148f_cgraph">
-<area shape="rect" title="Insere um novo cuidador a lista de cuidadores que o Idoso acessado pode requisitar." alt="" coords="5,5,160,32"/>
-<area shape="rect" href="lista_cuidador_8h.html#a8c1178c4c579b1d1950f0caa01f5ce41" title="Insere o cuidador ao final da lista de cuidadores acessada." alt="" coords="208,5,323,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_aab10cd3a90c4c144a89041f24c9b148f_cgraph.svg" width="328" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_aab10cd3a90c4c144a89041f24c9b148f_icgraph.png" border="0" usemap="#aidoso_8c_aab10cd3a90c4c144a89041f24c9b148f_icgraph" alt=""/></div>
-<map name="aidoso_8c_aab10cd3a90c4c144a89041f24c9b148f_icgraph" id="aidoso_8c_aab10cd3a90c4c144a89041f24c9b148f_icgraph">
-<area shape="rect" title="Insere um novo cuidador a lista de cuidadores que o Idoso acessado pode requisitar." alt="" coords="108,5,263,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_aab10cd3a90c4c144a89041f24c9b148f_icgraph.svg" width="268" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -625,22 +574,12 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a9f1fc433114612ab21373e245aa47712_cgraph.png" border="0" usemap="#aidoso_8c_a9f1fc433114612ab21373e245aa47712_cgraph" alt=""/></div>
-<map name="aidoso_8c_a9f1fc433114612ab21373e245aa47712_cgraph" id="aidoso_8c_a9f1fc433114612ab21373e245aa47712_cgraph">
-<area shape="rect" title="Libera a memoria alocada para a variavel de tipo Idoso." alt="" coords="5,56,103,83"/>
-<area shape="rect" href="geoloc_8h.html#a1e2732e2aee467321c0e4df4f748aa65" title="Libera a memoria alocada para a variavel de tipo Geoloc." alt="" coords="171,5,259,32"/>
-<area shape="rect" href="lista_cuidador_8h.html#a86284060d805e7118ba0094834ff85db" title="Libera a memoria alocada pela lista e suas celulas." alt="" coords="157,56,272,83"/>
-<area shape="rect" href="lista_idoso_8h.html#a6372ab13748fb8d78259a424fd21d986" title="Libera a memoria alocada pela lista e suas celulas." alt="" coords="151,107,279,133"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a9f1fc433114612ab21373e245aa47712_cgraph.svg" width="284" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a9f1fc433114612ab21373e245aa47712_icgraph.png" border="0" usemap="#aidoso_8c_a9f1fc433114612ab21373e245aa47712_icgraph" alt=""/></div>
-<map name="aidoso_8c_a9f1fc433114612ab21373e245aa47712_icgraph" id="aidoso_8c_a9f1fc433114612ab21373e245aa47712_icgraph">
-<area shape="rect" title="Libera a memoria alocada para a variavel de tipo Idoso." alt="" coords="108,5,205,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a9f1fc433114612ab21373e245aa47712_icgraph.svg" width="211" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -673,28 +612,12 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a88452684585a131cdad194e145456e67_cgraph.png" border="0" usemap="#aidoso_8c_a88452684585a131cdad194e145456e67_cgraph" alt=""/></div>
-<map name="aidoso_8c_a88452684585a131cdad194e145456e67_cgraph" id="aidoso_8c_a88452684585a131cdad194e145456e67_cgraph">
-<area shape="rect" title="Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes ob..." alt="" coords="5,107,120,133"/>
-<area shape="rect" href="cuidador_8h.html#a2e1114aca6ce014765fcba5722825b2b" title="Retorna o Nome do objeto Cuidador." alt="" coords="177,5,319,32"/>
-<area shape="rect" href="idoso_8c.html#ad410fb3330c4e9336dc048bb5c684b58" title="Retorna o Nome do objeto Idoso." alt="" coords="189,56,307,83"/>
-<area shape="rect" href="lista_cuidador_8h.html#a199e3cfc61052c71a6afad55ba8d4e4c" title="Retorna o cuidador mais proximo do ponto de referencia entre os presentes na lista." alt="" coords="168,107,328,133"/>
-<area shape="rect" href="lista_idoso_8h.html#afa97c09900abce26facf342d0a824599" title="Retorna o Idoso mais proximo do ponto de referencia entre os presentes na lista." alt="" coords="179,157,317,184"/>
-<area shape="rect" href="idoso_8c.html#a05c6062c3c814bfd4b9b219ccd09caa0" title="Define uma nova Condicao ao Idoso." alt="" coords="179,208,317,235"/>
-<area shape="rect" href="geoloc_8h.html#a58b31cb21ffe9fe839d9c2e0f69772a8" title="Calcula a distancia entre duas localizacoes Retornando um double resultante do calculo." alt="" coords="395,107,497,133"/>
-<area shape="rect" href="cuidador_8h.html#a0b02209f82186c9bd84ca27c3c01b58e" title="Retorna o Local (de tipo Geoloc) do objeto Cuidador." alt="" coords="377,56,515,83"/>
-<area shape="rect" href="idoso_8h.html#a137d0f97f095286e4d25790507a52e61" title="Retorna a condicao atual do idoso, respeitando a seguinte tabela &#45;2 = Bem morto &#45;1 = A informar,..." alt="" coords="376,157,516,184"/>
-<area shape="rect" href="idoso_8h.html#a408d4574b54a20f17a044f55cd887fa6" title="Retorna o Local do Idoso (Como Geoloc)" alt="" coords="389,208,503,235"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a88452684585a131cdad194e145456e67_cgraph.svg" width="522" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a88452684585a131cdad194e145456e67_icgraph.png" border="0" usemap="#aidoso_8c_a88452684585a131cdad194e145456e67_icgraph" alt=""/></div>
-<map name="aidoso_8c_a88452684585a131cdad194e145456e67_icgraph" id="aidoso_8c_a88452684585a131cdad194e145456e67_icgraph">
-<area shape="rect" title="Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes ob..." alt="" coords="108,5,223,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a88452684585a131cdad194e145456e67_icgraph.svg" width="228" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -727,12 +650,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a074ec0beda9207173bb20248369d008e_icgraph.png" border="0" usemap="#aidoso_8c_a074ec0beda9207173bb20248369d008e_icgraph" alt=""/></div>
-<map name="aidoso_8c_a074ec0beda9207173bb20248369d008e_icgraph" id="aidoso_8c_a074ec0beda9207173bb20248369d008e_icgraph">
-<area shape="rect" title="Zera o contador de febres baixas do Idoso." alt="" coords="267,5,404,32"/>
-<area shape="rect" href="idoso_8h.html#a9f1d51ea97ea9f557a840325ef5fb737" title="Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo." alt="" coords="108,5,219,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a074ec0beda9207173bb20248369d008e_icgraph.svg" width="410" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -776,13 +694,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a05c6062c3c814bfd4b9b219ccd09caa0_icgraph.png" border="0" usemap="#aidoso_8c_a05c6062c3c814bfd4b9b219ccd09caa0_icgraph" alt=""/></div>
-<map name="aidoso_8c_a05c6062c3c814bfd4b9b219ccd09caa0_icgraph" id="aidoso_8c_a05c6062c3c814bfd4b9b219ccd09caa0_icgraph">
-<area shape="rect" title="Define uma nova Condicao ao Idoso." alt="" coords="271,31,409,57"/>
-<area shape="rect" href="idoso_8h.html#a9f1d51ea97ea9f557a840325ef5fb737" title="Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo." alt="" coords="110,5,221,32"/>
-<area shape="rect" href="idoso_8h.html#a88452684585a131cdad194e145456e67" title="Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes ob..." alt="" coords="108,56,223,83"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,60,57"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a05c6062c3c814bfd4b9b219ccd09caa0_icgraph.svg" width="415" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -833,21 +745,12 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a73c41422fa6d8127dff69b6b02894fc1_cgraph.png" border="0" usemap="#aidoso_8c_a73c41422fa6d8127dff69b6b02894fc1_cgraph" alt=""/></div>
-<map name="aidoso_8c_a73c41422fa6d8127dff69b6b02894fc1_cgraph" id="aidoso_8c_a73c41422fa6d8127dff69b6b02894fc1_cgraph">
-<area shape="rect" title="Define o Local do Idoso para as novas coordenadas." alt="" coords="5,5,117,32"/>
-<area shape="rect" href="geoloc_8h.html#ad15a017b73ab2909652b15b346373bb7" title="Define a geolocalizacao dada para os valores de latitude e longitude passados." alt="" coords="165,5,272,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a73c41422fa6d8127dff69b6b02894fc1_cgraph.svg" width="278" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_a73c41422fa6d8127dff69b6b02894fc1_icgraph.png" border="0" usemap="#aidoso_8c_a73c41422fa6d8127dff69b6b02894fc1_icgraph" alt=""/></div>
-<map name="aidoso_8c_a73c41422fa6d8127dff69b6b02894fc1_icgraph" id="aidoso_8c_a73c41422fa6d8127dff69b6b02894fc1_icgraph">
-<area shape="rect" title="Define o Local do Idoso para as novas coordenadas." alt="" coords="267,5,379,32"/>
-<area shape="rect" href="idoso_8h.html#a9f1d51ea97ea9f557a840325ef5fb737" title="Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo." alt="" coords="108,5,219,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_a73c41422fa6d8127dff69b6b02894fc1_icgraph.svg" width="384" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -891,20 +794,19 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="idoso_8c_ab7bfad24a236d31876f699b460e00f4d_icgraph.png" border="0" usemap="#aidoso_8c_ab7bfad24a236d31876f699b460e00f4d_icgraph" alt=""/></div>
-<map name="aidoso_8c_ab7bfad24a236d31876f699b460e00f4d_icgraph" id="aidoso_8c_ab7bfad24a236d31876f699b460e00f4d_icgraph">
-<area shape="rect" title="Define o Nome do objeto Idoso." alt="" coords="248,5,365,32"/>
-<area shape="rect" href="idoso_8h.html#a3f54e9cc6f8cd2c53e2c3a09aefc32db" title="Faz a alocacao de memoria e inicializacao de uma variavel do tipo Idoso." alt="" coords="108,5,200,32"/>
-<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="idoso_8c_ab7bfad24a236d31876f699b460e00f4d_icgraph.svg" width="371" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="idoso_8c.html">idoso.c</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

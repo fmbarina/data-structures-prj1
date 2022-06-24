@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun 24 00:13:46 2022
+# Make data base, printed on Fri Jun 24 00:58:31 2022
 
 # Variables
 
@@ -21,7 +21,7 @@ VCPKG_DISABLE_METRICS = 1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d87f3c00-a178-4187-aa31-db3aad352ada.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-79ddb736-031c-4d85-9597-f91b9950b34d.sock
 # environment
 VSCODE_CWD = /home/gnizama
 # environment
@@ -101,7 +101,7 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 62359
+VSCODE_PID = 72062
 # environment
 SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0
 # environment
@@ -195,7 +195,7 @@ which_declare = declare -f
 # environment
 DEBUGINFOD_URLS = https://debuginfod.fedoraproject.org/ 
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 62359
+GIO_LAUNCHED_DESKTOP_FILE_PID = 72062
 # environment
 _ = /usr/bin/make
 # environment
@@ -278,13 +278,13 @@ all: edcare.out
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 00:13:24.046422685
+#  Last modified 2022-06-20 22:41:02
 #  File has been updated.
 #  Successfully updated.
+ 
 
 edcare.out:
 #  Implicit rule search has not been done.
- 
 #  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
@@ -329,12 +329,12 @@ edcare.out:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 180 B / avg = 8 B
-# current buf: size = 8162 B / used = 180 B / count = 22 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 181 B / avg = 8 B
+# current buf: size = 8162 B / used = 181 B / count = 22 / avg = 8 B
 
 # strcache performance: lookups = 35 / hit rate = 37%
 # hash-table stats:
 # Load=22/8192=0%, Rehash=0, Collisions=0/35=0%
-# Finished Make data base on Fri Jun 24 00:13:46 2022
+# Finished Make data base on Fri Jun 24 00:58:31 2022
 
  
