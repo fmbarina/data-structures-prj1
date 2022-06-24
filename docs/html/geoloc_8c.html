@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EDCare: Referência do Arquivo src/geoloc.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EDCare
+   </div>
+   <div id="projectbrief">Projeto de Estrutura de Dados - Rhuan Garcia e Felipe Barina</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Estruturas de Dados</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo geoloc.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="geoloc_8h_source.html">geoloc.h</a>&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para geoloc.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="geoloc_8c__incl.png" border="0" usemap="#asrc_2geoloc_8c" alt=""/></div>
+<map name="asrc_2geoloc_8c" id="asrc_2geoloc_8c">
+<area shape="rect" title=" " alt="" coords="93,5,192,32"/>
+<area shape="rect" href="geoloc_8h.html" title=" " alt="" coords="5,80,83,107"/>
+<area shape="rect" title=" " alt="" coords="107,80,178,107"/>
+<area shape="rect" title=" " alt="" coords="202,80,270,107"/>
+</map>
+</div>
+</div>
+<p><a href="geoloc_8c_source.html">Vá para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Estruturas de Dados</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgeoloc.html">geoloc</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:afbcdcb86de07f57b99d242367e2a4a05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="geoloc_8h.html#a71029d6f48f46e9cbb711c59352d7a51">Geoloc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geoloc_8c.html#afbcdcb86de07f57b99d242367e2a4a05">IniciaGeo</a> (int longitude, int latitude)</td></tr>
+<tr class="memdesc:afbcdcb86de07f57b99d242367e2a4a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Faz a alocacao de memoria e inicializacao de uma variavel do tipo Geoloc, responsavel por armazenas e gerir a localizacao.  <a href="geoloc_8c.html#afbcdcb86de07f57b99d242367e2a4a05">Mais...</a><br /></td></tr>
+<tr class="separator:afbcdcb86de07f57b99d242367e2a4a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b31cb21ffe9fe839d9c2e0f69772a8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geoloc_8c.html#a58b31cb21ffe9fe839d9c2e0f69772a8">CalcDistGeo</a> (<a class="el" href="geoloc_8h.html#a71029d6f48f46e9cbb711c59352d7a51">Geoloc</a> *g1, <a class="el" href="geoloc_8h.html#a71029d6f48f46e9cbb711c59352d7a51">Geoloc</a> *g2)</td></tr>
+<tr class="memdesc:a58b31cb21ffe9fe839d9c2e0f69772a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula a distancia entre duas localizacoes Retornando um double resultante do calculo.  <a href="geoloc_8c.html#a58b31cb21ffe9fe839d9c2e0f69772a8">Mais...</a><br /></td></tr>
+<tr class="separator:a58b31cb21ffe9fe839d9c2e0f69772a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15a017b73ab2909652b15b346373bb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geoloc_8c.html#ad15a017b73ab2909652b15b346373bb7">MudaPosGeo</a> (<a class="el" href="geoloc_8h.html#a71029d6f48f46e9cbb711c59352d7a51">Geoloc</a> *geo, int longitude, int latitude)</td></tr>
+<tr class="memdesc:ad15a017b73ab2909652b15b346373bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a geolocalizacao dada para os valores de latitude e longitude passados.  <a href="geoloc_8c.html#ad15a017b73ab2909652b15b346373bb7">Mais...</a><br /></td></tr>
+<tr class="separator:ad15a017b73ab2909652b15b346373bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2732e2aee467321c0e4df4f748aa65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geoloc_8c.html#a1e2732e2aee467321c0e4df4f748aa65">LiberaGeo</a> (<a class="el" href="geoloc_8h.html#a71029d6f48f46e9cbb711c59352d7a51">Geoloc</a> *geo)</td></tr>
+<tr class="memdesc:a1e2732e2aee467321c0e4df4f748aa65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera a memoria alocada para a variavel de tipo Geoloc.  <a href="geoloc_8c.html#a1e2732e2aee467321c0e4df4f748aa65">Mais...</a><br /></td></tr>
+<tr class="separator:a1e2732e2aee467321c0e4df4f748aa65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="a58b31cb21ffe9fe839d9c2e0f69772a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58b31cb21ffe9fe839d9c2e0f69772a8">&#9670;&nbsp;</a></span>CalcDistGeo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CalcDistGeo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="geoloc_8h.html#a71029d6f48f46e9cbb711c59352d7a51">Geoloc</a> *&#160;</td>
+          <td class="paramname"><em>g1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="geoloc_8h.html#a71029d6f48f46e9cbb711c59352d7a51">Geoloc</a> *&#160;</td>
+          <td class="paramname"><em>g2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula a distancia entre duas localizacoes Retornando um double resultante do calculo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g1</td><td>- Ponto 1 </td></tr>
+    <tr><td class="paramname">g2</td><td>- Ponto 2 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>double - Distancia entre eles </dd></dl>
+
+<p class="definition">Definição na linha <a class="el" href="geoloc_8c_source.html#l00019">19</a> do arquivo <a class="el" href="geoloc_8c_source.html">geoloc.c</a>.</p>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="geoloc_8c_a58b31cb21ffe9fe839d9c2e0f69772a8_icgraph.png" border="0" usemap="#ageoloc_8c_a58b31cb21ffe9fe839d9c2e0f69772a8_icgraph" alt=""/></div>
+<map name="ageoloc_8c_a58b31cb21ffe9fe839d9c2e0f69772a8_icgraph" id="ageoloc_8c_a58b31cb21ffe9fe839d9c2e0f69772a8_icgraph">
+<area shape="rect" title="Calcula a distancia entre duas localizacoes Retornando um double resultante do calculo." alt="" coords="479,31,581,57"/>
+<area shape="rect" href="lista_cuidador_8h.html#a199e3cfc61052c71a6afad55ba8d4e4c" title="Retorna o cuidador mais proximo do ponto de referencia entre os presentes na lista." alt="" coords="271,5,431,32"/>
+<area shape="rect" href="lista_idoso_8h.html#afa97c09900abce26facf342d0a824599" title="Retorna o Idoso mais proximo do ponto de referencia entre os presentes na lista." alt="" coords="282,56,419,83"/>
+<area shape="rect" href="idoso_8h.html#a88452684585a131cdad194e145456e67" title="Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes ob..." alt="" coords="108,31,223,57"/>
+<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,60,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afbcdcb86de07f57b99d242367e2a4a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbcdcb86de07f57b99d242367e2a4a05">&#9670;&nbsp;</a></span>IniciaGeo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="geoloc_8h.html#a71029d6f48f46e9cbb711c59352d7a51">Geoloc</a>* IniciaGeo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>longitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>latitude</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Faz a alocacao de memoria e inicializacao de uma variavel do tipo Geoloc, responsavel por armazenas e gerir a localizacao. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">longitude</td><td>- Coordenada inicial </td></tr>
+    <tr><td class="paramname">latitude</td><td>- Coordenada inicial </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Geoloc* - Geolocalizacao iniciada </dd></dl>
+
+<p class="definition">Definição na linha <a class="el" href="geoloc_8c_source.html#l00011">11</a> do arquivo <a class="el" href="geoloc_8c_source.html">geoloc.c</a>.</p>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="geoloc_8c_afbcdcb86de07f57b99d242367e2a4a05_icgraph.png" border="0" usemap="#ageoloc_8c_afbcdcb86de07f57b99d242367e2a4a05_icgraph" alt=""/></div>
+<map name="ageoloc_8c_afbcdcb86de07f57b99d242367e2a4a05_icgraph" id="ageoloc_8c_afbcdcb86de07f57b99d242367e2a4a05_icgraph">
+<area shape="rect" title="Faz a alocacao de memoria e inicializacao de uma variavel do tipo Geoloc, responsavel por armazenas e..." alt="" coords="271,31,353,57"/>
+<area shape="rect" href="cuidador_8h.html#aeb8e274de45a5c99428ad3740eef86b8" title="Faz a alocacao de memoria e inicializacao de uma variavel do tipo cuidador." alt="" coords="108,5,223,32"/>
+<area shape="rect" href="idoso_8h.html#a3f54e9cc6f8cd2c53e2c3a09aefc32db" title="Faz a alocacao de memoria e inicializacao de uma variavel do tipo Idoso." alt="" coords="119,56,211,83"/>
+<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,60,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1e2732e2aee467321c0e4df4f748aa65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2732e2aee467321c0e4df4f748aa65">&#9670;&nbsp;</a></span>LiberaGeo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LiberaGeo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="geoloc_8h.html#a71029d6f48f46e9cbb711c59352d7a51">Geoloc</a> *&#160;</td>
+          <td class="paramname"><em>geo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libera a memoria alocada para a variavel de tipo Geoloc. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">geo</td><td>- Geoloc a ser liberado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="geoloc_8c_source.html#l00031">31</a> do arquivo <a class="el" href="geoloc_8c_source.html">geoloc.c</a>.</p>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="geoloc_8c_a1e2732e2aee467321c0e4df4f748aa65_icgraph.png" border="0" usemap="#ageoloc_8c_a1e2732e2aee467321c0e4df4f748aa65_icgraph" alt=""/></div>
+<map name="ageoloc_8c_a1e2732e2aee467321c0e4df4f748aa65_icgraph" id="ageoloc_8c_a1e2732e2aee467321c0e4df4f748aa65_icgraph">
+<area shape="rect" title="Libera a memoria alocada para a variavel de tipo Geoloc." alt="" coords="276,31,364,57"/>
+<area shape="rect" href="cuidador_8h.html#a6e4af23e054337b68d5037edeefa9c85" title="Libera a memoria alocada para tal cuidador." alt="" coords="108,5,228,32"/>
+<area shape="rect" href="idoso_8h.html#a9f1fc433114612ab21373e245aa47712" title="Libera a memoria alocada para a variavel de tipo Idoso." alt="" coords="119,56,217,83"/>
+<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,60,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad15a017b73ab2909652b15b346373bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad15a017b73ab2909652b15b346373bb7">&#9670;&nbsp;</a></span>MudaPosGeo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MudaPosGeo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="geoloc_8h.html#a71029d6f48f46e9cbb711c59352d7a51">Geoloc</a> *&#160;</td>
+          <td class="paramname"><em>geo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>longitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>latitude</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define a geolocalizacao dada para os valores de latitude e longitude passados. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">geo</td><td>- Geoloc a ser atualizado </td></tr>
+    <tr><td class="paramname">longitude</td><td>- Nova coordenada </td></tr>
+    <tr><td class="paramname">latitude</td><td>- Nova coordenada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="geoloc_8c_source.html#l00025">25</a> do arquivo <a class="el" href="geoloc_8c_source.html">geoloc.c</a>.</p>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="geoloc_8c_ad15a017b73ab2909652b15b346373bb7_icgraph.png" border="0" usemap="#ageoloc_8c_ad15a017b73ab2909652b15b346373bb7_icgraph" alt=""/></div>
+<map name="ageoloc_8c_ad15a017b73ab2909652b15b346373bb7_icgraph" id="ageoloc_8c_ad15a017b73ab2909652b15b346373bb7_icgraph">
+<area shape="rect" title="Define a geolocalizacao dada para os valores de latitude e longitude passados." alt="" coords="472,31,579,57"/>
+<area shape="rect" href="cuidador_8h.html#a8eb550092858dafae62ebcc83fa99921" title="Define o Local (de tipo Geoloc) do objeto Cuidador." alt="" coords="289,5,424,32"/>
+<area shape="rect" href="idoso_8h.html#a73c41422fa6d8127dff69b6b02894fc1" title="Define o Local do Idoso para as novas coordenadas." alt="" coords="301,56,413,83"/>
+<area shape="rect" href="cuidador_8h.html#a676000430da09bc26e44294be49ce6a7" title="Faz a leitura de uma nova linha do arquivo referente ao cuidador, atualizando seu local no dado tempo..." alt="" coords="108,5,241,32"/>
+<area shape="rect" href="cliente_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,60,57"/>
+<area shape="rect" href="idoso_8h.html#a9f1d51ea97ea9f557a840325ef5fb737" title="Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo." alt="" coords="119,56,230,83"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

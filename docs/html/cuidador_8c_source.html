@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EDCare: Código-Fonte de src/cuidador.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EDCare
+   </div>
+   <div id="projectbrief">Projeto de Estrutura de Dados - Rhuan Garcia e Felipe Barina</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">cuidador.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="cuidador_8c.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cuidador_8h.html">cuidador.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geoloc_8h.html">geoloc.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pathman_8h.html">pathman.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="cuidador_8c.html#a0aac6c68a5a4eb4d5dbf7f94919de21c">    8</a></span>&#160;<span class="preprocessor">#define EXT &quot;.txt&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structcuidador.html">   10</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcuidador.html">cuidador</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structcuidador.html#ae2a0f66178bb1c4d42e2b70ec9426ccb">   12</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structcuidador.html#ae2a0f66178bb1c4d42e2b70ec9426ccb">nome</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">// char ocupacao; // cuidadores agora sao onipresentes</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structcuidador.html#a43312129bd7756884ed634fc351301d9">   14</a></span>&#160;    <a class="code" href="structgeoloc.html">Geoloc</a> *<a class="code" href="structcuidador.html#a43312129bd7756884ed634fc351301d9">local</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structcuidador.html#a5dd6b2ff89dd3e0c52117598e40a4e4b">   15</a></span>&#160;    FILE *<a class="code" href="structcuidador.html#a5dd6b2ff89dd3e0c52117598e40a4e4b">arquivo</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="cuidador_8h.html#aeb8e274de45a5c99428ad3740eef86b8">   18</a></span>&#160;<a class="code" href="structcuidador.html">Cuidador</a> *<a class="code" href="cuidador_8c.html#aeb8e274de45a5c99428ad3740eef86b8">IniciaCuidador</a>(<span class="keywordtype">char</span> *nome, <span class="keywordtype">char</span> *diretorio)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="structcuidador.html">Cuidador</a> *cui = (<a class="code" href="structcuidador.html">Cuidador</a> *)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structcuidador.html">Cuidador</a>));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    cui-&gt;<a class="code" href="structcuidador.html#ae2a0f66178bb1c4d42e2b70ec9426ccb">nome</a> = strdup(nome);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    cui-&gt;<a class="code" href="structcuidador.html#a43312129bd7756884ed634fc351301d9">local</a> = <a class="code" href="geoloc_8h.html#afbcdcb86de07f57b99d242367e2a4a05">IniciaGeo</a>(0, 0);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// cui-&gt;ocupacao = 0;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// Concatenacao com nome do cuidador</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">char</span>* pathEntrada = <a class="code" href="pathman_8h.html#a18886c8669c2a9541f75720f21bdb84c">expth</a>(<a class="code" href="pathman_8h.html#a8ac57bc6fde707215bb75ce25309489b">adpth</a>(strdup(diretorio), nome), <a class="code" href="cuidador_8c.html#a0aac6c68a5a4eb4d5dbf7f94919de21c">EXT</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    cui-&gt;<a class="code" href="structcuidador.html#a5dd6b2ff89dd3e0c52117598e40a4e4b">arquivo</a> = fopen(pathEntrada, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    free(pathEntrada);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> cui;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="cuidador_8h.html#a2e1114aca6ce014765fcba5722825b2b">   33</a></span>&#160;<span class="keywordtype">char</span> *<a class="code" href="cuidador_8c.html#a2e1114aca6ce014765fcba5722825b2b">GetNomeCuidador</a>(<a class="code" href="structcuidador.html">Cuidador</a> *cui)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> cui-&gt;<a class="code" href="structcuidador.html#ae2a0f66178bb1c4d42e2b70ec9426ccb">nome</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/*int GetOcupacaoCuidador(Cuidador *cui)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">    return (int)cui-&gt;ocupacao;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">void SetOcupacaoCuidador(Cuidador *cui, int ocupacao)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    cui-&gt;ocupacao = (char)ocupacao;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">}*/</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="cuidador_8h.html#a0b02209f82186c9bd84ca27c3c01b58e">   48</a></span>&#160;<a class="code" href="structgeoloc.html">Geoloc</a> *<a class="code" href="cuidador_8c.html#a0b02209f82186c9bd84ca27c3c01b58e">GetLocalCuidador</a>(<a class="code" href="structcuidador.html">Cuidador</a> *cui)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> cui-&gt;<a class="code" href="structcuidador.html#a43312129bd7756884ed634fc351301d9">local</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="cuidador_8h.html#a8eb550092858dafae62ebcc83fa99921">   53</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="cuidador_8c.html#a8eb550092858dafae62ebcc83fa99921">SetLocalCuidador</a>(<a class="code" href="structcuidador.html">Cuidador</a> *cui, <span class="keywordtype">int</span> longitude, <span class="keywordtype">int</span> latitude)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="geoloc_8h.html#ad15a017b73ab2909652b15b346373bb7">MudaPosGeo</a>(cui-&gt;<a class="code" href="structcuidador.html#a43312129bd7756884ed634fc351301d9">local</a>, longitude, latitude);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="cuidador_8h.html#a676000430da09bc26e44294be49ce6a7">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="cuidador_8c.html#a676000430da09bc26e44294be49ce6a7">AtualizaCuidador</a>(<a class="code" href="structcuidador.html">Cuidador</a> *cui)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> lon, lati; <span class="comment">// ...long é uma palavra reservada</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    fscanf(cui-&gt;<a class="code" href="structcuidador.html#a5dd6b2ff89dd3e0c52117598e40a4e4b">arquivo</a>, <span class="stringliteral">&quot;%i;%i&quot;</span>, &amp;lati, &amp;lon);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="cuidador_8c.html#a8eb550092858dafae62ebcc83fa99921">SetLocalCuidador</a>(cui, lon, lati);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="cuidador_8h.html#a6e4af23e054337b68d5037edeefa9c85">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="cuidador_8c.html#a6e4af23e054337b68d5037edeefa9c85">LiberaCuidador</a>(<a class="code" href="structcuidador.html">Cuidador</a> *cui)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (cui)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="geoloc_8h.html#a1e2732e2aee467321c0e4df4f748aa65">LiberaGeo</a>(cui-&gt;<a class="code" href="structcuidador.html#a43312129bd7756884ed634fc351301d9">local</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        free(cui-&gt;<a class="code" href="structcuidador.html#ae2a0f66178bb1c4d42e2b70ec9426ccb">nome</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        fclose(cui-&gt;<a class="code" href="structcuidador.html#a5dd6b2ff89dd3e0c52117598e40a4e4b">arquivo</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        free(cui);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        printf(<span class="stringliteral">&quot;Cuidador vazio!\n&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="ttc" id="acuidador_8c_html_a0aac6c68a5a4eb4d5dbf7f94919de21c"><div class="ttname"><a href="cuidador_8c.html#a0aac6c68a5a4eb4d5dbf7f94919de21c">EXT</a></div><div class="ttdeci">#define EXT</div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00008">cuidador.c:8</a></div></div>
+<div class="ttc" id="acuidador_8c_html_a0b02209f82186c9bd84ca27c3c01b58e"><div class="ttname"><a href="cuidador_8c.html#a0b02209f82186c9bd84ca27c3c01b58e">GetLocalCuidador</a></div><div class="ttdeci">Geoloc * GetLocalCuidador(Cuidador *cui)</div><div class="ttdoc">Retorna o Local (de tipo Geoloc) do objeto Cuidador.</div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00048">cuidador.c:48</a></div></div>
+<div class="ttc" id="acuidador_8c_html_a2e1114aca6ce014765fcba5722825b2b"><div class="ttname"><a href="cuidador_8c.html#a2e1114aca6ce014765fcba5722825b2b">GetNomeCuidador</a></div><div class="ttdeci">char * GetNomeCuidador(Cuidador *cui)</div><div class="ttdoc">Retorna o Nome do objeto Cuidador.</div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00033">cuidador.c:33</a></div></div>
+<div class="ttc" id="acuidador_8c_html_a676000430da09bc26e44294be49ce6a7"><div class="ttname"><a href="cuidador_8c.html#a676000430da09bc26e44294be49ce6a7">AtualizaCuidador</a></div><div class="ttdeci">void AtualizaCuidador(Cuidador *cui)</div><div class="ttdoc">Faz a leitura de uma nova linha do arquivo referente ao cuidador, atualizando seu local no dado tempo...</div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00058">cuidador.c:58</a></div></div>
+<div class="ttc" id="acuidador_8c_html_a6e4af23e054337b68d5037edeefa9c85"><div class="ttname"><a href="cuidador_8c.html#a6e4af23e054337b68d5037edeefa9c85">LiberaCuidador</a></div><div class="ttdeci">void LiberaCuidador(Cuidador *cui)</div><div class="ttdoc">Libera a memoria alocada para tal cuidador.</div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00065">cuidador.c:65</a></div></div>
+<div class="ttc" id="acuidador_8c_html_a8eb550092858dafae62ebcc83fa99921"><div class="ttname"><a href="cuidador_8c.html#a8eb550092858dafae62ebcc83fa99921">SetLocalCuidador</a></div><div class="ttdeci">void SetLocalCuidador(Cuidador *cui, int longitude, int latitude)</div><div class="ttdoc">Define o Local (de tipo Geoloc) do objeto Cuidador.</div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00053">cuidador.c:53</a></div></div>
+<div class="ttc" id="acuidador_8c_html_aeb8e274de45a5c99428ad3740eef86b8"><div class="ttname"><a href="cuidador_8c.html#aeb8e274de45a5c99428ad3740eef86b8">IniciaCuidador</a></div><div class="ttdeci">Cuidador * IniciaCuidador(char *nome, char *diretorio)</div><div class="ttdoc">Faz a alocacao de memoria e inicializacao de uma variavel do tipo cuidador.</div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00018">cuidador.c:18</a></div></div>
+<div class="ttc" id="acuidador_8h_html"><div class="ttname"><a href="cuidador_8h.html">cuidador.h</a></div></div>
+<div class="ttc" id="ageoloc_8h_html"><div class="ttname"><a href="geoloc_8h.html">geoloc.h</a></div></div>
+<div class="ttc" id="ageoloc_8h_html_a1e2732e2aee467321c0e4df4f748aa65"><div class="ttname"><a href="geoloc_8h.html#a1e2732e2aee467321c0e4df4f748aa65">LiberaGeo</a></div><div class="ttdeci">void LiberaGeo(Geoloc *geo)</div><div class="ttdoc">Libera a memoria alocada para a variavel de tipo Geoloc.</div><div class="ttdef"><b>Definition:</b> <a href="geoloc_8c_source.html#l00031">geoloc.c:31</a></div></div>
+<div class="ttc" id="ageoloc_8h_html_ad15a017b73ab2909652b15b346373bb7"><div class="ttname"><a href="geoloc_8h.html#ad15a017b73ab2909652b15b346373bb7">MudaPosGeo</a></div><div class="ttdeci">void MudaPosGeo(Geoloc *geo, int longitude, int latitude)</div><div class="ttdoc">Define a geolocalizacao dada para os valores de latitude e longitude passados.</div><div class="ttdef"><b>Definition:</b> <a href="geoloc_8c_source.html#l00025">geoloc.c:25</a></div></div>
+<div class="ttc" id="ageoloc_8h_html_afbcdcb86de07f57b99d242367e2a4a05"><div class="ttname"><a href="geoloc_8h.html#afbcdcb86de07f57b99d242367e2a4a05">IniciaGeo</a></div><div class="ttdeci">Geoloc * IniciaGeo(int longitude, int latitude)</div><div class="ttdoc">Faz a alocacao de memoria e inicializacao de uma variavel do tipo Geoloc, responsavel por armazenas e...</div><div class="ttdef"><b>Definition:</b> <a href="geoloc_8c_source.html#l00011">geoloc.c:11</a></div></div>
+<div class="ttc" id="apathman_8h_html"><div class="ttname"><a href="pathman_8h.html">pathman.h</a></div></div>
+<div class="ttc" id="apathman_8h_html_a18886c8669c2a9541f75720f21bdb84c"><div class="ttname"><a href="pathman_8h.html#a18886c8669c2a9541f75720f21bdb84c">expth</a></div><div class="ttdeci">char * expth(char *path, char *add)</div><div class="ttdoc">Extend path: adiciona uma string no final do caminho.</div><div class="ttdef"><b>Definition:</b> <a href="pathman_8c_source.html#l00007">pathman.c:7</a></div></div>
+<div class="ttc" id="apathman_8h_html_a8ac57bc6fde707215bb75ce25309489b"><div class="ttname"><a href="pathman_8h.html#a8ac57bc6fde707215bb75ce25309489b">adpth</a></div><div class="ttdeci">char * adpth(char *path, char *add)</div><div class="ttdoc">adiciona uma string no final do caminho, com um divisor no meio se o path terminar com um divisor,...</div><div class="ttdef"><b>Definition:</b> <a href="pathman_8c_source.html#l00045">pathman.c:45</a></div></div>
+<div class="ttc" id="astructcuidador_html"><div class="ttname"><a href="structcuidador.html">cuidador</a></div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00010">cuidador.c:11</a></div></div>
+<div class="ttc" id="astructcuidador_html_a43312129bd7756884ed634fc351301d9"><div class="ttname"><a href="structcuidador.html#a43312129bd7756884ed634fc351301d9">cuidador::local</a></div><div class="ttdeci">Geoloc * local</div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00014">cuidador.c:14</a></div></div>
+<div class="ttc" id="astructcuidador_html_a5dd6b2ff89dd3e0c52117598e40a4e4b"><div class="ttname"><a href="structcuidador.html#a5dd6b2ff89dd3e0c52117598e40a4e4b">cuidador::arquivo</a></div><div class="ttdeci">FILE * arquivo</div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00015">cuidador.c:15</a></div></div>
+<div class="ttc" id="astructcuidador_html_ae2a0f66178bb1c4d42e2b70ec9426ccb"><div class="ttname"><a href="structcuidador.html#ae2a0f66178bb1c4d42e2b70ec9426ccb">cuidador::nome</a></div><div class="ttdeci">char * nome</div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00012">cuidador.c:12</a></div></div>
+<div class="ttc" id="astructgeoloc_html"><div class="ttname"><a href="structgeoloc.html">geoloc</a></div><div class="ttdef"><b>Definition:</b> <a href="geoloc_8c_source.html#l00005">geoloc.c:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

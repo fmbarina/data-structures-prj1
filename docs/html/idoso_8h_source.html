@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EDCare: Código-Fonte de headers/idoso.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EDCare
+   </div>
+   <div id="projectbrief">Projeto de Estrutura de Dados - Rhuan Garcia e Felipe Barina</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">idoso.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="idoso_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="idoso_8h.html#a5111c2dbceb673d30c3676d4b42234cc">    1</a></span>&#160;<span class="preprocessor">#ifndef IDOSO_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IDOSO_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geoloc_8h.html">geoloc.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cuidador_8h.html">cuidador.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structidoso.html">idoso</a> <a class="code" href="structidoso.html">Idoso</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="structidoso.html">Idoso</a> *<a class="code" href="idoso_8h.html#a3f54e9cc6f8cd2c53e2c3a09aefc32db">IniciaIdoso</a>(<span class="keywordtype">char</span> *<a class="code" href="structidoso.html#ae2a0f66178bb1c4d42e2b70ec9426ccb">nome</a>, <span class="keywordtype">char</span> *diretorio);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="idoso_8h.html#ad410fb3330c4e9336dc048bb5c684b58">GetNomeIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idoso_8h.html#ab7bfad24a236d31876f699b460e00f4d">SetNomeIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido, <span class="keywordtype">char</span> *<a class="code" href="structidoso.html#ae2a0f66178bb1c4d42e2b70ec9426ccb">nome</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="structgeoloc.html">Geoloc</a> *<a class="code" href="idoso_8h.html#a408d4574b54a20f17a044f55cd887fa6">GetLocalIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idoso_8h.html#a73c41422fa6d8127dff69b6b02894fc1">SetLocalIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido, <span class="keywordtype">int</span> longitude, <span class="keywordtype">int</span> latitude);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">int</span> <a class="code" href="idoso_8h.html#a137d0f97f095286e4d25790507a52e61">GetCondicaoIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idoso_8h.html#a05c6062c3c814bfd4b9b219ccd09caa0">SetCondicaoIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido, <span class="keywordtype">int</span> <a class="code" href="structidoso.html#a28ceaebb7112e620f1856173fb709ccb">condicao</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">int</span> <a class="code" href="idoso_8h.html#ad498478889dd98cfb4369b704b681e1c">GetFebresIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idoso_8h.html#abcba8ce4d83ae423bb11438deb58b55e">IncFebresIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idoso_8h.html#a074ec0beda9207173bb20248369d008e">ResetFebresIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idoso_8h.html#a9f1d51ea97ea9f557a840325ef5fb737">AtualizaIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idoso_8h.html#aab10cd3a90c4c144a89041f24c9b148f">InsereCuidadorIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido, <a class="code" href="structcuidador.html">Cuidador</a> *cui);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idoso_8h.html#adead1c28f1b19683b8958019426a8aa2">InsereAmigoIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido, <a class="code" href="structidoso.html">Idoso</a> *amigo);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idoso_8h.html#a88452684585a131cdad194e145456e67">ProcessaIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keywordtype">void</span> <a class="code" href="idoso_8h.html#a9f1fc433114612ab21373e245aa47712">LiberaIdoso</a>(<a class="code" href="structidoso.html">Idoso</a> *ido);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// IDOSO_H_</span></div>
+<div class="ttc" id="acuidador_8h_html"><div class="ttname"><a href="cuidador_8h.html">cuidador.h</a></div></div>
+<div class="ttc" id="ageoloc_8h_html"><div class="ttname"><a href="geoloc_8h.html">geoloc.h</a></div></div>
+<div class="ttc" id="aidoso_8h_html_a05c6062c3c814bfd4b9b219ccd09caa0"><div class="ttname"><a href="idoso_8h.html#a05c6062c3c814bfd4b9b219ccd09caa0">SetCondicaoIdoso</a></div><div class="ttdeci">void SetCondicaoIdoso(Idoso *ido, int condicao)</div><div class="ttdoc">Define uma nova Condicao ao Idoso.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00085">idoso.c:85</a></div></div>
+<div class="ttc" id="aidoso_8h_html_a074ec0beda9207173bb20248369d008e"><div class="ttname"><a href="idoso_8h.html#a074ec0beda9207173bb20248369d008e">ResetFebresIdoso</a></div><div class="ttdeci">void ResetFebresIdoso(Idoso *ido)</div><div class="ttdoc">Zera o contador de febres baixas do Idoso.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00095">idoso.c:95</a></div></div>
+<div class="ttc" id="aidoso_8h_html_a137d0f97f095286e4d25790507a52e61"><div class="ttname"><a href="idoso_8h.html#a137d0f97f095286e4d25790507a52e61">GetCondicaoIdoso</a></div><div class="ttdeci">int GetCondicaoIdoso(Idoso *ido)</div><div class="ttdoc">Retorna a condicao atual do idoso, respeitando a seguinte tabela -2 = Bem morto -1 = A informar,...</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00080">idoso.c:80</a></div></div>
+<div class="ttc" id="aidoso_8h_html_a3f54e9cc6f8cd2c53e2c3a09aefc32db"><div class="ttname"><a href="idoso_8h.html#a3f54e9cc6f8cd2c53e2c3a09aefc32db">IniciaIdoso</a></div><div class="ttdeci">Idoso * IniciaIdoso(char *nome, char *diretorio)</div><div class="ttdoc">Faz a alocacao de memoria e inicializacao de uma variavel do tipo Idoso.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00036">idoso.c:36</a></div></div>
+<div class="ttc" id="aidoso_8h_html_a408d4574b54a20f17a044f55cd887fa6"><div class="ttname"><a href="idoso_8h.html#a408d4574b54a20f17a044f55cd887fa6">GetLocalIdoso</a></div><div class="ttdeci">Geoloc * GetLocalIdoso(Idoso *ido)</div><div class="ttdoc">Retorna o Local do Idoso (Como Geoloc)</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00070">idoso.c:70</a></div></div>
+<div class="ttc" id="aidoso_8h_html_a73c41422fa6d8127dff69b6b02894fc1"><div class="ttname"><a href="idoso_8h.html#a73c41422fa6d8127dff69b6b02894fc1">SetLocalIdoso</a></div><div class="ttdeci">void SetLocalIdoso(Idoso *ido, int longitude, int latitude)</div><div class="ttdoc">Define o Local do Idoso para as novas coordenadas.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00075">idoso.c:75</a></div></div>
+<div class="ttc" id="aidoso_8h_html_a88452684585a131cdad194e145456e67"><div class="ttname"><a href="idoso_8h.html#a88452684585a131cdad194e145456e67">ProcessaIdoso</a></div><div class="ttdeci">void ProcessaIdoso(Idoso *ido)</div><div class="ttdoc">Dadas as informacoes atualizadas do idoso, essa funcao eh responsavel por processar as informacoes ob...</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00165">idoso.c:165</a></div></div>
+<div class="ttc" id="aidoso_8h_html_a9f1d51ea97ea9f557a840325ef5fb737"><div class="ttname"><a href="idoso_8h.html#a9f1d51ea97ea9f557a840325ef5fb737">AtualizaIdoso</a></div><div class="ttdeci">void AtualizaIdoso(Idoso *ido)</div><div class="ttdoc">Faz a leitura de uma nova linha do arquivo referente ao Idoso, atualizando seus dados no dado tempo.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00105">idoso.c:105</a></div></div>
+<div class="ttc" id="aidoso_8h_html_a9f1fc433114612ab21373e245aa47712"><div class="ttname"><a href="idoso_8h.html#a9f1fc433114612ab21373e245aa47712">LiberaIdoso</a></div><div class="ttdeci">void LiberaIdoso(Idoso *ido)</div><div class="ttdoc">Libera a memoria alocada para a variavel de tipo Idoso.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00225">idoso.c:225</a></div></div>
+<div class="ttc" id="aidoso_8h_html_aab10cd3a90c4c144a89041f24c9b148f"><div class="ttname"><a href="idoso_8h.html#aab10cd3a90c4c144a89041f24c9b148f">InsereCuidadorIdoso</a></div><div class="ttdeci">void InsereCuidadorIdoso(Idoso *ido, Cuidador *cui)</div><div class="ttdoc">Insere um novo cuidador a lista de cuidadores que o Idoso acessado pode requisitar.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00155">idoso.c:155</a></div></div>
+<div class="ttc" id="aidoso_8h_html_ab7bfad24a236d31876f699b460e00f4d"><div class="ttname"><a href="idoso_8h.html#ab7bfad24a236d31876f699b460e00f4d">SetNomeIdoso</a></div><div class="ttdeci">void SetNomeIdoso(Idoso *ido, char *nome)</div><div class="ttdoc">Define o Nome do objeto Idoso.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00065">idoso.c:65</a></div></div>
+<div class="ttc" id="aidoso_8h_html_abcba8ce4d83ae423bb11438deb58b55e"><div class="ttname"><a href="idoso_8h.html#abcba8ce4d83ae423bb11438deb58b55e">IncFebresIdoso</a></div><div class="ttdeci">void IncFebresIdoso(Idoso *ido)</div><div class="ttdoc">Incrementa o contador de febres baixas seguidas do Idoso.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00100">idoso.c:100</a></div></div>
+<div class="ttc" id="aidoso_8h_html_ad410fb3330c4e9336dc048bb5c684b58"><div class="ttname"><a href="idoso_8h.html#ad410fb3330c4e9336dc048bb5c684b58">GetNomeIdoso</a></div><div class="ttdeci">char * GetNomeIdoso(Idoso *ido)</div><div class="ttdoc">Retorna o Nome do objeto Idoso.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00060">idoso.c:60</a></div></div>
+<div class="ttc" id="aidoso_8h_html_ad498478889dd98cfb4369b704b681e1c"><div class="ttname"><a href="idoso_8h.html#ad498478889dd98cfb4369b704b681e1c">GetFebresIdoso</a></div><div class="ttdeci">int GetFebresIdoso(Idoso *ido)</div><div class="ttdoc">Retorna quantas Febres baixas seguidas o Idoso em questao teve.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00090">idoso.c:90</a></div></div>
+<div class="ttc" id="aidoso_8h_html_adead1c28f1b19683b8958019426a8aa2"><div class="ttname"><a href="idoso_8h.html#adead1c28f1b19683b8958019426a8aa2">InsereAmigoIdoso</a></div><div class="ttdeci">void InsereAmigoIdoso(Idoso *ido, Idoso *amigo)</div><div class="ttdoc">Insere um novo idoso a lista de amizades do Idoso acessado.</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00160">idoso.c:160</a></div></div>
+<div class="ttc" id="astructcuidador_html"><div class="ttname"><a href="structcuidador.html">cuidador</a></div><div class="ttdef"><b>Definition:</b> <a href="cuidador_8c_source.html#l00010">cuidador.c:11</a></div></div>
+<div class="ttc" id="astructgeoloc_html"><div class="ttname"><a href="structgeoloc.html">geoloc</a></div><div class="ttdef"><b>Definition:</b> <a href="geoloc_8c_source.html#l00005">geoloc.c:6</a></div></div>
+<div class="ttc" id="astructidoso_html"><div class="ttname"><a href="structidoso.html">idoso</a></div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00013">idoso.c:14</a></div></div>
+<div class="ttc" id="astructidoso_html_a28ceaebb7112e620f1856173fb709ccb"><div class="ttname"><a href="structidoso.html#a28ceaebb7112e620f1856173fb709ccb">idoso::condicao</a></div><div class="ttdeci">char condicao</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00017">idoso.c:17</a></div></div>
+<div class="ttc" id="astructidoso_html_ae2a0f66178bb1c4d42e2b70ec9426ccb"><div class="ttname"><a href="structidoso.html#ae2a0f66178bb1c4d42e2b70ec9426ccb">idoso::nome</a></div><div class="ttdeci">char * nome</div><div class="ttdef"><b>Definition:</b> <a href="idoso_8c_source.html#l00015">idoso.c:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
