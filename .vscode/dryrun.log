@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/gnizama/Documents/prog/vamo la/data-structures-prj1'
+gcc -Wall -g  ./src/*.c -o ./edcare.out -I ./headers -lm
+make: Leaving directory '/home/gnizama/Documents/prog/vamo la/data-structures-prj1'
+ 
