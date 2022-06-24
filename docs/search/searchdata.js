@@ -7,7 +7,7 @@ var indexSectionsWithContent =
   4: "acfilnpu",
   5: "cgil",
   6: "bde",
-  7: "d"
+  7: "e"
 };
 
 var indexSectionNames =
@@ -24,13 +24,13 @@ var indexSectionNames =
 
 var indexSectionLabels =
 {
-  0: "All",
-  1: "Data Structures",
-  2: "Files",
-  3: "Functions",
-  4: "Variables",
-  5: "Typedefs",
-  6: "Macros",
-  7: "Pages"
+  0: "Todos",
+  1: "Estruturas de Dados",
+  2: "Arquivos",
+  3: "Funções",
+  4: "Variáveis",
+  5: "Definições de Tipos",
+  6: "Definições e Macros",
+  7: "Páginas"
 };
 
