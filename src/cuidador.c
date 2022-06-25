@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #include "cuidador.h"
 #include "geoloc.h"
 #include "pathman.h"

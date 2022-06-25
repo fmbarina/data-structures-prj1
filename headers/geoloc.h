@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #ifndef GEOLOC_H_
 #define GEOLOC_H_
 

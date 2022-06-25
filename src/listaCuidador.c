@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #include "listaCuidador.h"
 #include <stdio.h>
 #include <stdlib.h>

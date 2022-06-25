@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #ifndef PATHMAN_H_
 #define PATHMAN_H_
 

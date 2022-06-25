@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #ifndef IDOSO_H_
 #define IDOSO_H_
 #include "geoloc.h"

@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #include "pathman.h"
 #include <stdlib.h>
 #include <string.h>

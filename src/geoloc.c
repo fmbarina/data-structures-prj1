@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #include "geoloc.h"
 #include <stdlib.h>
 #include <math.h>

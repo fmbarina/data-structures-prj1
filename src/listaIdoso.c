@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #include "listaIdoso.h"
 #include "idoso.h"
 #include <stdio.h>

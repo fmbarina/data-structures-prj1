@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #ifndef LISTA_CUIDADOR_H_
 #define LISTA_CUIDADOR_H_
 #include "cuidador.h"

@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #ifndef LISTA_IDOSO_H_
 #define LISTA_IDOSO_H_
 #include "idoso.h"

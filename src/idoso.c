@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #include "idoso.h"
 #include "cuidador.h"
 #include "listaIdoso.h"

@@ -1,3 +1,6 @@
+//
+// Autores: Rhuan Garcia e Felipe M. Barina
+//
 #ifndef CUIDADOR_H_
 #define CUIDADOR_H_
 #include "geoloc.h"
