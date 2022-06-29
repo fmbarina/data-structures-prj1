@@ -1,2 +1,2 @@
 # data-structures-prj1
-EDCare - Estruturas de Dados I, Ufes.
+[EDCare](https://fmbarina.github.io/data-structures-prj1/index.html) - Estruturas de Dados I, Ufes.
